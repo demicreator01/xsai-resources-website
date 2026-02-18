@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-green-primary: #10b981;
+  --color-green-light: #d1fae5;
+  --color-green-dark: #059669;
+  --color-blue-light: #eff6ff;
+  --color-blue-accent: #3b82f6;
+  --color-bg-page: #f9fafb;
+  --color-bg-white: #ffffff;
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #9ca3af;
+  --color-border: #e5e7eb;
+
+  --font-inter: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { opacity: 0; }
+.fade-up.visible { animation: fadeUp 600ms cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-headline { animation: heroFadeIn 700ms cubic-bezier(0.22, 1, 0.36, 1) 100ms both; }
+.hero-sub      { animation: heroFadeIn 700ms cubic-bezier(0.22, 1, 0.36, 1) 280ms both; }
+.hero-cta      { animation: heroFadeIn 700ms cubic-bezier(0.22, 1, 0.36, 1) 460ms both; }
+
+@keyframes scaleIn {
+  from { transform: scale(0.6); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+@keyframes drawLine {
+  from { width: 0; }
+  to   { width: 48px; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}

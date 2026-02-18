@@ -1,0 +1,62 @@
+import React from 'react';
+import { Section } from '../ui/Section';
+
+export const PayrollPreview: React.FC = () => {
+    const features = [
+        "Full payroll processing",
+        "RTI submissions to HMRC",
+        "Auto-enrolment & pension management",
+        "Digital payslips",
+        "Year-end processing",
+        "BACS bureau handling",
+        "Dedicated account management"
+    ];
+
+    return (
+        <Section background="green-light" id="payroll">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                {/* Content */}
+                <div className="order-2 lg:order-1">
+                    <span className="text-xs font-bold text-[#10b981] tracking-widest uppercase mb-3 block">PAYROLL</span>
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-6">
+                        Payroll, Done Properly
+                    </h2>
+                    <p className="text-lg text-gray-600 mb-8">
+                        Our payroll service is designed around three principles: <strong className="text-gray-900">Accuracy. Security. Efficiency.</strong>
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+                        {features.map((feature, index) => (
+                            <div key={index} className="flex items-center gap-3">
+                                <div className="w-5 h-5 rounded-full bg-[#10b981] flex items-center justify-center shrink-0">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </div>
+                                <span className="text-gray-700 font-medium">{feature}</span>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="mt-10">
+                        <p className="font-bold text-[#111827]">Your employees are paid correctly and on time — every time.</p>
+                    </div>
+                </div>
+
+                {/* Pricing Card */}
+                <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+                    <div className="bg-white rounded-2xl border-2 border-[#10b981] p-8 md:p-10 shadow-xl max-w-sm w-full text-center hover:scale-105 transition-transform duration-300">
+                        <div className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Flat Rate</div>
+                        <div className="flex items-baseline justify-center gap-1 mb-2">
+                            <span className="text-6xl md:text-7xl font-bold text-[#10b981]">£3</span>
+                        </div>
+                        <div className="text-gray-500 font-medium border-t border-gray-100 pt-4 mt-4">
+                            per employee / per month
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Section>
+    );
+};
