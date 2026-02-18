@@ -32,41 +32,44 @@ export const Navbar: React.FC = () => {
     ];
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
-            <div className="max-w-[1120px] mx-auto px-5 md:px-8 h-20 flex items-center justify-between">
-                <Link to="/" className="flex items-center gap-2">
-                    <Logo />
-                </Link>
+        <nav className="fixed w-full z-50 transition-all duration-300 top-0 border-b border-white/10 bg-white/80 backdrop-blur-md shadow-sm">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between h-20 items-center">
+                    {/* Logo */}
+                    <Link to="/" className="flex items-center gap-2 group">
+                        <div className="w-10 h-10 bg-gradient-to-br from-green-primary to-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:shadow-green-primary/30 transition-shadow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span className="font-bold text-xl tracking-tight text-gray-900 group-hover:text-green-primary transition-colors">
+                            XSAI<span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-gray-400 font-light">Resources</span>
+                        </span>
+                    </Link>
 
-                {/* Desktop Nav */}
-                <div className="hidden md:flex items-center gap-8">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            to={link.href}
-                            className={`text-sm font-medium transition-colors duration-200 ${location.pathname === link.href ? 'text-[#10b981]' : 'text-gray-600 hover:text-[#10b981]'
-                                }`}
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
-                    <Button variant="primary" className="ml-4 !py-2.5 !px-5 min-h-[40px]">
-                        Book a Call
-                    </Button>
+                    {/* Desktop Menu */}
+                    <div className="hidden md:flex items-center space-x-8">
+                        <Link to="/" className="text-sm font-medium text-gray-600 hover:text-green-primary transition-colors">Home</Link>
+                        <Link to="/payroll" className="text-sm font-medium text-gray-600 hover:text-green-primary transition-colors">Payroll</Link>
+                        <Link to="/#why-us" className="text-sm font-medium text-gray-600 hover:text-green-primary transition-colors">Why XSAI</Link>
+                        <Button variant="primary" size="sm" href="/contact" className="shadow-lg shadow-green-primary/20 hover:shadow-green-primary/40">
+                            Book a Call
+                        </Button>
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <button
+                        className="md:hidden p-2 -mr-2 text-gray-900 focus:outline-none"
+                        onClick={() => setIsOpen(true)}
+                        aria-label="Open navigation menu"
+                    >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
                 </div>
-
-                {/* Mobile Menu Button */}
-                <button
-                    className="md:hidden p-2 -mr-2 text-gray-900 focus:outline-none"
-                    onClick={() => setIsOpen(true)}
-                    aria-label="Open navigation menu"
-                >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </button>
             </div>
 
             {/* Mobile Drawer */}
