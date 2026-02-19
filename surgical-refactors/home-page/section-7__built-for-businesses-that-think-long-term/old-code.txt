@@ -1,0 +1,20 @@
+<Section background="white" className="text-center border-t border-gray-100">
+                <div className="max-w-3xl mx-auto py-12">
+
+                    <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">
+                        Built for Businesses That Think Long Term
+                    </h2>
+                    <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+                        <p>
+                            We believe operational efficiency should benefit the businesses creating real value — not just the providers facilitating it.
+                        </p>
+                        <p>
+                            Our model rewards scale, early organisation, and partnership.
+                        </p>
+                    </div>
+                    <div className="mt-8 flex flex-col gap-2">
+                        <p className="font-bold text-xl text-gray-900 leading-tight">It’s not about hype.</p>
+                        <p className="font-bold text-xl text-green-primary leading-tight">It’s about structure.</p>
+                    </div>
+                </div>
+            </Section>

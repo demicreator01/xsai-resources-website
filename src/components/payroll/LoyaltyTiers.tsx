@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section } from '../ui/Section';
-import { LoyaltyProgram } from '../home/LoyaltyProgram'; // Reuse the diagram/intro logic if possible, or just the diagram?
+
 // Prompt says "Use same layout and diagram as Section 4 on home, but extended with additional detail"
 // To keep it clean, I'll rebuild the layout here with the added Tiers.
 
@@ -42,101 +42,80 @@ const FlowDiagram: React.FC = () => (
 
 export const LoyaltyTiers: React.FC = () => {
     return (
-        <Section>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16">
-                <div className="flex flex-col gap-6">
-                    <span className="text-xs font-bold text-green-primary tracking-widest uppercase mb-1 block">LOYALTY CREDITS</span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-text-primary">
-                        The Loyalty Credit Programme
-                    </h2>
-                    <div className="space-y-4 text-lg text-gray-600">
-                        <p>Payroll funds are typically received several days before employees are paid. This is standard industry practice.</p>
-                        <p>Within that operational window, safeguarded client accounts may generate treasury benefit at bank level.</p>
-                        <p>Most providers retain this entirely.</p>
-                        <p className="font-bold text-green-primary text-xl">We take a different approach.</p>
-                    </div>
-                    <div className="bg-green-light/50 border-l-4 border-green-primary p-4 rounded-r-lg mt-4">
-                        <div className="flex gap-3">
-                            <span className="text-xl">ℹ️</span>
-                            <p className="text-sm text-gray-600 leading-relaxed">
-                                No investment exposure. No lending activity. No risk deployment.<br />
-                                Just operational efficiency — shared fairly.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="flex justify-center bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                    <FlowDiagram />
-                </div>
-            </div>
+        <Section background="light">
+            <div className="flex flex-col gap-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div className="flex flex-col gap-6">
 
-            {/* Tiers */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Standard */}
-                <div className="bg-white p-8 rounded-xl border-2 border-green-primary/30 flex flex-col gap-4">
-                    <div className="text-lg font-bold text-gray-900 border-b border-gray-100 pb-4">Standard Partner</div>
-                    <div className="space-y-4">
-                        <div className="flex justify-between items-center text-sm">
-                            <span className="text-gray-500">Funding</span>
-                            <span className="font-medium">3 days prior</span>
-                        </div>
-                        <div className="flex justify-between items-center text-sm">
-                            <span className="text-gray-500">Volume</span>
-                            <span className="font-medium">Any</span>
-                        </div>
-                        <div className="flex justify-between items-center text-sm">
-                            <span className="text-gray-500">Commitment</span>
-                            <span className="font-medium text-gray-400">—</span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-text-primary">
+                            Loyalty Credits
+                        </h2>
+                        <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+                            <p>Most providers retain 100% of the interest generated on client payroll funds. We don't.</p>
+                            <p>We believe operational volume should benefit the businesses creating it. Our programme converts treasury benefit back into loyalty credits for our partners.</p>
+                            <p className="font-bold text-green-primary text-xl">Operational efficiency shared fairly.</p>
                         </div>
                     </div>
-                    <div className="mt-auto pt-6 text-center">
-                        <span className="inline-block bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full">BASE ALLOCATION</span>
+                    <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
+                        <FlowDiagram />
+                        <div className="mt-8 text-center text-sm text-gray-400 font-medium">
+                            Funds are safeguarded in UK banks. Zero deployment risk.
+                        </div>
                     </div>
                 </div>
 
-                {/* Early Funding */}
-                <div className="bg-green-light/30 p-8 rounded-xl border-2 border-green-primary flex flex-col gap-4 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 bg-green-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
-                    <div className="text-lg font-bold text-gray-900 border-b border-green-primary/10 pb-4">Early Funding Partner</div>
-                    <div className="space-y-4">
-                        <div className="flex justify-between items-center text-sm">
-                            <span className="text-gray-500">Funding</span>
-                            <span className="font-bold text-green-primary">5 days prior</span>
-                        </div>
-                        <div className="flex justify-between items-center text-sm">
-                            <span className="text-gray-500">Volume</span>
-                            <span className="font-medium">Any</span>
-                        </div>
-                        <div className="flex justify-between items-center text-sm">
-                            <span className="text-gray-500">Commitment</span>
-                            <span className="font-medium text-gray-400">—</span>
-                        </div>
-                    </div>
-                    <div className="mt-auto pt-6 text-center">
-                        <span className="inline-block bg-green-primary text-white text-xs font-bold px-3 py-1 rounded-full">ENHANCED</span>
-                    </div>
-                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {[
+                        {
+                            name: "Standard",
+                            funding: "3 days prior",
+                            volume: "Any",
+                            highlight: "Base Allocation",
+                            style: "white"
+                        },
+                        {
+                            name: "Preferred",
+                            funding: "5 days prior",
+                            volume: "Any",
+                            highlight: "Enhanced Allocation",
+                            style: "green"
+                        },
+                        {
+                            name: "Partners",
+                            funding: "5 days prior",
+                            volume: "500+ employees",
+                            highlight: "Priority Allocation",
+                            style: "dark"
+                        }
+                    ].map((tier, i) => (
+                        <div key={i} className={`p-8 rounded-2xl border shadow-md flex flex-col gap-6 transition-all duration-300 hover:shadow-xl ${tier.style === 'green' ? 'bg-green-primary text-white border-green-primary scale-105 z-10' :
+                            tier.style === 'dark' ? 'bg-text-primary text-white border-text-primary' :
+                                'bg-white text-text-primary border-gray-100'
+                            }`}>
+                            <div>
+                                <h3 className="text-2xl font-bold mb-1">{tier.name}</h3>
+                                <p className={tier.style === 'white' ? 'text-gray-500 font-medium' : 'text-white font-medium'}>Programme Tier</p>
+                            </div>
 
-                {/* Strategic */}
-                <div className="bg-[#111827] p-8 rounded-xl border-2 border-gray-800 flex flex-col gap-4 text-white">
-                    <div className="text-lg font-bold border-b border-gray-700 pb-4">Strategic Partner</div>
-                    <div className="space-y-4">
-                        <div className="flex justify-between items-center text-sm">
-                            <span className="text-gray-400">Funding</span>
-                            <span className="font-medium">5 days prior</span>
+                            <div className="space-y-4">
+                                <div className={`flex justify-between items-center py-3 border-b ${tier.style === 'white' ? 'border-gray-100' : 'border-white/30'}`}>
+                                    <span className={`text-sm ${tier.style === 'white' ? 'text-gray-600' : 'text-white'}`}>Funding</span>
+                                    <span className="font-bold">{tier.funding}</span>
+                                </div>
+                                <div className={`flex justify-between items-center py-3 border-b ${tier.style === 'white' ? 'border-gray-100' : 'border-white/30'}`}>
+                                    <span className={`text-sm ${tier.style === 'white' ? 'text-gray-600' : 'text-white'}`}>Volume</span>
+                                    <span className="font-bold">{tier.volume}</span>
+                                </div>
+                            </div>
+
+                            <div className="mt-auto">
+                                <div className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-sm ${tier.style === 'white' ? 'bg-green-primary text-white' : 'bg-white text-text-primary'
+                                    }`}>
+                                    {tier.highlight}
+                                </div>
+                            </div>
                         </div>
-                        <div className="flex justify-between items-center text-sm">
-                            <span className="text-gray-400">Volume</span>
-                            <span className="font-medium">500+ employees</span>
-                        </div>
-                        <div className="flex justify-between items-center text-sm">
-                            <span className="text-gray-400">Commitment</span>
-                            <span className="font-medium">Annual service</span>
-                        </div>
-                    </div>
-                    <div className="mt-auto pt-6 text-center">
-                        <span className="inline-block bg-green-primary/20 text-green-primary border border-green-primary/50 text-xs font-bold px-3 py-1 rounded-full">PRIORITY</span>
-                    </div>
+                    ))}
                 </div>
             </div>
         </Section>

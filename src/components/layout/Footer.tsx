@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Logo } from '../ui/Logo';
+
 
 export const Footer: React.FC = () => {
     return (
-        <footer className="bg-[#111827] text-white pt-16 pb-8 border-t border-gray-800">
+        <footer className="bg-text-primary text-white pt-16 pb-8 border-t border-gray-800">
             <div className="max-w-[1120px] mx-auto px-5 md:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-16">
 
@@ -29,17 +29,17 @@ export const Footer: React.FC = () => {
                     {/* Col 2: Quick Links */}
                     <div className="flex flex-col gap-4">
                         <h3 className="text-gray-400 text-sm font-semibold uppercase tracking-wider mb-2">Company</h3>
-                        <Link to="/#services" className="text-gray-300 hover:text-[#10b981] transition-colors">Services</Link>
-                        <Link to="/payroll" className="text-gray-300 hover:text-[#10b981] transition-colors">Payroll</Link>
-                        <Link to="/#accounting" className="text-gray-300 hover:text-[#10b981] transition-colors">Accounting</Link>
-                        <Link to="/#contact" className="text-gray-300 hover:text-[#10b981] transition-colors">Contact</Link>
+                        <Link to="/#services" className="text-gray-300 hover:text-green-primary transition-colors">Services</Link>
+                        <Link to="/payroll" className="text-gray-300 hover:text-green-primary transition-colors">Payroll</Link>
+                        <Link to="/#accounting" className="text-gray-300 hover:text-green-primary transition-colors">Accounting</Link>
+                        <Link to="/#contact" className="text-gray-300 hover:text-green-primary transition-colors">Contact</Link>
                     </div>
 
                     {/* Col 3: Contact */}
                     <div className="flex flex-col gap-4">
                         <h3 className="text-gray-400 text-sm font-semibold uppercase tracking-wider mb-2">Connect</h3>
-                        <a href="mailto:hello@xsai.co.uk" className="text-gray-300 hover:text-[#10b981] transition-colors">hello@xsai.co.uk</a>
-                        <a href="tel:+442012345678" className="text-gray-300 hover:text-[#10b981] transition-colors">+44 20 1234 5678</a>
+                        <a href="mailto:hello@xsai.co.uk" className="text-gray-300 hover:text-green-primary transition-colors">hello@xsai.co.uk</a>
+                        <a href="tel:+442012345678" className="text-gray-300 hover:text-green-primary transition-colors">+44 20 1234 5678</a>
                     </div>
                 </div>
 

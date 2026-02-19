@@ -2,44 +2,54 @@ import React from 'react';
 import { Section } from '../ui/Section';
 
 export const Inclusions: React.FC = () => {
-    const items = [
-        "Full payroll processing",
-        "RTI submissions",
-        "Pension auto-enrolment management",
-        "Digital payslips",
-        "Starter & leaver handling",
-        "Statutory pay calculations",
-        "Year-end P60 processing",
-        "Dedicated account manager",
-        "BACS bureau handling"
-    ];
+    const items = ["Test"];
+    console.log(items);
+
 
     return (
-        <Section background="green-light">
+        <Section background="white">
             <div className="flex flex-col gap-12">
-                {/* Pricing Header */}
-                <div className="text-center">
-                    <div className="inline-block bg-white rounded-2xl border-2 border-green-primary px-10 py-8 shadow-sm mb-8">
-                        <div className="flex items-baseline justify-center gap-1 mb-2">
-                            <span className="text-5xl md:text-6xl font-bold text-green-primary">£3</span>
-                        </div>
-                        <div className="text-gray-500 font-medium text-sm uppercase tracking-wide">
-                            per employee / per month
-                        </div>
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8">
+                    <div className="max-w-2xl">
+
+                        <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+                            Payroll Inclusions
+                        </h2>
+                        <p className="text-lg text-gray-600">
+                            Transparent, predictable billing. No per-item add-ons or hidden complexities.
+                        </p>
                     </div>
 
-                    <h2 className="text-2xl md:text-3xl font-bold text-text-primary mb-2">What's Included</h2>
-                    <p className="text-gray-600">Transparent pricing. No hidden per-item add-ons.</p>
+                    <div className="bg-gray-50 rounded-2xl border-2 border-green-primary p-6 md:p-8 shadow-sm">
+                        <div className="flex items-baseline gap-2 mb-1">
+                            <span className="text-4xl md:text-5xl font-bold text-text-primary">£3</span>
+                            <span className="text-gray-500 font-medium">/employee</span>
+                        </div>
+                        <div className="text-xs font-bold text-green-primary uppercase tracking-widest">
+                            Flat Monthly Fee
+                        </div>
+                    </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 max-w-4xl mx-auto">
-                    {items.map((item, index) => (
-                        <div key={index} className="flex items-center gap-3 bg-white/50 p-3 rounded-lg border border-transparent hover:border-green-primary/30 transition-colors">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-green-primary shrink-0">
-                                <circle cx="12" cy="12" r="10" fill="currentColor" fillOpacity="0.1" />
-                                <path d="M16 9L10.5 14.5L8 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                            <span className="text-gray-700 font-medium">{item}</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {[
+                        "Full payroll processing",
+                        "RTI submissions",
+                        "Pension auto-enrolment management",
+                        "Digital payslips",
+                        "Starter & leaver handling",
+                        "Statutory pay calculations",
+                        "Year-end P60 processing",
+                        "Dedicated account manager",
+                        "BACS bureau handling"
+                    ].map((item, index) => (
+                        <div key={index} className="flex items-center gap-4 bg-gray-50 p-5 rounded-2xl border border-gray-100 hover:border-green-primary/30 hover:bg-white transition-all group">
+                            <div className="w-8 h-8 rounded-full bg-green-primary/10 flex items-center justify-center text-green-primary group-hover:bg-green-primary group-hover:text-white transition-colors">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </div>
+                            <span className="text-gray-800 font-semibold">{item}</span>
                         </div>
                     ))}
                 </div>

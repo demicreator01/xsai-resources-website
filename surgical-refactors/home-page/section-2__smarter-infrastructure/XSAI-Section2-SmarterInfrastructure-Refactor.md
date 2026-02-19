@@ -1,0 +1,306 @@
+# XSAI — SECTION 2: SMARTER INFRASTRUCTURE — REFACTOR PROMPT
+### Replace SmarterInfrastructure.tsx entirely with the code below.
+
+---
+
+## THE PROBLEMS WITH THE CURRENT SECTION
+
+1. **Wrong illustration entirely** — a piggy bank, car, house, bills, and man counting cash is personal finance / consumer budgeting. XSAI sells B2B payroll infrastructure to CFOs and finance directors. This image actively undermines credibility with the target buyer.
+2. **Section feels structurally flat** — white background, standard grid, no atmospheric depth. After the hero's layered panel, this reads as a step backwards.
+3. **Feature pills are underselling** — the three "No X" statements are powerful positioning. Three flat single-line pills don't give them enough room to land. They need visual weight.
+4. **The closing quote sits orphaned** — `"Just structured, dependable financial operations."` is in quotes and italic as if it's a testimonial. It's a brand statement. Treat it like one.
+5. **Left column copy is split into two short paragraphs** — reads choppy on desktop. Needs a better flow.
+6. **No section atmosphere** — this is a `#ffffff` section. It needs subtle depth so it doesn't feel like a blank page after the hero.
+
+---
+
+## THE NEW DESIGN DIRECTION
+
+This section should feel like **a confident statement of infrastructure philosophy** — not a feature list. The right side replaces the illustration with a **coded services architecture diagram** showing three interconnected pillars (Payroll, Accounting, Admin) feeding into a central "XSAI Infrastructure" hub. Built from inline SVG and HTML — zero external images.
+
+The three "No X" statements become **full-width negation cards** — bold, slightly oversized text, with a subtle strikethrough visual treatment on the "No" to make them feel definitive and punchy. Below, the closing brand line gets its own centred moment with a proper typographic treatment.
+
+**Background:** `#ffffff` with a very subtle left-side green glow and a faint horizontal rule connecting to the next section.
+
+---
+
+## FULL COMPONENT — REPLACE SmarterInfrastructure.tsx
+
+```tsx
+import React, { useEffect, useRef } from 'react';
+
+export const SmarterInfrastructure: React.FC = () => {
+
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const els = sectionRef.current?.querySelectorAll('.fade-up') ?? [];
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.12 }
+    );
+    els.forEach(el => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative bg-white py-20 md:py-28 px-5 md:px-8 overflow-hidden"
+    >
+      {/* Atmospheric background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute top-0 left-0 w-[500px] h-[500px]"
+          style={{ background: 'radial-gradient(ellipse at 10% 20%, rgba(16,185,129,0.06) 0%, transparent 65%)' }}
+        />
+        {/* Bottom rule transitioning to next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e5e7eb] to-transparent" />
+      </div>
+
+      <div className="relative z-10 max-w-[1120px] mx-auto">
+
+        {/* ── TOP GRID: Text left, Architecture diagram right ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-[52%_44%] gap-10 lg:gap-16 items-center mb-16 md:mb-20">
+
+          {/* Left: Text */}
+          <div className="fade-up">
+            <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-4 block">
+              What We Do
+            </span>
+            <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-6">
+              A Smarter Infrastructure<br className="hidden md:block" /> for Growing Businesses
+            </h2>
+            <div className="space-y-4 max-w-[520px]">
+              <p className="text-[1.05rem] text-[#374151] leading-relaxed">
+                Running a business is hard enough without fragmented back-office services.
+              </p>
+              <p className="text-[1.05rem] text-[#374151] leading-relaxed">
+                We provide fully managed payroll, accounting, and administrative support under
+                one streamlined infrastructure — built for <strong className="text-[#0f1724] font-semibold">reliability</strong>,{' '}
+                <strong className="text-[#0f1724] font-semibold">clarity</strong>, and{' '}
+                <strong className="text-[#0f1724] font-semibold">long-term partnership</strong>.
+              </p>
+            </div>
+          </div>
+
+          {/* Right: Infrastructure Architecture Diagram */}
+          <div className="fade-up relative flex justify-center lg:justify-end" style={{ animationDelay: '120ms' }}>
+            <div className="relative w-full max-w-[420px]">
+              {/* Glow behind diagram */}
+              <div
+                className="absolute -inset-6 rounded-3xl pointer-events-none"
+                style={{ background: 'radial-gradient(ellipse at 60% 50%, rgba(16,185,129,0.09) 0%, transparent 70%)' }}
+              />
+
+              {/* Diagram card */}
+              <div className="relative rounded-2xl border border-[#e5e7eb] bg-white shadow-[0_4px_32px_rgba(0,0,0,0.07)] overflow-hidden">
+                {/* Top accent */}
+                <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[#10b981] to-transparent" />
+
+                <div className="p-6 md:p-7">
+                  <p className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#10b981] mb-1">
+                    Service Architecture
+                  </p>
+                  <p className="text-sm font-bold text-[#0f1724] mb-5">One Infrastructure. Three Disciplines.</p>
+
+                  {/* Hub + three pillars */}
+                  <div className="flex flex-col items-center gap-3">
+
+                    {/* Three pillar cards */}
+                    <div className="grid grid-cols-3 gap-2 w-full">
+                      {[
+                        { label: 'Payroll', icon: (
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <rect x="2" y="4" width="16" height="12" rx="2" stroke="#10b981" strokeWidth="1.5"/>
+                            <path d="M6 8h4M6 11h6" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round"/>
+                          </svg>
+                        )},
+                        { label: 'Accounting', icon: (
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 3v14M3 10h14" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round"/>
+                            <circle cx="10" cy="10" r="7" stroke="#10b981" strokeWidth="1.5"/>
+                          </svg>
+                        )},
+                        { label: 'Admin', icon: (
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 4h12v2H4zM4 9h8v2H4zM4 14h6v2H4z" fill="#10b981"/>
+                          </svg>
+                        )},
+                      ].map((pillar, i) => (
+                        <div key={i} className="flex flex-col items-center gap-1.5 bg-[#f0fdf4] border border-[#bbf7d0] rounded-xl p-3">
+                          {pillar.icon}
+                          <span className="text-[0.65rem] font-bold text-[#059669]">{pillar.label}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Connector lines */}
+                    <div className="flex items-center justify-center w-full gap-0">
+                      {/* Three vertical lines pointing down to hub */}
+                      <svg viewBox="0 0 300 28" className="w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="50" y1="0" x2="50" y2="14" stroke="#bbf7d0" strokeWidth="1.5" strokeDasharray="3 2"/>
+                        <line x1="150" y1="0" x2="150" y2="14" stroke="#bbf7d0" strokeWidth="1.5" strokeDasharray="3 2"/>
+                        <line x1="250" y1="0" x2="250" y2="14" stroke="#bbf7d0" strokeWidth="1.5" strokeDasharray="3 2"/>
+                        <line x1="50" y1="14" x2="250" y2="14" stroke="#bbf7d0" strokeWidth="1.5"/>
+                        <line x1="150" y1="14" x2="150" y2="28" stroke="#10b981" strokeWidth="1.5" strokeDasharray="3 2"/>
+                      </svg>
+                    </div>
+
+                    {/* Central hub */}
+                    <div className="w-full rounded-xl bg-[#10b981] border border-[#059669] shadow-[0_4px_16px_rgba(16,185,129,0.30)] p-3.5 flex items-center justify-between">
+                      <div>
+                        <p className="text-[0.6rem] text-white/70 font-semibold uppercase tracking-widest">Central Hub</p>
+                        <p className="text-sm font-bold text-white">XSAI Infrastructure</p>
+                      </div>
+                      <div className="flex items-center gap-1 bg-white/15 rounded-full px-2.5 py-1">
+                        <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                        <span className="text-[0.6rem] text-white font-semibold">Live</span>
+                      </div>
+                    </div>
+
+                    {/* Output row */}
+                    <svg viewBox="0 0 300 16" className="w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <line x1="150" y1="0" x2="150" y2="16" stroke="#10b981" strokeWidth="1.5" strokeDasharray="3 2"/>
+                    </svg>
+
+                    {/* Output: single "Your Business" node */}
+                    <div className="w-full rounded-xl border border-[#e5e7eb] bg-[#f8fffe] p-3 flex items-center gap-3">
+                      <div className="w-7 h-7 rounded-full bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center shrink-0">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <path d="M2 12V6l5-4 5 4v6H9V9H5v3H2Z" stroke="#10b981" strokeWidth="1.2" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="text-[0.6rem] text-[#9ca3af] font-medium uppercase tracking-wider">Output</p>
+                        <p className="text-xs font-bold text-[#0f1724]">Your Business — Running Smoothly</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── THREE NEGATION STATEMENTS ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14 md:mb-16">
+          {[
+            {
+              no: 'No',
+              rest: 'inflated fees.',
+              sub: 'Transparent £3 per employee pricing. No tiers that hide the real cost.',
+              icon: (
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <circle cx="11" cy="11" r="9" stroke="#10b981" strokeWidth="1.5"/>
+                  <path d="M11 7v4M11 14v.5" stroke="#10b981" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              ),
+            },
+            {
+              no: 'No',
+              rest: 'hidden add-ons.',
+              sub: 'Everything included in the service. What you see is exactly what you pay.',
+              icon: (
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <rect x="4" y="10" width="14" height="9" rx="2" stroke="#10b981" strokeWidth="1.5"/>
+                  <path d="M8 10V7a3 3 0 0 1 6 0v3" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+              ),
+            },
+            {
+              no: 'No',
+              rest: 'unnecessary complexity.',
+              sub: 'One team, one relationship, one infrastructure. Simple by design.',
+              icon: (
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M3 11h4l3-7 4 14 3-7h4" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              ),
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="fade-up group relative bg-white rounded-2xl border border-[#e5e7eb] p-6 hover:border-[#10b981]/40 hover:shadow-[0_4px_20px_rgba(16,185,129,0.10)] hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              style={{ animationDelay: `${i * 100}ms` }}
+            >
+              {/* Green left accent bar */}
+              <div className="absolute left-0 top-4 bottom-4 w-[3px] rounded-r-full bg-[#10b981]" />
+
+              <div className="pl-3">
+                {/* Icon */}
+                <div className="w-9 h-9 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mb-4">
+                  {item.icon}
+                </div>
+
+                {/* Headline */}
+                <p className="text-lg font-bold text-[#0f1724] mb-1.5 leading-snug">
+                  <span className="text-[#10b981]">{item.no}</span>{' '}
+                  {item.rest}
+                </p>
+
+                {/* Sub-line */}
+                <p className="text-sm text-[#6b7280] leading-relaxed">
+                  {item.sub}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ── CLOSING BRAND STATEMENT ── */}
+        <div className="fade-up flex flex-col items-center gap-4 text-center pt-2">
+          {/* Decorative line */}
+          <div className="flex items-center gap-4 w-full max-w-[460px]">
+            <div className="flex-1 h-px bg-[#e5e7eb]" />
+            <div className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+            <div className="flex-1 h-px bg-[#e5e7eb]" />
+          </div>
+
+          <p className="text-xl md:text-2xl font-semibold text-[#0f1724] max-w-[480px] leading-snug">
+            Just structured, dependable{' '}
+            <span className="text-[#10b981]">financial operations.</span>
+          </p>
+
+          <p className="text-sm text-[#9ca3af] max-w-[340px]">
+            Reliability isn't a feature. For XSAI, it's the foundation.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+```
+
+---
+
+## WHAT THIS ACHIEVES
+
+| Before | After |
+|---|---|
+| Personal finance cartoon (piggy bank / car / house) | Coded service architecture diagram — Payroll + Accounting + Admin → XSAI Hub → Your Business |
+| Flat white section, no atmosphere | Subtle left-side green radial glow, atmospheric depth |
+| Single-line feature pills with icon only | Full cards with icon, bold headline, explanatory sub-line, green left accent bar |
+| Closing quote in italic quotes — looks like a testimonial | Treated as a brand statement: large, bold, green accent word, decorative rule above |
+| Copy paragraphs feel choppy | Key terms bolded inline: reliability, clarity, long-term partnership |
+| No hover depth on feature cards | Hover: green border tint, subtle shadow lift, translateY(-4px) |
+| Illustration occupies 50% of layout with wrong content | Architecture diagram earns its space — directly visualises the service model |
+
+---
+
+## MOBILE BEHAVIOUR
+
+- Architecture diagram: full width, max-w `420px` centred, appears **below** the text on mobile (natural stacking order)
+- Three negation cards: single column stack on mobile (`grid-cols-1`), 3-col on `md:`
+- Closing statement: centred, full width, readable at mobile sizes
+- Fade-up animations: triggered by Intersection Observer (already wired in the component via `useEffect`)
+- No horizontal overflow anywhere
+
+---
+
+## NOTES
+
+- The `fade-up` / `fade-up.visible` CSS must exist in your global stylesheet (established in the hero refactor). This component uses it directly — no additional CSS needed.
+- The `animate-pulse` class on the "Live" dot must also be in global CSS (also established in hero).
+- No external images, no libraries, no new dependencies.

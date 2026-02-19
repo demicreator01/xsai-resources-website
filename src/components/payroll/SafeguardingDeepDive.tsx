@@ -11,41 +11,48 @@ export const SafeguardingDeepDive: React.FC = () => {
                 </svg>
             </div>
 
-            <div className="relative z-10 flex flex-col gap-12">
-                <div className="text-center max-w-2xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-                        Client Fund Safeguarding
-                    </h2>
-                    <p className="text-lg text-gray-600">Trust is critical in payroll.</p>
-                </div>
+            <Section background="white">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
 
-                {/* Reusing cards structure but keeping content specific if needed, or we could reuse Security component if identical. 
-                Prompt asks for "4 safeguarding points — same card style as Section 7 on home".
-                For simplicity and to allow specific text updates independently, I'll inline them here.
-            */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {[
-                        { title: "Segregated Accounts", icon: "shield", desc: "Client payroll funds held in dedicated UK bank accounts, never commingled." },
-                        { title: "Sole Purpose", icon: "lock", desc: "Funds used solely for payroll processing. Zero third-party exposure." },
-                        { title: "Never Deployed", icon: "block", desc: "Funds are never invested, lent, or deployed for any secondary purpose." },
-                        { title: "Daily Reconciliation", icon: "chart", desc: "Accounts reconciled and monitored daily. Operational resilience first." }
-                    ].map((card, i) => (
-                        <div key={i} className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm border-t-4 border-t-green-primary hover:-translate-y-1 transition-transform duration-300">
-                            <h3 className="font-bold text-text-primary mb-3 text-lg">{card.title}</h3>
-                            <p className="text-gray-600 text-sm leading-relaxed">{card.desc}</p>
-                        </div>
-                    ))}
-                </div>
-
-                <div className="flex justify-center mt-4">
-                    <div className="bg-gray-50 border border-gray-200 px-8 py-4 rounded-full text-center">
-                        <p className="text-sm text-gray-500 italic">
-                            Payroll funds are not exposed to third-party lending or investment activity.<br />
-                            Operational stability always comes first.
+                        <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+                            Safeguarding
+                        </h2>
+                        <p className="text-lg text-gray-600 mb-8">
+                            Client payroll funds are protected by multiple layers of security and strict operational controls.
                         </p>
+
+                        <div className="space-y-4">
+                            {[
+                                "Segregated Safeguarded UK bank accounts",
+                                "Funds used solely for payroll processing",
+                                "Zero Deployment: Never invested or lent",
+                                "Daily Reconciliation and monitoring"
+                            ].map((point, i) => (
+                                <div key={i} className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
+                                    <div className="w-2 h-2 rounded-full bg-green-primary" />
+                                    <span className="text-gray-800 font-semibold">{point}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="bg-text-primary p-8 md:p-12 rounded-3xl text-white relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-8 opacity-10">
+                            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <p className="text-xl md:text-2xl font-medium leading-relaxed mb-8 relative z-10">
+                            "Stability is the first requirement of any payroll system. Our infrastructure is built to protect the assets that matter most to your employees."
+                        </p>
+                        <div className="flex items-center gap-3 relative z-10">
+                            <div className="h-px w-8 bg-green-primary" />
+                            <span className="text-green-primary font-bold tracking-widest uppercase text-sm">Resilience First</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Section>
         </Section>
     );
 };
