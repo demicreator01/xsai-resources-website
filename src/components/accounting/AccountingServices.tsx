@@ -4,6 +4,7 @@ const services = [
     {
         id: 'bookkeeping',
         title: 'Bookkeeping',
+        description: 'Your financial records, maintained accurately and continuously.',
         icon: (
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <rect x="3" y="2" width="12" height="14" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
@@ -17,11 +18,13 @@ const services = [
             'Clear monthly reporting',
             'Cloud software integration',
         ],
-        closing: 'Your books stay current, organised, and inspection-ready.',
+        barStatement: 'Your books stay current, organised, and inspection-ready.',
+        barSub: 'Always accurate. Never behind.',
     },
     {
         id: 'vat',
         title: 'VAT Returns',
+        description: 'Accurate VAT submissions filed on time, every quarter.',
         icon: (
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <rect x="3" y="1" width="12" height="16" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
@@ -36,11 +39,13 @@ const services = [
             'Digital record compliance',
             'Filing under Making Tax Digital (MTD)',
         ],
-        closing: 'No missed deadlines. No late penalties.',
+        barStatement: 'No missed deadlines. No late penalties.',
+        barSub: 'Every quarter, handled.',
     },
     {
         id: 'annual-accounts',
         title: 'Annual Accounts',
+        description: 'Statutory accounts prepared and filed professionally at year-end.',
         icon: (
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <rect x="2" y="2" width="14" height="14" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
@@ -53,11 +58,13 @@ const services = [
             'Compliance with UK accounting standards',
             'Director review and sign-off support',
         ],
-        closing: 'Your year-end handled professionally and properly.',
+        barStatement: 'Your year-end handled professionally and properly.',
+        barSub: 'Filed on time. Every time.',
     },
     {
         id: 'corporation-tax',
         title: 'Corporation Tax',
+        description: 'Corporation tax calculated correctly and filed without surprises.',
         icon: (
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <rect x="3" y="2" width="12" height="14" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
@@ -73,12 +80,13 @@ const services = [
             'Tax efficiency review',
             'Filing and deadline monitoring',
         ],
-        closing: 'Clear calculations. No surprises.',
+        barStatement: 'Clear calculations. No surprises.',
+        barSub: 'Calculated correctly. Filed without delay.',
     },
     {
         id: 'self-assessment',
         title: 'Self-Assessment',
-        subtitle: 'For directors and business owners',
+        description: 'Personal tax aligned with your company structure and strategy.',
         icon: (
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <circle cx="9" cy="6" r="3" stroke="currentColor" strokeWidth="1.4" />
@@ -91,12 +99,13 @@ const services = [
             'Income structuring guidance',
             'Filing and HMRC liaison',
         ],
-        closing: 'Your personal tax aligned with your company strategy.',
+        barStatement: 'Your personal tax aligned with your company strategy.',
+        barSub: 'Director tax done properly.',
     },
     {
         id: 'integration',
         title: 'Integrated with Payroll',
-        subtitle: 'When payroll and accounting are handled separately, inconsistencies arise. We integrate:',
+        description: 'When payroll and accounting are handled separately, inconsistencies arise. We integrate:',
         icon: (
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <rect x="1" y="5" width="6" height="8" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
@@ -110,8 +119,8 @@ const services = [
             'PAYE balances into reconciliation',
             'Year-end payroll data into statutory accounts',
         ],
-        closing: 'Everything aligns automatically.',
-        closingSub: 'No duplicated effort. No conflicting numbers.',
+        barStatement: 'Everything aligns automatically.',
+        barSub: 'No duplicated effort. No conflicting numbers.',
     },
 ];
 
@@ -177,17 +186,35 @@ export const AccountingServices: React.FC = () => {
 
                 {/* ── SERVICE TAB NAVIGATION ── */}
                 <div className="fade-up -mx-5 px-5 md:mx-0 md:px-0 mb-8 md:mb-10" style={{ animationDelay: '80ms' }}>
-                    <div className="flex gap-2 overflow-x-auto pb-2 md:flex-wrap md:overflow-visible" style={{ scrollbarWidth: 'none' }}>
+
+                    {/* ── MOBILE: 2-column grid — all tabs visible, nothing hidden ── */}
+                    <div className="grid grid-cols-2 gap-2 sm:hidden mb-6">
                         {services.map((service, i) => (
                             <button
                                 key={service.id}
                                 onClick={() => setActive(i)}
-                                className={`shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 border whitespace-nowrap ${active === i
-                                        ? 'bg-green-primary text-white border-green-primary shadow-[0_4px_12px_rgba(16,185,129,0.25)]'
-                                        : 'bg-white text-[#374151] border-[#e5e7eb] hover:border-green-primary/40 hover:text-green-primary'
+                                className={`px-3 py-2.5 rounded-xl text-xs font-semibold text-center leading-snug transition-all duration-200 ${active === i
+                                        ? 'bg-[#10b981] text-white shadow-sm'
+                                        : 'bg-white border border-[#e5e7eb] text-[#374151] hover:border-[#10b981]/40'
                                     }`}
                             >
-                                <div className={`w-[18px] h-[18px] ${active === i ? 'text-white' : 'text-green-primary'}`}>
+                                {service.id === 'integration' ? 'Payroll Integration' : service.title}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* ── SM+: Horizontal scroll row — existing behaviour preserved ── */}
+                    <div className="hidden sm:flex gap-2 overflow-x-auto pb-1 scrollbar-hide mb-6">
+                        {services.map((service, i) => (
+                            <button
+                                key={service.id}
+                                onClick={() => setActive(i)}
+                                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 ${active === i
+                                        ? 'bg-[#10b981] text-white shadow-[0_4px_12px_rgba(16,185,129,0.25)]'
+                                        : 'bg-white border border-[#e5e7eb] text-[#374151] hover:border-[#10b981]/40 hover:text-[#10b981]'
+                                    }`}
+                            >
+                                <div className={`shrink-0 w-[18px] h-[18px] ${active === i ? 'text-white' : 'text-[#10b981]'}`}>
                                     {service.icon}
                                 </div>
                                 {service.title}
@@ -201,10 +228,10 @@ export const AccountingServices: React.FC = () => {
                     <div className="bg-white rounded-2xl border border-[#e5e7eb] overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.04)]">
                         <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
 
-                        <div className="p-6 md:p-8 lg:p-10">
+                        <div className="p-6 md:p-7">
 
                             {/* Service header */}
-                            <div className="flex items-start gap-4 mb-7">
+                            <div className="flex items-start gap-4 mb-4">
                                 <div className="shrink-0 w-11 h-11 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center text-green-primary">
                                     {current.icon}
                                 </div>
@@ -212,20 +239,20 @@ export const AccountingServices: React.FC = () => {
                                     <h3 className="text-[1.25rem] md:text-[1.4rem] font-bold text-[#0f1724] leading-snug">
                                         {current.title}
                                     </h3>
-                                    {current.subtitle && (
-                                        <p className="text-sm text-[#6b7280] mt-1 leading-relaxed max-w-[480px]">
-                                            {current.subtitle}
-                                        </p>
-                                    )}
                                 </div>
                             </div>
+
+                            {/* Service description */}
+                            <p className="text-sm text-[#6b7280] leading-relaxed mb-5 max-w-[560px]">
+                                {current.description}
+                            </p>
 
                             {/* Deliverable items — 2-col on desktop, 1-col on mobile */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 {current.items.map((item, i) => (
                                     <div
                                         key={i}
-                                        className="flex items-center gap-3 p-4 bg-[#f9fafb] rounded-xl border border-[#f3f4f6] hover:border-green-primary/30 hover:bg-[#f0fdf4]/50 transition-colors duration-200"
+                                        className="flex items-center gap-3 px-4 py-3 bg-[#f9fafb] rounded-xl border border-[#f3f4f6] hover:border-green-primary/30 hover:bg-[#f0fdf4]/50 transition-colors duration-200"
                                     >
                                         <div className="shrink-0 w-5 h-5 rounded-full bg-green-primary flex items-center justify-center">
                                             <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -239,19 +266,20 @@ export const AccountingServices: React.FC = () => {
                         </div>
 
                         {/* Closing guarantee footer */}
-                        <div className="bg-[#0f1724] px-6 py-5 md:px-10 md:py-6 flex items-center gap-4">
-                            <div className="shrink-0 w-8 h-8 rounded-full bg-green-primary/15 border border-green-primary/30 flex items-center justify-center hidden sm:flex">
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                    <path d="M6 1l1.2 2.4L10 4l-2 1.9.5 2.8L6 7.2 3.5 8.7l.5-2.8-2-1.9 2.8-.6L6 1Z" fill="#10b981" />
+                        <div className="bg-[#0f1724] px-6 py-5 md:px-10 flex items-center gap-4 rounded-b-2xl">
+                            <div className="w-8 h-8 rounded-full bg-[#10b981]/20 border border-[#10b981]/40 flex items-center justify-center shrink-0 hidden sm:flex">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M7 1.5L2 4.5v3.5c0 3 2.2 5.5 5 6.5 2.8-1 5-3.5 5-6.5V4.5L7 1.5Z" stroke="#10b981" strokeWidth="1.3" strokeLinejoin="round" />
+                                    <path d="M4.5 7l2 2 3.5-3.5" stroke="#10b981" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </div>
                             <div>
-                                <p className="text-[1rem] md:text-[1.1rem] font-bold text-white leading-snug">
-                                    {current.closing}
+                                <p className="text-white font-bold text-sm leading-snug">
+                                    {current.barStatement}
                                 </p>
-                                {current.closingSub && (
-                                    <p className="text-sm text-[#9ca3af] mt-1">{current.closingSub}</p>
-                                )}
+                                <p className="text-[#6b7280] text-xs mt-0.5">
+                                    {current.barSub}
+                                </p>
                             </div>
                         </div>
                     </div>
