@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar } from './Navbar';
-import { Footer } from './Footer';
+// import { Footer } from './Footer';
+import { CTA } from './CTA';
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -30,6 +31,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
             <Navbar />
             <main className="grow pt-20">
                 {children}
+                <CTA />
             </main>
             {/* <Footer /> */}
         </div>

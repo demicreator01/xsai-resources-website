@@ -1,123 +1,180 @@
-import React from 'react';
-import { Section } from '../ui/Section';
+import React, { useEffect, useRef } from 'react';
 
-// Prompt says "Use same layout and diagram as Section 4 on home, but extended with additional detail"
-// To keep it clean, I'll rebuild the layout here with the added Tiers.
-
-const FlowDiagram: React.FC = () => (
-    <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto max-w-[400px] mx-auto">
-        {/* Box 1 */}
-        <rect x="20" y="20" width="100" height="60" rx="8" fill="#d1fae5" />
-        <text x="70" y="55" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="10" fontWeight="600" fill="#111827">Payroll Funds</text>
-
-        {/* Arrow 1 */}
-        <path d="M120 50H150" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
-
-        {/* Box 2 */}
-        <rect x="150" y="20" width="140" height="60" rx="8" fill="#d1fae5" />
-        <text x="220" y="55" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="10" fontWeight="600" fill="#111827">Safeguarded Account</text>
-
-        {/* Arrow 2 */}
-        <path d="M290 50H320" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
-
-        {/* Box 3 */}
-        <rect x="320" y="20" width="100" height="60" rx="8" fill="#d1fae5" />
-        <text x="370" y="55" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="10" fontWeight="600" fill="#111827">Treasury Benefit</text>
-
-        {/* Arrow Down-Left */}
-        <path d="M370 80V140H220" stroke="#10b981" strokeWidth="2" strokeDasharray="4 4" />
-        <path d="M220 140V160" stroke="#10b981" strokeWidth="2" markerEnd="url(#arrowhead)" />
-
-        {/* Box 4 (Result) */}
-        <rect x="150" y="160" width="140" height="60" rx="8" fill="#d1fae5" stroke="#10b981" strokeWidth="2" />
-        <text x="220" y="195" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="10" fontWeight="bold" fill="#059669">Loyalty Credits</text>
-
-        <defs>
-            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="#10b981" />
-            </marker>
-        </defs>
-    </svg>
-);
+const tiers = [
+    {
+        name: 'Standard Partner',
+        tag: 'Entry Tier',
+        tagStyle: 'bg-[#f0fdf4] text-[#059669] border-[#bbf7d0]',
+        criteria: [
+            { label: 'Funding timing', value: '3 working days prior' },
+            { label: 'Headcount', value: 'Any volume' },
+            { label: 'Commitment', value: 'Monthly rolling' },
+        ],
+        allocation: 'Base Allocation',
+        allocationDesc: 'Eligible for base quarterly credit allocation based on payroll volume and holding window duration.',
+        cardStyle: 'bg-white border-[#e5e7eb]',
+        labelStyle: 'text-[#0f1724]',
+        subStyle: 'text-[#6b7280]',
+        valueStyle: 'text-[#0f1724]',
+        rowBorder: 'border-[#f3f4f6]',
+        allocationBg: 'bg-[#f0fdf4] border-[#bbf7d0] text-[#059669]',
+        allocationDescStyle: 'text-[#6b7280]',
+    },
+    {
+        name: 'Early Funding Partner',
+        tag: 'Enhanced Tier',
+        tagStyle: 'bg-white/20 text-white border-white/30',
+        criteria: [
+            { label: 'Funding timing', value: '5 working days prior' },
+            { label: 'Headcount', value: 'Any volume' },
+            { label: 'Commitment', value: 'Monthly rolling' },
+        ],
+        allocation: 'Enhanced Allocation',
+        allocationDesc: 'Enhanced credit allocation reflecting the extended operational window created by early funding.',
+        cardStyle: 'bg-[#10b981] border-[#059669]',
+        labelStyle: 'text-white/70',
+        subStyle: 'text-white/80',
+        valueStyle: 'text-white font-bold',
+        rowBorder: 'border-white/20',
+        allocationBg: 'bg-white/15 border-white/30 text-white',
+        allocationDescStyle: 'text-white/70',
+    },
+    {
+        name: 'Strategic Partner',
+        tag: 'Priority Tier',
+        tagStyle: 'bg-[#10b981]/15 text-[#10b981] border-[#10b981]/30',
+        criteria: [
+            { label: 'Funding timing', value: '5 working days prior' },
+            { label: 'Headcount', value: '500+ employees' },
+            { label: 'Commitment', value: 'Annual service agreement' },
+        ],
+        allocation: 'Priority Allocation',
+        allocationDesc: 'Priority quarterly allocation with dedicated account review. Highest credit return tier in the programme.',
+        cardStyle: 'bg-[#0f1724] border-[#1e293b]',
+        labelStyle: 'text-[#9ca3af]',
+        subStyle: 'text-[#9ca3af]',
+        valueStyle: 'text-white font-bold',
+        rowBorder: 'border-white/[0.08]',
+        allocationBg: 'bg-[#10b981]/10 border-[#10b981]/30 text-[#10b981]',
+        allocationDescStyle: 'text-[#9ca3af]',
+    },
+];
 
 export const LoyaltyTiers: React.FC = () => {
-    return (
-        <Section background="light">
-            <div className="flex flex-col gap-16">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    <div className="flex flex-col gap-6">
+    const sectionRef = useRef<HTMLDivElement>(null);
 
-                        <h2 className="text-3xl md:text-4xl font-bold text-text-primary">
-                            Loyalty Credits
-                        </h2>
-                        <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
-                            <p>Most providers retain 100% of the interest generated on client payroll funds. We don't.</p>
-                            <p>We believe operational volume should benefit the businesses creating it. Our programme converts treasury benefit back into loyalty credits for our partners.</p>
-                            <p className="font-bold text-green-primary text-xl">Operational efficiency shared fairly.</p>
-                        </div>
-                    </div>
-                    <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
-                        <FlowDiagram />
-                        <div className="mt-8 text-center text-sm text-gray-400 font-medium">
-                            Funds are safeguarded in UK banks. Zero deployment risk.
-                        </div>
-                    </div>
+    useEffect(() => {
+        const els = sectionRef.current?.querySelectorAll('.fade-up') ?? [];
+        const obs = new IntersectionObserver(
+            (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+            { threshold: 0.1 }
+        );
+        els.forEach(el => obs.observe(el));
+        return () => obs.disconnect();
+    }, []);
+
+    return (
+        <section
+            ref={sectionRef}
+            className="relative bg-white py-20 md:py-28 px-5 md:px-8 overflow-hidden"
+        >
+            {/* Atmospheric background */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div
+                    className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e5e7eb] to-transparent"
+                />
+                <div
+                    className="absolute top-0 right-0 w-[500px] h-[400px]"
+                    style={{ background: 'radial-gradient(ellipse at 85% 10%, rgba(16,185,129,0.06) 0%, transparent 65%)' }}
+                />
+                <div
+                    className="absolute bottom-0 left-0 w-[400px] h-[350px]"
+                    style={{ background: 'radial-gradient(ellipse at 10% 90%, rgba(59,130,246,0.04) 0%, transparent 65%)' }}
+                />
+            </div>
+
+            <div className="relative z-10 max-w-[1120px] mx-auto">
+
+                {/* ── HEADING ── */}
+                <div className="fade-up mb-10 md:mb-12">
+                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-3 block">
+                        Programme Tiers
+                    </span>
+                    <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-4">
+                        Loyalty <span className="text-[#10b981]">Tiers</span>
+                    </h2>
+                    <p className="text-[#4b5563] text-lg max-w-[520px] leading-relaxed">
+                        Three tiers based on funding timing, headcount, and partnership commitment.
+                        Your tier determines your quarterly allocation level.
+                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {[
-                        {
-                            name: "Standard",
-                            funding: "3 days prior",
-                            volume: "Any",
-                            highlight: "Base Allocation",
-                            style: "white"
-                        },
-                        {
-                            name: "Preferred",
-                            funding: "5 days prior",
-                            volume: "Any",
-                            highlight: "Enhanced Allocation",
-                            style: "green"
-                        },
-                        {
-                            name: "Partners",
-                            funding: "5 days prior",
-                            volume: "500+ employees",
-                            highlight: "Priority Allocation",
-                            style: "dark"
-                        }
-                    ].map((tier, i) => (
-                        <div key={i} className={`p-8 rounded-2xl border shadow-md flex flex-col gap-6 transition-all duration-300 hover:shadow-xl ${tier.style === 'green' ? 'bg-green-primary text-white border-green-primary scale-105 z-10' :
-                            tier.style === 'dark' ? 'bg-text-primary text-white border-text-primary' :
-                                'bg-white text-text-primary border-gray-100'
-                            }`}>
+                {/* ── TIER CARDS ── */}
+                <div className="fade-up grid grid-cols-1 md:grid-cols-3 gap-5 mb-8 md:mb-10" style={{ animationDelay: '80ms' }}>
+                    {tiers.map((tier, i) => (
+                        <div
+                            key={i}
+                            className={`rounded-2xl border p-6 md:p-7 flex flex-col gap-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)] ${tier.cardStyle}`}
+                        >
+                            {/* Tier header */}
                             <div>
-                                <h3 className="text-2xl font-bold mb-1">{tier.name}</h3>
-                                <p className={tier.style === 'white' ? 'text-gray-500 font-medium' : 'text-white font-medium'}>Programme Tier</p>
-                            </div>
-
-                            <div className="space-y-4">
-                                <div className={`flex justify-between items-center py-3 border-b ${tier.style === 'white' ? 'border-gray-100' : 'border-white/30'}`}>
-                                    <span className={`text-sm ${tier.style === 'white' ? 'text-gray-600' : 'text-white'}`}>Funding</span>
-                                    <span className="font-bold">{tier.funding}</span>
+                                <div className={`inline-flex items-center border rounded-full px-2.5 py-1 mb-3 ${tier.tagStyle}`}>
+                                    <span className="text-[0.6rem] font-bold tracking-[0.15em] uppercase">{tier.tag}</span>
                                 </div>
-                                <div className={`flex justify-between items-center py-3 border-b ${tier.style === 'white' ? 'border-gray-100' : 'border-white/30'}`}>
-                                    <span className={`text-sm ${tier.style === 'white' ? 'text-gray-600' : 'text-white'}`}>Volume</span>
-                                    <span className="font-bold">{tier.volume}</span>
-                                </div>
-                            </div>
-
-                            <div className="mt-auto">
-                                <div className={`inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-sm ${tier.style === 'white' ? 'bg-green-primary text-white' : 'bg-white text-text-primary'
+                                <h3 className={`text-lg font-bold leading-snug ${i === 2 ? 'text-white' : i === 1 ? 'text-white' : 'text-[#0f1724]'
                                     }`}>
-                                    {tier.highlight}
+                                    {tier.name}
+                                </h3>
+                            </div>
+
+                            {/* Criteria rows */}
+                            <div className="flex flex-col gap-0">
+                                {tier.criteria.map((row, j) => (
+                                    <div
+                                        key={j}
+                                        className={`flex items-center justify-between py-3 border-b ${tier.rowBorder}`}
+                                    >
+                                        <span className={`text-xs font-medium ${tier.labelStyle}`}>{row.label}</span>
+                                        <span className={`text-xs ${tier.valueStyle}`}>{row.value}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Allocation badge + description */}
+                            <div className="mt-auto">
+                                <div className={`inline-flex items-center gap-1.5 border rounded-full px-3 py-1.5 mb-3 ${tier.allocationBg}`}>
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                        <path d="M5 1L6.2 4H9L6.5 5.8l.9 3L5 7.5 2.6 8.8l.9-3L1 4h2.8L5 1Z"
+                                            fill={i === 0 ? '#10b981' : 'currentColor'} />
+                                    </svg>
+                                    <span className="text-[0.6rem] font-bold tracking-[0.12em] uppercase">{tier.allocation}</span>
                                 </div>
+                                <p className={`text-xs leading-relaxed ${tier.allocationDescStyle}`}>
+                                    {tier.allocationDesc}
+                                </p>
                             </div>
                         </div>
                     ))}
                 </div>
+
+                {/* ── CLOSING COMPLIANCE LINE ── */}
+                <div className="fade-up flex flex-col items-center gap-3 text-center" style={{ animationDelay: '140ms' }}>
+                    <div className="flex items-center gap-4 w-full max-w-[460px]">
+                        <div className="flex-1 h-px bg-[#e5e7eb]" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+                        <div className="flex-1 h-px bg-[#e5e7eb]" />
+                    </div>
+                    <p className="text-sm font-semibold text-[#374151]">
+                        Allocations are reviewed quarterly and applied{' '}
+                        <span className="text-[#10b981]">transparently.</span>
+                    </p>
+                    <p className="text-xs text-[#9ca3af] max-w-[420px] leading-relaxed">
+                        Your dedicated account manager will confirm your tier classification and
+                        provide a quarterly credit summary with each allocation cycle.
+                    </p>
+                </div>
+
             </div>
-        </Section>
+        </section>
     );
 };

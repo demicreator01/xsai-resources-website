@@ -115,7 +115,7 @@ export const PayrollPreview: React.FC = () => {
             <div className="relative z-10 max-w-[1120px] mx-auto">
 
                 {/* Section label + heading */}
-                <div className="fade-up mb-10 md:mb-12">
+                <div className="fade-up mb-7 md:mb-9">
                     <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-3 block">
                         Payroll
                     </span>
