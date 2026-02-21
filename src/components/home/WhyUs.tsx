@@ -119,12 +119,12 @@ export const WhyUs: React.FC = () => {
 
                 {/* ── HEADING ── */}
                 <div className="fade-up mb-10 md:mb-12">
-                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-3 block">
+                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-3 block">
                         Why Switch
                     </span>
                     <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-white leading-[1.1] tracking-tight">
                         Why Businesses{' '}
-                        <span className="text-[#10b981]">Switch to Us</span>
+                        <span className="text-green-primary">Switch to Us</span>
                     </h2>
                 </div>
 
@@ -133,17 +133,17 @@ export const WhyUs: React.FC = () => {
                     {coreDifferentiators.map((item, i) => (
                         <div
                             key={i}
-                            className="group relative rounded-2xl border border-white/10 bg-white/05 backdrop-blur-sm p-5 hover:border-[#10b981]/40 hover:bg-white/08 transition-all duration-300 overflow-hidden"
+                            className="group relative rounded-2xl border border-white/10 bg-white/05 backdrop-blur-sm p-5 hover:border-green-primary/40 hover:bg-white/08 transition-all duration-300 overflow-hidden"
                             style={{ background: 'rgba(255,255,255,0.04)' }}
                         >
                             {/* Subtle top accent on hover */}
-                            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#10b981]/0 to-transparent group-hover:via-[#10b981]/50 transition-all duration-500" />
+                            <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-green-primary/0 to-transparent group-hover:via-green-primary/50 transition-all duration-500" />
 
-                            <div className="w-10 h-10 rounded-xl bg-[#10b981]/10 border border-[#10b981]/20 flex items-center justify-center mb-4">
+                            <div className="w-10 h-10 rounded-xl bg-green-primary/10 border border-green-primary/20 flex items-center justify-center mb-4">
                                 {item.icon}
                             </div>
                             <p className="text-sm font-bold text-white mb-1.5 leading-snug">{item.label}</p>
-                            <p className="text-xs text-[#9ca3af] leading-relaxed">{item.sub}</p>
+                            <p className="text-xs text-text-muted leading-relaxed">{item.sub}</p>
                         </div>
                     ))}
                 </div>
@@ -153,10 +153,10 @@ export const WhyUs: React.FC = () => {
                     {supportingReasons.map((item, i) => (
                         <div
                             key={i}
-                            className="flex items-center gap-3 rounded-xl border border-white/08 px-4 py-3.5 hover:border-[#10b981]/30 transition-all duration-200"
+                            className="flex items-center gap-3 rounded-xl border border-white/08 px-4 py-3.5 hover:border-green-primary/30 transition-all duration-200"
                             style={{ background: 'rgba(255,255,255,0.03)' }}
                         >
-                            <div className="w-6 h-6 rounded-lg bg-[#10b981]/10 border border-[#10b981]/20 flex items-center justify-center shrink-0">
+                            <div className="w-6 h-6 rounded-lg bg-green-primary/10 border border-green-primary/20 flex items-center justify-center shrink-0">
                                 {item.icon}
                             </div>
                             <span className="text-sm font-medium text-white/80 leading-snug">{item.label}</span>
@@ -168,8 +168,8 @@ export const WhyUs: React.FC = () => {
                 <div className="fade-up" style={{ animationDelay: '180ms' }}>
                     {/* Decorative line */}
                     <div className="flex items-center gap-4 mb-8 md:mb-10">
-                        <div className="flex-1 h-px bg-gradient-to-r from-white/0 to-white/10" />
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+                        <div className="flex-1 h-px bg-linear-to-r from-white/0 to-white/10" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-primary" />
                         <div className="flex-1 h-px bg-gradient-to-l from-white/0 to-white/10" />
                     </div>
 
@@ -178,7 +178,7 @@ export const WhyUs: React.FC = () => {
                             <p className="text-2xl md:text-3xl font-bold text-white leading-snug mb-3">
                                 We are not a volume call centre.
                             </p>
-                            <p className="text-[1.05rem] text-[#9ca3af] leading-relaxed">
+                            <p className="text-[1.05rem] text-text-muted leading-relaxed">
                                 We build stable relationships with businesses that value structure and fairness.
                                 Long-term partnership isn't a selling point — it's how we operate.
                             </p>
@@ -188,7 +188,7 @@ export const WhyUs: React.FC = () => {
                         <div className="shrink-0 flex flex-col items-start md:items-end gap-3">
                             <Link
                                 to="#contact"
-                                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#10b981] text-white font-semibold text-base transition-all duration-200 hover:bg-[#059669] hover:shadow-[0_8px_28px_rgba(16,185,129,0.40)] hover:-translate-y-0.5 min-h-[52px]"
+                                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-green-primary text-white font-semibold text-base transition-all duration-200 hover:bg-green-dark hover:shadow-[0_8px_28px_rgba(16,185,129,0.40)] hover:-translate-y-0.5 min-h-[52px]"
                             >
                                 Book a Discovery Call
                                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 16 16" fill="none">

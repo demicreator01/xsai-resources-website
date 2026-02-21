@@ -80,7 +80,7 @@ export const WhyClientsCombine: React.FC = () => {
             {/* Atmospheric background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div
-                    className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                    className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent"
                 />
                 <div
                     className="absolute top-0 right-0 w-[600px] h-[500px]"
@@ -97,7 +97,7 @@ export const WhyClientsCombine: React.FC = () => {
                         backgroundSize: '32px 32px',
                     }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0f1724]" />
+                <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-[#0f1724]" />
             </div>
 
             <div className="relative z-10 max-w-[1120px] mx-auto">
@@ -105,25 +105,25 @@ export const WhyClientsCombine: React.FC = () => {
 
                     {/* LEFT: Argument + closing brand statement */}
                     <div className="fade-up lg:sticky lg:top-8">
-                        <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-3 block">
+                        <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-3 block">
                             The Combined Advantage
                         </span>
                         <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-white leading-[1.1] tracking-tight mb-5">
                             Why Clients Combine Payroll{' '}
-                            <span className="text-[#10b981]">&amp; Accounting</span>
+                            <span className="text-green-primary">&amp; Accounting</span>
                         </h2>
-                        <p className="text-[#9ca3af] text-lg leading-relaxed mb-10">
+                        <p className="text-text-muted text-lg leading-relaxed mb-10">
                             Most businesses run payroll and accounting through separate providers.
                             It works — until it doesn't. Reconciliation gaps, year-end scrambles,
                             and duplicated admin are the price of fragmentation.
                         </p>
 
                         {/* Closing brand statement — typographic moment */}
-                        <div className="border-l-[3px] border-[#10b981] pl-5">
+                        <div className="border-l-[3px] border-green-primary pl-5">
                             <p className="text-[1.2rem] md:text-[1.4rem] font-bold text-white leading-snug mb-1">
                                 Your financial operations become
                             </p>
-                            <p className="text-[1.2rem] md:text-[1.4rem] font-bold text-[#10b981] leading-snug">
+                            <p className="text-[1.2rem] md:text-[1.4rem] font-bold text-green-primary leading-snug">
                                 cohesive — not reactive.
                             </p>
                         </div>
@@ -134,9 +134,9 @@ export const WhyClientsCombine: React.FC = () => {
                         {outcomes.map((outcome, i) => (
                             <div
                                 key={i}
-                                className="group flex items-start gap-4 bg-white/[0.04] border border-white/[0.08] rounded-2xl px-5 py-4 hover:bg-white/[0.07] hover:border-[#10b981]/30 hover:-translate-y-0.5 transition-all duration-250"
+                                className="group flex items-start gap-4 bg-white/4 border border-white/8 rounded-2xl px-5 py-4 hover:bg-white/[0.07] hover:border-green-primary/30 hover:-translate-y-0.5 transition-all duration-250"
                             >
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#10b981]/10 border border-[#10b981]/20 flex items-center justify-center mt-0.5 group-hover:bg-[#10b981] group-hover:border-[#059669] transition-colors duration-250">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-green-primary/10 border border-green-primary/20 flex items-center justify-center mt-0.5 group-hover:bg-green-primary group-hover:border-green-dark transition-colors duration-250">
                                     <div className="group-hover:[&_path]:stroke-white group-hover:[&_circle]:stroke-white group-hover:[&_rect]:stroke-white transition-colors duration-250">
                                         {outcome.icon}
                                     </div>

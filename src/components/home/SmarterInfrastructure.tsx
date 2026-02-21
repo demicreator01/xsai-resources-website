@@ -26,7 +26,7 @@ export const SmarterInfrastructure: React.FC = () => {
                     style={{ background: 'radial-gradient(ellipse at 10% 20%, rgba(16,185,129,0.06) 0%, transparent 65%)' }}
                 />
                 {/* Bottom rule transitioning to next section */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e5e7eb] to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
             </div>
 
             <div className="relative z-10 max-w-[1120px] mx-auto">
@@ -65,9 +65,9 @@ export const SmarterInfrastructure: React.FC = () => {
                             />
 
                             {/* Diagram card */}
-                            <div className="relative rounded-2xl border border-[#e5e7eb] bg-white shadow-[0_4px_32px_rgba(0,0,0,0.07)] overflow-hidden">
+                            <div className="relative rounded-2xl border border-border bg-white shadow-[0_4px_32px_rgba(0,0,0,0.07)] overflow-hidden">
                                 {/* Top accent */}
-                                <div className="h-0.5 w-full bg-linear-to-r from-transparent via-[#10b981] to-transparent" />
+                                <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
 
                                 <div className="p-6 md:p-7">
                                     <p className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-green-primary mb-1">
@@ -107,7 +107,7 @@ export const SmarterInfrastructure: React.FC = () => {
                                             ].map((pillar, i) => (
                                                 <div key={i} className="flex flex-col items-center gap-1.5 bg-[#f0fdf4] border border-[#bbf7d0] rounded-xl p-3">
                                                     {pillar.icon}
-                                                    <span className="text-[0.65rem] font-bold text-[#059669]">{pillar.label}</span>
+                                                    <span className="text-[0.65rem] font-bold text-green-dark">{pillar.label}</span>
                                                 </div>
                                             ))}
                                         </div>
@@ -125,7 +125,7 @@ export const SmarterInfrastructure: React.FC = () => {
                                         </div>
 
                                         {/* Central hub */}
-                                        <div className="w-full rounded-xl bg-green-primary border border-[#059669] shadow-[0_4px_16px_rgba(16,185,129,0.30)] p-3.5 flex items-center justify-between">
+                                        <div className="w-full rounded-xl bg-green-primary border border-green-dark shadow-[0_4px_16px_rgba(16,185,129,0.30)] p-3.5 flex items-center justify-between">
                                             <div>
                                                 <p className="text-[0.6rem] text-white/70 font-semibold uppercase tracking-widest">Central Hub</p>
                                                 <p className="text-sm font-bold text-white">XSAI Infrastructure</p>
@@ -142,14 +142,14 @@ export const SmarterInfrastructure: React.FC = () => {
                                         </svg>
 
                                         {/* Output: single "Your Business" node */}
-                                        <div className="w-full rounded-xl border border-[#e5e7eb] bg-[#f8fffe] p-3 flex items-center gap-3">
+                                        <div className="w-full rounded-xl border border-border bg-[#f8fffe] p-3 flex items-center gap-3">
                                             <div className="w-7 h-7 rounded-full bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center shrink-0">
                                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                                                     <path d="M2 12V6l5-4 5 4v6H9V9H5v3H2Z" stroke="#10b981" strokeWidth="1.2" strokeLinejoin="round" />
                                                 </svg>
                                             </div>
                                             <div>
-                                                <p className="text-[0.6rem] text-[#9ca3af] font-medium uppercase tracking-wider">Output</p>
+                                                <p className="text-[0.6rem] text-text-muted font-medium uppercase tracking-wider">Output</p>
                                                 <p className="text-xs font-bold text-[#0f1724]">Your Business — Running Smoothly</p>
                                             </div>
                                         </div>
@@ -198,7 +198,7 @@ export const SmarterInfrastructure: React.FC = () => {
                     ].map((item, i) => (
                         <div
                             key={i}
-                            className="fade-up group relative bg-white rounded-2xl border border-[#e5e7eb] p-6 hover:border-[#10b981]/40 hover:shadow-[0_4px_20px_rgba(16,185,129,0.10)] hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                            className="fade-up group relative bg-white rounded-2xl border border-border p-6 hover:border-green-primary/40 hover:shadow-[0_4px_20px_rgba(16,185,129,0.10)] hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                             style={{ animationDelay: `${i * 100}ms` }}
                         >
                             {/* Green left accent bar */}
@@ -229,9 +229,9 @@ export const SmarterInfrastructure: React.FC = () => {
                 <div className="fade-up flex flex-col items-center gap-4 text-center pt-2">
                     {/* Decorative line */}
                     <div className="flex items-center gap-4 w-full max-w-[460px]">
-                        <div className="flex-1 h-px bg-[#e5e7eb]" />
+                        <div className="flex-1 h-px bg-border" />
                         <div className="w-1.5 h-1.5 rounded-full bg-green-primary" />
-                        <div className="flex-1 h-px bg-[#e5e7eb]" />
+                        <div className="flex-1 h-px bg-border" />
                     </div>
 
                     <p className="text-xl md:text-2xl font-semibold text-[#0f1724] max-w-[480px] leading-snug">
@@ -239,7 +239,7 @@ export const SmarterInfrastructure: React.FC = () => {
                         <span className="text-green-primary">financial operations.</span>
                     </p>
 
-                    <p className="text-sm text-[#9ca3af] max-w-[340px]">
+                    <p className="text-sm text-text-muted max-w-[340px]">
                         Reliability isn't a feature. For XSAI, it's the foundation.
                     </p>
                 </div>

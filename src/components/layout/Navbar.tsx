@@ -7,6 +7,7 @@ export const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
+    const isDarkHero = ['/insights', '/our-edge'].includes(location.pathname);
 
     // Close mobile menu on route change
     useEffect(() => {
@@ -38,25 +39,38 @@ export const Navbar: React.FC = () => {
         { name: 'Home', href: '/' },
         { name: 'Payroll', href: '/payroll' },
         { name: 'Accounting', href: '/accounting' },
+        { name: 'Admin & Support', href: '/admin-support' },
+        { name: 'Insights', href: '/insights' },
+        { name: 'Our Edge', href: '/our-edge' },
     ];
 
     return (
         <>
-            <nav className={`fixed w-full z-50 transition-all duration-300 top-0 border-b border-white/10 ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm h-16' : 'bg-transparent h-20'}`}>
+            <nav className={`fixed w-full z-50 transition-all duration-300 top-0 ${scrolled
+                ? 'bg-white/80 backdrop-blur-md shadow-sm h-16 border-b border-white/10'
+                : isDarkHero
+                    ? 'bg-transparent h-20 border-b border-white/8'
+                    : 'bg-transparent h-20 border-b border-white/10'
+                }`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
                     <div className="flex justify-between items-center h-full">
                         {/* Logo */}
                         <Link to="/" className="flex items-center gap-2 group">
-                            <Logo />
+                            <Logo textColor={isDarkHero && !scrolled ? '#ffffff' : '#111827'} />
                         </Link>
 
                         {/* Desktop Menu */}
-                        <div className="hidden md:flex items-center space-x-8">
+                        <div className="hidden lg2:flex items-center space-x-8">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     to={link.href}
-                                    className={`text-sm font-medium transition-colors duration-200 ${location.pathname === link.href ? 'text-green-primary' : 'text-gray-600 hover:text-green-primary'}`}
+                                    className={`text-sm font-medium transition-colors duration-200 ${location.pathname === link.href
+                                        ? 'text-green-primary'
+                                        : isDarkHero && !scrolled
+                                            ? 'text-white/70 hover:text-white'
+                                            : 'text-gray-600 hover:text-green-primary'
+                                        }`}
                                 >
                                     {link.name}
                                 </Link>
@@ -68,7 +82,7 @@ export const Navbar: React.FC = () => {
 
                         {/* Mobile Menu Button */}
                         <button
-                            className="md:hidden p-2 -mr-2 text-gray-900 focus:outline-none"
+                            className={`lg2:hidden p-2 -mr-2 focus:outline-none ${isDarkHero && !scrolled ? 'text-white' : 'text-gray-900'}`}
                             onClick={() => setIsOpen(true)}
                             aria-label="Open navigation menu"
                         >
@@ -84,13 +98,13 @@ export const Navbar: React.FC = () => {
 
             {/* Mobile Drawer Backdrop */}
             <div
-                className={`fixed inset-0 z-60 bg-black/40 backdrop-blur-sm transition-opacity duration-300 md:hidden ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                className={`fixed inset-0 z-60 bg-black/40 backdrop-blur-sm transition-opacity duration-300 lg2:hidden ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                 onClick={() => setIsOpen(false)}
             />
 
             {/* Mobile Drawer Content */}
             <div
-                className={`fixed top-0 right-0 bottom-0 w-[85%] max-w-[360px] bg-white shadow-2xl z-70 transform transition-transform duration-300 ease-out md:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`fixed top-0 right-0 bottom-0 w-[85%] max-w-[360px] bg-white shadow-2xl z-70 transform transition-transform duration-300 ease-out lg2:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
             >
                 <div className="p-6 flex flex-col h-full bg-linear-to-b from-white to-gray-50">
                     <div className="flex items-center justify-between mb-8">

@@ -76,21 +76,21 @@ export const SafeguardingDeepDive: React.FC = () => {
                     className="absolute bottom-0 left-0 w-[400px] h-[350px]"
                     style={{ background: 'radial-gradient(ellipse at 15% 90%, rgba(59,130,246,0.05) 0%, transparent 65%)' }}
                 />
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e5e7eb] to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
             </div>
 
             <div className="relative z-10 max-w-[1120px] mx-auto">
 
                 {/* ── HEADING ── */}
                 <div className="fade-up mb-10 md:mb-12">
-                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-3 block">
+                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-3 block">
                         Client Fund Safeguarding
                     </span>
                     <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-4">
                         Trust Is Critical{' '}
-                        <span className="text-[#10b981]">in Payroll</span>
+                        <span className="text-green-primary">in Payroll</span>
                     </h2>
-                    <p className="text-[#4b5563] text-lg max-w-[560px] leading-relaxed">
+                    <p className="text-text-secondary text-lg max-w-[560px] leading-relaxed">
                         All employer payroll funds operate under strict structural controls.
                         This is not policy language — it is how the infrastructure is built.
                     </p>
@@ -104,9 +104,9 @@ export const SafeguardingDeepDive: React.FC = () => {
                         {safeguardPoints.map((point, i) => (
                             <div
                                 key={i}
-                                className="group bg-white border border-[#e5e7eb] rounded-2xl p-5 hover:border-[#10b981]/40 hover:shadow-[0_4px_20px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden"
+                                className="group bg-white border border-border rounded-2xl p-5 hover:border-green-primary/40 hover:shadow-[0_4px_20px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden"
                             >
-                                <div className="absolute top-0 left-4 right-4 h-0.5 bg-[#10b981] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+                                <div className="absolute top-0 left-4 right-4 h-0.5 bg-green-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
                                 <div className="w-10 h-10 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mb-4">
                                     {point.icon}
                                 </div>
@@ -123,18 +123,18 @@ export const SafeguardingDeepDive: React.FC = () => {
                     {/* RIGHT: Trust panel — rebuilt */}
                     <div className="fade-up" style={{ animationDelay: '140ms' }}>
                         <div className="rounded-2xl bg-[#0f1724] overflow-hidden shadow-[0_8px_48px_rgba(0,0,0,0.20)]">
-                            <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[#10b981] to-transparent" />
+                            <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
                             <div className="p-7 md:p-8">
 
                                 {/* Badge */}
                                 <div className="flex items-center gap-2 mb-6">
-                                    <div className="w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center">
+                                    <div className="w-7 h-7 rounded-full bg-green-primary/15 border border-green-primary/30 flex items-center justify-center">
                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                                             <path d="M7 1.5L2 4.5v3.5c0 3 2.2 5.5 5 6.5 2.8-1 5-3.5 5-6.5V4.5L7 1.5Z"
                                                 stroke="#10b981" strokeWidth="1.3" strokeLinejoin="round" />
                                         </svg>
                                     </div>
-                                    <span className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#10b981]">
+                                    <span className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-green-primary">
                                         Resilience First
                                     </span>
                                 </div>
@@ -143,10 +143,10 @@ export const SafeguardingDeepDive: React.FC = () => {
                                 <p className="text-[1.1rem] md:text-[1.25rem] font-bold text-white leading-snug mb-2">
                                     Stability is the first requirement
                                 </p>
-                                <p className="text-[1.1rem] md:text-[1.25rem] font-bold text-[#10b981] leading-snug mb-5">
+                                <p className="text-[1.1rem] md:text-[1.25rem] font-bold text-green-primary leading-snug mb-5">
                                     of any payroll system.
                                 </p>
-                                <p className="text-sm text-[#9ca3af] leading-relaxed mb-6">
+                                <p className="text-sm text-text-muted leading-relaxed mb-6">
                                     Our infrastructure is built to protect the assets that matter most to your employees.
                                     Every structural control exists so that when pay date arrives, funds are exactly where
                                     they need to be — in your employees' accounts.
@@ -163,24 +163,24 @@ export const SafeguardingDeepDive: React.FC = () => {
                                         'Zero third-party exposure — no lending, no investment vehicles',
                                     ].map((line, i) => (
                                         <div key={i} className="flex items-start gap-3">
-                                            <div className="shrink-0 w-4 h-4 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center mt-0.5">
+                                            <div className="shrink-0 w-4 h-4 rounded-full bg-green-primary/15 border border-green-primary/30 flex items-center justify-center mt-0.5">
                                                 <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
                                                     <path d="M1.5 4L3 5.5L6.5 2" stroke="#10b981" strokeWidth="1.3"
                                                         strokeLinecap="round" strokeLinejoin="round" />
                                                 </svg>
                                             </div>
-                                            <p className="text-xs text-[#9ca3af] leading-relaxed">{line}</p>
+                                            <p className="text-xs text-text-muted leading-relaxed">{line}</p>
                                         </div>
                                     ))}
                                 </div>
 
                                 {/* Compliance classification box */}
-                                <div className="rounded-xl border border-[#10b981]/20 bg-[#10b981]/05 p-4"
+                                <div className="rounded-xl border border-green-primary/20 bg-green-primary/05 p-4"
                                     style={{ background: 'rgba(16,185,129,0.05)' }}>
-                                    <p className="text-[0.6rem] font-bold tracking-[0.15em] uppercase text-[#10b981] mb-1.5">
+                                    <p className="text-[0.6rem] font-bold tracking-[0.15em] uppercase text-green-primary mb-1.5">
                                         Classification
                                     </p>
-                                    <p className="text-xs text-[#9ca3af] leading-relaxed">
+                                    <p className="text-xs text-text-muted leading-relaxed">
                                         These are structural operational controls — not discretionary safeguarding policies.
                                         They apply to every client account, every cycle, without exception.
                                     </p>
@@ -200,7 +200,7 @@ export const SafeguardingDeepDive: React.FC = () => {
                             </svg>
                         </div>
                         <div>
-                            <p className="text-sm font-bold text-[#059669] mb-1">Compliance Statement</p>
+                            <p className="text-sm font-bold text-green-dark mb-1">Compliance Statement</p>
                             <p className="text-sm text-[#374151] leading-relaxed">
                                 Payroll funds held by XSAI Resources Ltd are <strong>not exposed to third-party lending or investment activity</strong> at any point.
                                 Operational stability always comes first. All client accounts are maintained in accordance with UK banking regulations and

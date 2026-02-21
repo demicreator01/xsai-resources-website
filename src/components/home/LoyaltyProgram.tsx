@@ -67,11 +67,11 @@ export const LoyaltyProgram: React.FC = () => {
 
                 {/* ── NARRATIVE INTRO ── */}
                 <div className="fade-up max-w-[680px] mb-12 md:mb-14">
-                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-3 block">
+                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-3 block">
                         Loyalty Credits
                     </span>
                     <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-6">
-                        The Loyalty Credit <span className="text-[#10b981]">Programme</span>
+                        The Loyalty Credit <span className="text-green-primary">Programme</span>
                     </h2>
                     <div className="space-y-4 text-[1.05rem] text-[#374151] leading-relaxed">
                         <p>
@@ -87,25 +87,25 @@ export const LoyaltyProgram: React.FC = () => {
 
                 {/* ── CONTRAST MOMENT — full width dark strip ── */}
                 <div className="fade-up mb-12 md:mb-16 rounded-2xl bg-[#0f1724] overflow-hidden" style={{ animationDelay: '80ms' }}>
-                    <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[#10b981] to-transparent" />
+                    <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
                     <div className="px-8 py-8 md:px-12 md:py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                         <div className="flex-1">
                             <p className="text-[1.15rem] md:text-[1.35rem] font-bold text-white leading-snug mb-2">
                                 Most providers retain this entirely.
                             </p>
                             <p className="text-[1.15rem] md:text-[1.35rem] font-bold leading-snug">
-                                <span className="text-[#10b981]">We take a different approach.</span>
+                                <span className="text-green-primary">We take a different approach.</span>
                             </p>
                         </div>
                         <div className="shrink-0 flex flex-col gap-2 text-sm">
                             {['No investment exposure.', 'No lending activity.', 'No risk deployment.'].map((line, i) => (
                                 <div key={i} className="flex items-center gap-2">
-                                    <div className="w-4 h-4 rounded-full bg-[#10b981]/20 border border-[#10b981]/40 flex items-center justify-center">
+                                    <div className="w-4 h-4 rounded-full bg-green-primary/20 border border-green-primary/40 flex items-center justify-center">
                                         <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
                                             <path d="M6.5 2L3 5.5L1.5 4" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
                                     </div>
-                                    <span className="text-[#9ca3af] font-medium">{line}</span>
+                                    <span className="text-text-muted font-medium">{line}</span>
                                 </div>
                             ))}
                         </div>
@@ -117,18 +117,18 @@ export const LoyaltyProgram: React.FC = () => {
 
                     {/* LEFT: Rebuilt flow diagram */}
                     <div className="fade-up" style={{ animationDelay: '120ms' }}>
-                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#9ca3af] mb-5">
+                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-text-muted mb-5">
                             How the programme works
                         </p>
 
-                        <div className="relative rounded-2xl border border-[#e5e7eb] bg-[#f8fffe] overflow-hidden">
-                            <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[#10b981] to-transparent" />
+                        <div className="relative rounded-2xl border border-border bg-[#f8fffe] overflow-hidden">
+                            <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
                             <div className="p-6 md:p-7">
 
                                 {/* Step 1 */}
                                 <div className="flex items-start gap-4 mb-2">
                                     <div className="shrink-0 flex flex-col items-center">
-                                        <div className="w-9 h-9 rounded-full bg-[#f0fdf4] border-2 border-[#10b981] flex items-center justify-center">
+                                        <div className="w-9 h-9 rounded-full bg-[#f0fdf4] border-2 border-green-primary flex items-center justify-center">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <rect x="2" y="3" width="12" height="10" rx="1.5" stroke="#10b981" strokeWidth="1.4" />
                                                 <path d="M5 7h4M5 9.5h6" stroke="#10b981" strokeWidth="1.4" strokeLinecap="round" />
@@ -145,7 +145,7 @@ export const LoyaltyProgram: React.FC = () => {
                                 {/* Step 2 */}
                                 <div className="flex items-start gap-4 mb-2">
                                     <div className="shrink-0 flex flex-col items-center">
-                                        <div className="w-9 h-9 rounded-full bg-[#f0fdf4] border-2 border-[#10b981] flex items-center justify-center">
+                                        <div className="w-9 h-9 rounded-full bg-[#f0fdf4] border-2 border-green-primary flex items-center justify-center">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <rect x="3" y="2" width="10" height="12" rx="1.5" stroke="#10b981" strokeWidth="1.4" />
                                                 <path d="M6 6h4M6 8.5h2.5" stroke="#10b981" strokeWidth="1.4" strokeLinecap="round" />
@@ -163,7 +163,7 @@ export const LoyaltyProgram: React.FC = () => {
                                 {/* Step 3 */}
                                 <div className="flex items-start gap-4 mb-2">
                                     <div className="shrink-0 flex flex-col items-center">
-                                        <div className="w-9 h-9 rounded-full bg-[#f0fdf4] border-2 border-[#10b981] flex items-center justify-center">
+                                        <div className="w-9 h-9 rounded-full bg-[#f0fdf4] border-2 border-green-primary flex items-center justify-center">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <circle cx="8" cy="8" r="5.5" stroke="#10b981" strokeWidth="1.4" />
                                                 <path d="M8 5v2.5l1.5 1.5" stroke="#10b981" strokeWidth="1.4" strokeLinecap="round" />
@@ -180,19 +180,19 @@ export const LoyaltyProgram: React.FC = () => {
                                 {/* Step 4 — highlighted */}
                                 <div className="flex items-start gap-4">
                                     <div className="shrink-0">
-                                        <div className="w-9 h-9 rounded-full bg-[#10b981] border-2 border-[#059669] shadow-[0_4px_12px_rgba(16,185,129,0.35)] flex items-center justify-center">
+                                        <div className="w-9 h-9 rounded-full bg-green-primary border-2 border-green-dark shadow-[0_4px_12px_rgba(16,185,129,0.35)] flex items-center justify-center">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="M8 2l1.2 3.5H13l-2.9 2.1 1.1 3.4L8 9l-3.2 2 1.1-3.4L3 5.5h3.8L8 2Z" fill="white" />
                                             </svg>
                                         </div>
                                     </div>
                                     <div className="flex-1 bg-[#f0fdf4] border border-[#bbf7d0] rounded-xl p-3">
-                                        <p className="text-sm font-bold text-[#059669]">Loyalty Credits Returned to You</p>
+                                        <p className="text-sm font-bold text-green-dark">Loyalty Credits Returned to You</p>
                                         <p className="text-xs text-[#374151] mt-0.5 leading-snug">A portion is allocated back to qualifying partners as discretionary operational credits.</p>
                                     </div>
                                 </div>
 
-                                <p className="text-[0.6rem] text-[#9ca3af] text-center mt-5 tracking-wide">
+                                <p className="text-[0.6rem] text-text-muted text-center mt-5 tracking-wide">
                                     Discretionary operational rebate · Not an investment product · Not guaranteed income
                                 </p>
                             </div>
@@ -201,17 +201,17 @@ export const LoyaltyProgram: React.FC = () => {
 
                     {/* RIGHT: Credit option cards */}
                     <div className="fade-up flex flex-col gap-4" style={{ animationDelay: '180ms' }}>
-                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#9ca3af]">
+                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-text-muted">
                             Credits can be used as
                         </p>
 
                         {credits.map((credit, i) => (
                             <div
                                 key={i}
-                                className="group flex items-start gap-4 bg-white border border-[#e5e7eb] rounded-2xl p-5 hover:border-[#10b981]/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
+                                className="group flex items-start gap-4 bg-white border border-border rounded-2xl p-5 hover:border-green-primary/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
                             >
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-[#10b981] group-hover:border-[#059669] transition-colors duration-250">
-                                    <div className="text-[#10b981] group-hover:[&_path]:stroke-white group-hover:[&_rect]:stroke-white group-hover:[&_circle]:stroke-white transition-colors duration-250">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-green-primary group-hover:border-green-dark transition-colors duration-250">
+                                    <div className="text-green-primary group-hover:[&_path]:stroke-white group-hover:[&_rect]:stroke-white group-hover:[&_circle]:stroke-white transition-colors duration-250">
                                         {credit.icon}
                                     </div>
                                 </div>
@@ -224,11 +224,11 @@ export const LoyaltyProgram: React.FC = () => {
 
                         {/* Closing efficiency line */}
                         <div className="mt-2 flex items-center gap-3 px-2">
-                            <div className="flex-1 h-px bg-[#e5e7eb]" />
-                            <p className="text-xs font-semibold text-[#10b981] text-center">
+                            <div className="flex-1 h-px bg-border" />
+                            <p className="text-xs font-semibold text-green-primary text-center">
                                 Operational efficiency — shared fairly.
                             </p>
-                            <div className="flex-1 h-px bg-[#e5e7eb]" />
+                            <div className="flex-1 h-px bg-border" />
                         </div>
                     </div>
                 </div>
@@ -243,7 +243,7 @@ export const LoyaltyProgram: React.FC = () => {
                             </svg>
                         </div>
                         <div>
-                            <p className="text-sm font-bold text-[#059669] mb-1">Important — Programme Classification</p>
+                            <p className="text-sm font-bold text-green-dark mb-1">Important — Programme Classification</p>
                             <p className="text-sm text-[#374151] leading-relaxed">
                                 The Loyalty Credit Programme is a <strong>discretionary operational rebate</strong> — not an investment product, not interest on deposits, and not guaranteed income.
                                 Credits are allocated at XSAI's discretion based on payroll volume, funding timing, and partnership length.

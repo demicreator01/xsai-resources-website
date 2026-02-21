@@ -28,7 +28,7 @@ export const AccountingHero: React.FC = () => {
     return (
         <section
             ref={sectionRef}
-            className="relative bg-[#f8fffe] min-h-[90vh] flex items-center py-20 md:py-0 px-5 md:px-8 overflow-hidden"
+            className="relative bg-[#f8fffe] min-h-[90vh] flex items-center py-20 md:py-14 px-5 md:px-8 overflow-hidden"
         >
             {/* ── ATMOSPHERIC BACKGROUND ── */}
             <div className="absolute inset-0 pointer-events-none">
@@ -110,7 +110,7 @@ export const AccountingHero: React.FC = () => {
                         {/* Three "No X" lines */}
                         <div className="hero-fade flex flex-wrap gap-2 mb-9">
                             {['No fragmentation.', 'No crossed wires.', 'No last-minute surprises.'].map((line, i) => (
-                                <div key={i} className="inline-flex items-center gap-2 bg-white border border-[#e5e7eb] rounded-full px-4 py-2 shadow-sm">
+                                <div key={i} className="inline-flex items-center gap-2 bg-white border border-border rounded-full px-4 py-2 shadow-sm">
                                     <div className="w-1.5 h-1.5 rounded-full bg-green-primary" />
                                     <span className="text-sm font-semibold text-[#0f1724]">{line}</span>
                                 </div>
@@ -143,7 +143,7 @@ export const AccountingHero: React.FC = () => {
                                 'Companies House Filing',
                                 'MTD Ready',
                             ].map((tag, i) => (
-                                <div key={i} className="inline-flex items-center gap-1.5 bg-white border border-[#e5e7eb] rounded-full px-3.5 py-1.5 shadow-sm">
+                                <div key={i} className="inline-flex items-center gap-1.5 bg-white border border-border rounded-full px-3.5 py-1.5 shadow-sm">
                                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                                         <circle cx="5" cy="5" r="4.5" fill="#10b981" fillOpacity="0.15" />
                                         <path d="M3 5l1.5 1.5 2.5-2.5" stroke="#10b981" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
@@ -156,7 +156,7 @@ export const AccountingHero: React.FC = () => {
 
                     {/* ── RIGHT: ACCOUNTING STATUS PANEL ── */}
                     <div className="hero-fade hidden lg:block">
-                        <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_64px_rgba(0,0,0,0.12)] border border-[#e5e7eb]">
+                        <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_64px_rgba(0,0,0,0.12)] border border-border">
                             <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
 
                             {/* Panel header */}
@@ -165,7 +165,7 @@ export const AccountingHero: React.FC = () => {
                                     <div className="flex gap-1.5">
                                         <div className="w-2.5 h-2.5 rounded-full bg-[#ef4444]/70" />
                                         <div className="w-2.5 h-2.5 rounded-full bg-[#f59e0b]/70" />
-                                        <div className="w-2.5 h-2.5 rounded-full bg-[#10b981]/70" />
+                                        <div className="w-2.5 h-2.5 rounded-full bg-green-primary/70" />
                                     </div>
                                     <span className="text-[0.6rem] font-bold tracking-[0.18em] uppercase text-[#6b7280]">
                                         Accounting Overview
@@ -191,7 +191,7 @@ export const AccountingHero: React.FC = () => {
                                                 ? 'bg-[#f0fdf4] border-[#bbf7d0]'
                                                 : item.status === 'active'
                                                     ? 'bg-[#fffbeb] border-[#fde68a]'
-                                                    : 'bg-[#f9fafb] border-[#e5e7eb]'
+                                                    : 'bg-bg-page border-border'
                                                 }`}
                                         >
                                             <div className="flex items-center gap-3">
@@ -199,7 +199,7 @@ export const AccountingHero: React.FC = () => {
                                                     ? 'bg-green-primary'
                                                     : item.status === 'active'
                                                         ? 'bg-[#f59e0b]'
-                                                        : 'bg-[#e5e7eb]'
+                                                        : 'bg-border'
                                                     }`}>
                                                     {item.status === 'filed' ? (
                                                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -222,7 +222,7 @@ export const AccountingHero: React.FC = () => {
                                                 ? 'bg-green-primary text-white'
                                                 : item.status === 'active'
                                                     ? 'bg-[#f59e0b] text-white'
-                                                    : 'bg-[#e5e7eb] text-text-muted'
+                                                    : 'bg-border text-text-muted'
                                                 }`}>
                                                 {item.date}
                                             </span>
@@ -232,7 +232,7 @@ export const AccountingHero: React.FC = () => {
                             </div>
 
                             {/* Panel footer — key metrics */}
-                            <div className="bg-[#f8fffe] border-t border-[#e5e7eb] px-6 py-4 grid grid-cols-3 gap-4">
+                            <div className="bg-[#f8fffe] border-t border-border px-6 py-4 grid grid-cols-3 gap-4">
                                 {[
                                     { label: 'Filed', value: '2', sub: 'this period' },
                                     { label: 'In Progress', value: '2', sub: 'on track' },
@@ -248,7 +248,7 @@ export const AccountingHero: React.FC = () => {
 
                             {/* Compliance footer tag */}
                             <div className="bg-[#0f1724] px-6 py-3 text-center">
-                                <p className="text-[0.55rem] text-[#4b5563] tracking-wide">
+                                <p className="text-[0.55rem] text-text-secondary tracking-wide">
                                     HMRC compliant · MTD ready · Companies House filing · Annual accounts
                                 </p>
                             </div>

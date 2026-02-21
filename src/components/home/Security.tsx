@@ -70,7 +70,7 @@ export const Security: React.FC = () => {
     return (
         <section
             ref={sectionRef}
-            className="relative bg-[#f9fafb] py-20 md:py-28 px-5 md:px-8 overflow-hidden"
+            className="relative bg-bg-page py-20 md:py-28 px-5 md:px-8 overflow-hidden"
         >
             {/* Atmospheric background */}
             <div className="absolute inset-0 pointer-events-none">
@@ -83,21 +83,21 @@ export const Security: React.FC = () => {
                     style={{ background: 'radial-gradient(ellipse at 15% 90%, rgba(59,130,246,0.05) 0%, transparent 65%)' }}
                 />
                 {/* Top border — connects from dark WhyUs section */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e5e7eb] to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
             </div>
 
             <div className="relative z-10 max-w-[1120px] mx-auto">
 
                 {/* ── HEADING ── */}
                 <div className="fade-up mb-10 md:mb-12">
-                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-3 block">
+                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-3 block">
                         Security
                     </span>
                     <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-4">
                         Security &{' '}
-                        <span className="text-[#10b981]">Safeguarding</span>
+                        <span className="text-green-primary">Safeguarding</span>
                     </h2>
-                    <p className="text-[#4b5563] text-lg max-w-[540px] leading-relaxed">
+                    <p className="text-text-secondary text-lg max-w-[540px] leading-relaxed">
                         Client payroll funds operate under strict controls.
                         This is not policy language — it is how the infrastructure actually runs.
                     </p>
@@ -111,10 +111,10 @@ export const Security: React.FC = () => {
                         {safeguardPoints.map((point, i) => (
                             <div
                                 key={i}
-                                className="group bg-white border border-[#e5e7eb] rounded-2xl p-5 hover:border-[#10b981]/40 hover:shadow-[0_4px_20px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden"
+                                className="group bg-white border border-border rounded-2xl p-5 hover:border-green-primary/40 hover:shadow-[0_4px_20px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden"
                             >
                                 {/* Green top accent — appears on hover */}
-                                <div className="absolute top-0 left-4 right-4 h-0.5 bg-[#10b981] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+                                <div className="absolute top-0 left-4 right-4 h-0.5 bg-green-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
 
                                 <div className="w-10 h-10 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mb-4">
                                     {point.icon}
@@ -133,18 +133,18 @@ export const Security: React.FC = () => {
                     <div className="fade-up" style={{ animationDelay: '140ms' }}>
                         <div className="rounded-2xl bg-[#0f1724] overflow-hidden shadow-[0_8px_48px_rgba(0,0,0,0.20)]">
                             {/* Top accent */}
-                            <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[#10b981] to-transparent" />
+                            <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
 
                             <div className="p-7 md:p-8">
                                 {/* Trust badge */}
                                 <div className="flex items-center gap-2 mb-6">
-                                    <div className="w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center">
+                                    <div className="w-7 h-7 rounded-full bg-green-primary/15 border border-green-primary/30 flex items-center justify-center">
                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                                             <path d="M7 1.5L2 4.5v3.5c0 3 2.2 5.5 5 6.5 2.8-1 5-3.5 5-6.5V4.5L7 1.5Z"
                                                 stroke="#10b981" strokeWidth="1.3" strokeLinejoin="round" />
                                         </svg>
                                     </div>
-                                    <span className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#10b981]">
+                                    <span className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-green-primary">
                                         Integrity First
                                     </span>
                                 </div>
@@ -153,10 +153,10 @@ export const Security: React.FC = () => {
                                 <p className="text-[1.15rem] md:text-[1.3rem] font-bold text-white leading-snug mb-2">
                                     Operational resilience comes first.
                                 </p>
-                                <p className="text-[1.15rem] md:text-[1.3rem] font-bold text-[#10b981] leading-snug mb-6">
+                                <p className="text-[1.15rem] md:text-[1.3rem] font-bold text-green-primary leading-snug mb-6">
                                     Always.
                                 </p>
-                                <p className="text-sm text-[#9ca3af] leading-relaxed mb-7">
+                                <p className="text-sm text-text-muted leading-relaxed mb-7">
                                     Payroll is trust infrastructure — and we treat it that way.
                                     Everything downstream of payroll depends on it running perfectly.
                                     We do not compromise on the controls that make that possible.
@@ -169,12 +169,12 @@ export const Security: React.FC = () => {
                                 <div className="flex flex-col gap-3">
                                     {operationalProofs.map((proof, i) => (
                                         <div key={i} className="flex items-start gap-3">
-                                            <div className="shrink-0 w-4 h-4 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center mt-0.5">
+                                            <div className="shrink-0 w-4 h-4 rounded-full bg-green-primary/15 border border-green-primary/30 flex items-center justify-center mt-0.5">
                                                 <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
                                                     <path d="M1.5 4L3 5.5L6.5 2" stroke="#10b981" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                                                 </svg>
                                             </div>
-                                            <p className="text-xs text-[#9ca3af] leading-relaxed">{proof}</p>
+                                            <p className="text-xs text-text-muted leading-relaxed">{proof}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -193,13 +193,13 @@ export const Security: React.FC = () => {
                 {/* ── CLOSING BRAND LINE ── */}
                 <div className="fade-up flex flex-col items-center gap-3 text-center" style={{ animationDelay: '200ms' }}>
                     <div className="flex items-center gap-4 w-full max-w-[460px]">
-                        <div className="flex-1 h-px bg-[#e5e7eb]" />
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
-                        <div className="flex-1 h-px bg-[#e5e7eb]" />
+                        <div className="flex-1 h-px bg-border" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-primary" />
+                        <div className="flex-1 h-px bg-border" />
                     </div>
                     <p className="text-lg md:text-xl font-semibold text-[#0f1724] max-w-[500px] leading-snug">
                         Payroll is trust infrastructure —{' '}
-                        <span className="text-[#10b981]">and we treat it that way.</span>
+                        <span className="text-green-primary">and we treat it that way.</span>
                     </p>
                 </div>
 

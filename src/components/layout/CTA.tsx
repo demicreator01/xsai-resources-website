@@ -1,12 +1,53 @@
 import React, { useEffect, useRef } from 'react';
 
-export const CTA: React.FC = () => {
+interface CTAProps {
+    headline?: string;
+    subline?: string;
+    rightCardTitle?: string;
+    rightCardDescription?: string;
+    rightCardChecklist?: string[];
+    rightCardButton?: string;
+    rightCardEmail?: string;
+    rightCardEmailSubject?: string;
+}
+
+const DEFAULT_PROPS: Required<CTAProps> = {
+    headline: "Let's build something that lasts.",
+    subline:
+        "If you're looking for transparent pricing, clean payroll execution, and a team that treats your business as a long-term partnership — we should talk.",
+    rightCardTitle: 'Request a Formal Proposal',
+    rightCardDescription:
+        "For multi-entity businesses or SMEs with 50+ employees, we provide a detailed cost-benefit analysis, implementation roadmap, and projected Loyalty Credit allocation based on your payroll profile.",
+    rightCardChecklist: [
+        'Tailored pricing breakdown for your headcount',
+        'Projected Loyalty Credit allocation estimate',
+        'Implementation timeline and transition plan',
+    ],
+    rightCardButton: 'Request a Proposal',
+    rightCardEmail: 'proposals@xsai.co.uk',
+    rightCardEmailSubject: 'Proposal%20Request',
+};
+
+export const CTA: React.FC<CTAProps> = (props) => {
+    const {
+        headline,
+        subline,
+        rightCardTitle,
+        rightCardDescription,
+        rightCardChecklist,
+        rightCardButton,
+        rightCardEmail,
+        rightCardEmailSubject,
+    } = { ...DEFAULT_PROPS, ...props };
+
     const sectionRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const els = sectionRef.current?.querySelectorAll('.fade-up') ?? [];
         const obs = new IntersectionObserver(
-            (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+            (entries) => entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            }),
             { threshold: 0.12 }
         );
         els.forEach(el => obs.observe(el));
@@ -17,7 +58,7 @@ export const CTA: React.FC = () => {
         <section
             ref={sectionRef}
             id="contact"
-            className="relative bg-[#0a1628] py-20 md:py-28 px-5 md:px-8 overflow-hidden"
+            className="relative bg-[#0f1724] py-20 md:py-28 px-5 md:px-8 overflow-hidden"
         >
             {/* Atmospheric background */}
             <div className="absolute inset-0 pointer-events-none">
@@ -35,72 +76,65 @@ export const CTA: React.FC = () => {
                     }}
                 />
                 {/* Fade out dot grid at edges */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628] via-transparent to-[#0a1628]" />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a1628]" />
+                <div className="absolute inset-0 bg-linear-to-r from-[#0f1724] via-transparent to-[#0f1724]" />
+                <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-[#0f1724]" />
             </div>
 
             <div className="relative z-10 max-w-[1120px] mx-auto">
 
-                {/* ── HEADING ── */}
-                <div className="fade-up text-center mb-12 md:mb-14">
-                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-4 block">
+                {/* Section header */}
+                <div className="fade-up text-center mb-12">
+                    <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-4">
                         Get Started
-                    </span>
-                    <h2 className="text-[2rem] md:text-[3rem] font-bold text-white leading-[1.1] tracking-tight mb-5">
-                        Let's build something{' '}
-                        <span className="text-[#10b981]">that lasts.</span>
+                    </p>
+                    <h2 className="text-[2rem] md:text-[3rem] font-bold text-white leading-tight mb-5">
+                        {headline}
                     </h2>
-                    <p className="text-[#9ca3af] text-lg max-w-[520px] mx-auto leading-relaxed">
-                        If you're looking for transparent pricing, clean payroll execution, and
-                        a team that treats your business as a long-term partnership — we should talk.
+                    <p className="text-text-muted text-lg leading-relaxed max-w-[600px] mx-auto">
+                        {subline}
                     </p>
                 </div>
 
-                {/* ── TWO CONVERSION CARDS ── */}
-                <div className="fade-up grid grid-cols-1 md:grid-cols-2 gap-5 mb-8 md:mb-10" style={{ animationDelay: '100ms' }}>
+                {/* Two cards */}
+                <div className="fade-up grid grid-cols-1 md:grid-cols-2 gap-5" style={{ animationDelay: '100ms' }}>
 
-                    {/* LEFT: Discovery Call — PRIMARY */}
-                    <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_48px_rgba(16,185,129,0.15)]">
-                        <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[#10b981] to-transparent" />
-                        <div className="bg-gradient-to-br from-[#10b981] to-[#059669] p-7 md:p-8 h-full flex flex-col">
-
-                            {/* Badge */}
-                            <div className="inline-flex items-center gap-2 bg-white/15 border border-white/20 rounded-full px-3 py-1 mb-5 self-start">
-                                <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                                <span className="text-[0.6rem] font-bold tracking-[0.15em] uppercase text-white">
-                                    Most Popular Starting Point
-                                </span>
-                            </div>
-
-                            <h3 className="text-2xl font-bold text-white mb-2">Book a Discovery Call</h3>
-                            <p className="text-white/80 text-sm leading-relaxed mb-6 flex-1">
-                                A focused 15-minute briefing to discuss your payroll setup, current challenges,
-                                and how XSAI's infrastructure maps to your requirements.
-                                No obligation. No sales pressure.
+                    {/* LEFT CARD — always identical across all pages */}
+                    <div className="rounded-2xl bg-green-primary p-7 flex flex-col gap-5">
+                        <div>
+                            <span className="inline-flex items-center gap-1.5 bg-white/20 rounded-full px-3 py-1 text-[0.6rem] font-bold tracking-[0.15em] uppercase text-white mb-4">
+                                <div className="w-1.5 h-1.5 rounded-full bg-white" />
+                                Most Popular Starting Point
+                            </span>
+                            <h3 className="text-[1.4rem] font-bold text-white mb-2">
+                                Book a Discovery Call
+                            </h3>
+                            <p className="text-sm text-white/80 leading-relaxed">
+                                A focused 15-minute briefing to discuss your payroll setup,
+                                current challenges, and how XSAI's infrastructure maps to
+                                your requirements. No obligation. No sales pressure.
                             </p>
-
-                            {/* What to expect */}
-                            <div className="space-y-2 mb-7">
-                                {[
-                                    'Review of your current payroll structure',
-                                    'Clarity on pricing for your headcount',
-                                    'Infrastructure fit assessment',
-                                ].map((line, i) => (
-                                    <div key={i} className="flex items-center gap-2.5">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                            <circle cx="7" cy="7" r="6" fill="rgba(255,255,255,0.2)" />
-                                            <path d="M4.5 7l2 2 3-3" stroke="white" strokeWidth="1.5"
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            {[
+                                'Review of your current payroll structure',
+                                'Clarity on pricing for your headcount',
+                                'Infrastructure fit assessment',
+                            ].map((item, i) => (
+                                <div key={i} className="flex items-center gap-2.5">
+                                    <div className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                                            <path d="M1.5 4l2 2 3-3" stroke="white" strokeWidth="1.3"
                                                 strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
-                                        <span className="text-white/80 text-xs font-medium">{line}</span>
                                     </div>
-                                ))}
-                            </div>
-
-                            {/* Primary CTA */}
+                                    <p className="text-sm text-white/90 font-medium">{item}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="mt-auto flex flex-col gap-3">
                             <a
-                                href="mailto:contact@xsai.co.uk"
-                                className="group w-full flex items-center justify-center gap-2 bg-white text-[#059669] font-bold text-sm px-6 py-4 rounded-xl hover:bg-[#f0fdf4] transition-all duration-200 hover:shadow-[0_4px_16px_rgba(0,0,0,0.15)]"
+                                href="mailto:contact@xsai.co.uk?subject=Discovery%20Call%20Request"
+                                className="group w-full flex items-center justify-center gap-2 bg-white text-green-dark font-bold py-3.5 rounded-xl text-sm transition-all duration-200 hover:bg-white/90"
                             >
                                 Book a 15-Minute Call
                                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
@@ -109,80 +143,72 @@ export const CTA: React.FC = () => {
                                         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </a>
-                            <p className="text-center text-white/50 text-xs mt-3">
-                                Or email directly: contact@xsai.co.uk
+                            <p className="text-[0.7rem] text-white/60 text-center">
+                                Or email directly:{' '}
+                                <a href="mailto:contact@xsai.co.uk"
+                                    className="text-white/80 hover:text-white underline">
+                                    contact@xsai.co.uk
+                                </a>
                             </p>
                         </div>
                     </div>
 
-                    {/* RIGHT: Formal Proposal — SECONDARY */}
-                    <div className="relative rounded-2xl overflow-hidden border border-white/10">
-                        <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                        <div className="bg-white/[0.04] backdrop-blur-sm p-7 md:p-8 h-full flex flex-col">
-
-                            {/* Badge */}
-                            <div className="inline-flex items-center gap-2 bg-white/8 border border-white/15 rounded-full px-3 py-1 mb-5 self-start"
-                                style={{ background: 'rgba(255,255,255,0.06)' }}>
-                                <span className="text-[0.6rem] font-bold tracking-[0.15em] uppercase text-[#9ca3af]">
-                                    Larger Organisations
-                                </span>
-                            </div>
-
-                            <h3 className="text-2xl font-bold text-white mb-2">Request a Formal Proposal</h3>
-                            <p className="text-[#9ca3af] text-sm leading-relaxed mb-6 flex-1">
-                                For multi-entity businesses or SMEs with 50+ employees, we provide
-                                a detailed cost-benefit analysis, implementation roadmap, and
-                                projected Loyalty Credit allocation based on your payroll profile.
+                    {/* RIGHT CARD — changes per page via props */}
+                    <div className="rounded-2xl border border-white/8 p-7 flex flex-col gap-5"
+                        style={{ background: 'rgba(255,255,255,0.03)' }}>
+                        <div className="h-0.5 w-full bg-linear-to-r from-transparent via-white/20 to-transparent -mt-7 -mx-7 mb-7" />
+                        <div className="-mt-6">
+                            <span className="inline-flex items-center border border-white/20 rounded-full px-3 py-1 text-[0.6rem] font-bold tracking-[0.15em] uppercase text-text-muted mb-4">
+                                Larger Organisations
+                            </span>
+                            <h3 className="text-[1.4rem] font-bold text-white mb-2">
+                                {rightCardTitle}
+                            </h3>
+                            <p className="text-sm text-text-muted leading-relaxed">
+                                {rightCardDescription}
                             </p>
-
-                            {/* What's included in proposal */}
-                            <div className="space-y-2 mb-7">
-                                {[
-                                    'Tailored pricing breakdown for your headcount',
-                                    'Projected Loyalty Credit allocation estimate',
-                                    'Implementation timeline and transition plan',
-                                ].map((line, i) => (
-                                    <div key={i} className="flex items-center gap-2.5">
-                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                            <circle cx="7" cy="7" r="6" stroke="#10b981" strokeWidth="1.2" />
-                                            <path d="M4.5 7l2 2 3-3" stroke="#10b981" strokeWidth="1.5"
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            {rightCardChecklist.map((item, i) => (
+                                <div key={i} className="flex items-center gap-2.5">
+                                    <div className="w-4 h-4 rounded-full border border-green-primary/50 flex items-center justify-center shrink-0">
+                                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                                            <path d="M1.5 4l2 2 3-3" stroke="#10b981" strokeWidth="1.3"
                                                 strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
-                                        <span className="text-[#9ca3af] text-xs font-medium">{line}</span>
                                     </div>
-                                ))}
-                            </div>
-
-                            {/* Secondary CTA */}
+                                    <p className="text-sm text-text-muted font-medium">{item}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="mt-auto flex flex-col gap-3">
                             <a
-                                href="mailto:proposals@xsai.co.uk"
-                                className="group w-full flex items-center justify-center gap-2 bg-[#10b981] text-white font-bold text-sm px-6 py-4 rounded-xl hover:bg-[#059669] transition-all duration-200 hover:shadow-[0_8px_24px_rgba(16,185,129,0.35)] hover:-translate-y-0.5"
+                                href={`mailto:${rightCardEmail}?subject=${rightCardEmailSubject}`}
+                                className="group w-full flex items-center justify-center gap-2 bg-green-primary text-white font-bold py-3.5 rounded-xl text-sm transition-all duration-200 hover:bg-green-dark hover:shadow-[0_8px_28px_rgba(16,185,129,0.35)]"
                             >
-                                Request a Proposal
+                                {rightCardButton}
                                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
                                     viewBox="0 0 16 16" fill="none">
                                     <path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor"
                                         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </a>
-                            <p className="text-center text-[#6b7280] text-xs mt-3">
-                                proposals@xsai.co.uk · Typically responded within 2 business days
+                            <p className="text-[0.7rem] text-[#6b7280] text-center">
+                                <a href={`mailto:${rightCardEmail}`}
+                                    className="hover:text-text-muted underline">
+                                    {rightCardEmail}
+                                </a>
+                                {' · '}Typically responded within 2 business days
                             </p>
                         </div>
                     </div>
+
                 </div>
 
-                {/* ── TRUST + COMPLIANCE STRIP ── */}
-                <div className="fade-up border-t border-white/08 pt-7 flex flex-col md:flex-row items-center justify-between gap-4"
-                    style={{ animationDelay: '160ms', borderColor: 'rgba(255,255,255,0.08)' }}>
-
-                    {/* Three trust signals */}
+                {/* Footer trust signals */}
+                <div className="fade-up mt-10 pt-8 border-t border-white/6 flex flex-col md:flex-row items-center justify-between gap-4" style={{ animationDelay: '160ms' }}>
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6">
-                        {[
-                            'HMRC Compliant',
-                            'Safeguarded Client Accounts',
-                            'Dedicated Account Manager',
-                        ].map((signal, i) => (
+                        {['HMRC Compliant', 'Safeguarded Client Accounts', 'Dedicated Account Manager'].map((item, i) => (
                             <div key={i} className="flex items-center gap-1.5">
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                                     <path d="M6 1L2 3.5v3c0 2.5 1.8 4.5 4 5.5 2.2-1 4-3 4-5.5v-3L6 1Z"
@@ -191,18 +217,11 @@ export const CTA: React.FC = () => {
                                         strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                                 <span className="text-[0.65rem] font-semibold text-[#6b7280] uppercase tracking-wide">
-                                    {signal}
+                                    {item}
                                 </span>
                             </div>
                         ))}
                     </div>
-
-                    {/* Registered address — TODO: replace with actual address */}
-                    <p className="text-[0.6rem] text-[#4b5563] text-center md:text-right leading-relaxed">
-                        {/* TODO: Replace with actual registered address and company number before launch */}
-                        XSAI Resources Ltd · Registered in England & Wales<br />
-                        Registered Office: [ACTUAL ADDRESS] · VAT No: [VAT NUMBER]
-                    </p>
                 </div>
 
             </div>

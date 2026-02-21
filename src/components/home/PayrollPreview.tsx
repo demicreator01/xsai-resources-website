@@ -157,7 +157,7 @@ export const PayrollPreview: React.FC = () => {
                             {features.map((f, i) => (
                                 <div
                                     key={i}
-                                    className="flex items-center gap-3 bg-white rounded-xl border border-[#e5e7eb] px-4 py-2.5 hover:border-[#10b981]/40 hover:shadow-sm transition-all duration-200"
+                                    className="flex items-center gap-3 bg-white rounded-xl border border-border px-4 py-2.5 hover:border-green-primary/40 hover:shadow-sm transition-all duration-200"
                                 >
                                     <div className="w-7 h-7 rounded-lg bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center shrink-0">
                                         {f.icon}
@@ -170,13 +170,13 @@ export const PayrollPreview: React.FC = () => {
 
                     {/* RIGHT: Pricing + inclusion panel */}
                     <div className="fade-up" style={{ animationDelay: '200ms' }}>
-                        <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_48px_rgba(0,0,0,0.10)] border border-[#e5e7eb]">
+                        <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_48px_rgba(0,0,0,0.10)] border border-border">
                             {/* Top accent */}
-                            <div className="h-0.5 w-full bg-linear-to-r from-transparent via-[#10b981] to-transparent" />
+                            <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
 
                             {/* Price block */}
-                            <div className="bg-white px-7 py-8 text-center border-b border-[#e5e7eb]">
-                                <p className="text-[0.6rem] font-bold tracking-[0.22em] uppercase text-[#9ca3af] mb-1">
+                            <div className="bg-white px-7 py-8 text-center border-b border-border">
+                                <p className="text-[0.6rem] font-bold tracking-[0.22em] uppercase text-text-muted mb-1">
                                     Flat Rate — No Surprises
                                 </p>
                                 <div className="flex items-start justify-center gap-1 mt-2">
@@ -190,7 +190,7 @@ export const PayrollPreview: React.FC = () => {
                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                                         <path d="M6 1L7.5 4.5H11L8 6.5L9 10L6 8L3 10L4 6.5L1 4.5H4.5L6 1Z" fill="#10b981" />
                                     </svg>
-                                    <span className="text-[0.65rem] font-semibold text-[#059669]">
+                                    <span className="text-[0.65rem] font-semibold text-green-dark">
                                         Industry average: £8–£14/employee
                                     </span>
                                 </div>
@@ -198,7 +198,7 @@ export const PayrollPreview: React.FC = () => {
 
                             {/* What's included compact list */}
                             <div className="bg-[#f8fffe] px-7 py-6">
-                                <p className="text-[0.65rem] font-bold tracking-[0.15em] uppercase text-[#9ca3af] mb-4">
+                                <p className="text-[0.65rem] font-bold tracking-[0.15em] uppercase text-text-muted mb-4">
                                     Everything Included
                                 </p>
                                 <div className="space-y-2.5">
@@ -215,17 +215,17 @@ export const PayrollPreview: React.FC = () => {
                             </div>
 
                             {/* CTA inside card */}
-                            <div className="bg-white px-7 py-5 border-t border-[#e5e7eb]">
+                            <div className="bg-white px-7 py-5 border-t border-border">
                                 <Link
                                     to="#contact"
-                                    className="group w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-green-primary text-white font-semibold text-sm transition-all duration-200 hover:bg-[#059669] hover:shadow-[0_8px_24px_rgba(16,185,129,0.35)] hover:-translate-y-0.5"
+                                    className="group w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-green-primary text-white font-semibold text-sm transition-all duration-200 hover:bg-green-dark hover:shadow-[0_8px_24px_rgba(16,185,129,0.35)] hover:-translate-y-0.5"
                                 >
                                     Book a Discovery Call
                                     <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 14 14" fill="none">
                                         <path d="M2.5 7H11.5M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </Link>
-                                <p className="text-center text-[0.65rem] text-[#9ca3af] mt-2.5">
+                                <p className="text-center text-[0.65rem] text-text-muted mt-2.5">
                                     No setup fees · Cancel with notice · Dedicated AM from day one
                                 </p>
                             </div>
@@ -235,10 +235,10 @@ export const PayrollPreview: React.FC = () => {
 
                 {/* Closing guarantee bar */}
                 <div className="fade-up mt-12 md:mt-14 rounded-2xl bg-[#0f1724] overflow-hidden" style={{ animationDelay: '250ms' }}>
-                    <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[#10b981] to-transparent" />
+                    <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
                     <div className="px-7 py-6 md:px-10 md:py-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                         <div className="flex items-start md:items-center gap-4">
-                            <div className="shrink-0 w-10 h-10 rounded-full bg-green-primary/15 border border-[#10b981]/30 flex items-center justify-center mt-0.5 md:mt-0">
+                            <div className="shrink-0 w-10 h-10 rounded-full bg-green-primary/15 border border-green-primary/30 flex items-center justify-center mt-0.5 md:mt-0">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                                     <path d="M9 2l2 4.5H16l-4 3 1.5 4.5L9 11.5 5.5 14 7 9.5 3 6.5h5L9 2Z" fill="#10b981" />
                                 </svg>

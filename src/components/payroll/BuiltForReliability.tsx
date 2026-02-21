@@ -73,12 +73,12 @@ export const BuiltForReliability: React.FC = () => {
     return (
         <section
             ref={sectionRef}
-            className="relative bg-[#f9fafb] py-20 md:py-28 px-5 md:px-8 overflow-hidden"
+            className="relative bg-bg-page py-20 md:py-28 px-5 md:px-8 overflow-hidden"
         >
             {/* Atmospheric background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div
-                    className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#e5e7eb] to-transparent"
+                    className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent"
                 />
                 <div
                     className="absolute top-0 left-0 w-[500px] h-[400px]"
@@ -101,7 +101,7 @@ export const BuiltForReliability: React.FC = () => {
                         Built for{' '}
                         <span className="text-green-primary">Reliability</span>
                     </h2>
-                    <p className="text-[#4b5563] text-lg max-w-[520px] leading-relaxed">
+                    <p className="text-text-secondary text-lg max-w-[520px] leading-relaxed">
                         Payroll cannot fail. Every control below exists to ensure it doesn't.
                     </p>
                 </div>
@@ -114,7 +114,7 @@ export const BuiltForReliability: React.FC = () => {
                         {controls.map((control, i) => (
                             <div
                                 key={i}
-                                className="group flex items-start gap-4 bg-white border border-[#e5e7eb] rounded-2xl px-5 py-4 hover:border-green-primary/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
+                                className="group flex items-start gap-4 bg-white border border-border rounded-2xl px-5 py-4 hover:border-green-primary/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
                             >
                                 <div className="shrink-0 w-10 h-10 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-green-primary group-hover:border-green-dark transition-colors duration-250">
                                     <div className="group-hover:[&_path]:stroke-white group-hover:[&_circle]:stroke-white group-hover:[&_rect]:stroke-white transition-colors duration-250 text-green-primary">

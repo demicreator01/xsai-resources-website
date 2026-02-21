@@ -168,9 +168,9 @@ export const ServicesGrid: React.FC = () => {
                     </span>
                     <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-4">
                         Integrated Accounting{' '}
-                        <span className="text-[#10b981]">&amp; Admin</span>
+                        <span className="text-green-primary">&amp; Admin</span>
                     </h2>
-                    <p className="text-[#4b5563] text-lg max-w-[520px] leading-relaxed">
+                    <p className="text-text-secondary text-lg max-w-[520px] leading-relaxed">
                         Beyond payroll, we manage the financial and administrative infrastructure that keeps your business compliant and running.
                     </p>
                 </div>
@@ -184,7 +184,7 @@ export const ServicesGrid: React.FC = () => {
                     {/* Panel header */}
                     <div className="px-6 py-4 md:px-8 border-b border-[#e0eeff] bg-[#f8fbff] flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                            <div className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
+                            <div className="w-2 h-2 rounded-full bg-green-primary animate-pulse" />
                             <p className="text-xs font-bold tracking-[0.15em] uppercase text-[#374151]">
                                 One Infrastructure — Two Disciplines
                             </p>
@@ -237,7 +237,7 @@ export const ServicesGrid: React.FC = () => {
                                 </div>
                                 <div>
                                     <p className="text-sm font-bold text-[#0f1724]">Administrative Support</p>
-                                    <p className="text-[0.65rem] text-[#10b981] font-semibold uppercase tracking-wider">4 services</p>
+                                    <p className="text-[0.65rem] text-green-primary font-semibold uppercase tracking-wider">4 services</p>
                                 </div>
                             </div>
 
@@ -245,7 +245,7 @@ export const ServicesGrid: React.FC = () => {
                                 {adminServices.map((s, i) => (
                                     <div
                                         key={i}
-                                        className="flex items-center gap-2.5 bg-[#f8fffe] border border-[#e5e7eb] rounded-xl px-3 py-2.5 hover:border-[#10b981]/40 hover:bg-[#f0fdf4] transition-all duration-200"
+                                        className="flex items-center gap-2.5 bg-[#f8fffe] border border-border rounded-xl px-3 py-2.5 hover:border-green-primary/40 hover:bg-[#f0fdf4] transition-all duration-200"
                                     >
                                         <div className="w-6 h-6 rounded-lg bg-white border border-[#bbf7d0] flex items-center justify-center shrink-0">
                                             {s.icon}
@@ -273,7 +273,7 @@ export const ServicesGrid: React.FC = () => {
                     {unifiedValues.map((v, i) => (
                         <div
                             key={i}
-                            className="bg-white border border-[#e0eeff] rounded-2xl p-5 hover:border-[#10b981]/30 hover:shadow-[0_4px_16px_rgba(16,185,129,0.07)] transition-all duration-250"
+                            className="bg-white border border-[#e0eeff] rounded-2xl p-5 hover:border-green-primary/30 hover:shadow-[0_4px_16px_rgba(16,185,129,0.07)] transition-all duration-250"
                         >
                             <div className="w-9 h-9 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mb-3">
                                 {v.icon}
@@ -288,14 +288,14 @@ export const ServicesGrid: React.FC = () => {
                 <div className="fade-up flex flex-col items-center gap-3 text-center" style={{ animationDelay: '180ms' }}>
                     <div className="flex items-center gap-4 w-full max-w-[500px]">
                         <div className="flex-1 h-px bg-[#e0eeff]" />
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-primary" />
                         <div className="flex-1 h-px bg-[#e0eeff]" />
                     </div>
                     <p className="text-xl md:text-2xl font-semibold text-[#0f1724] max-w-[520px] leading-snug">
                         Everything aligned. Everything under{' '}
-                        <span className="text-[#10b981]">one accountable team.</span>
+                        <span className="text-green-primary">one accountable team.</span>
                     </p>
-                    <p className="text-sm text-[#9ca3af] max-w-[360px]">
+                    <p className="text-sm text-text-muted max-w-[360px]">
                         One infrastructure. One relationship. Complete back-office coverage.
                     </p>
                 </div>

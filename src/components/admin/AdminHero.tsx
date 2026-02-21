@@ -1,15 +1,45 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-const cycleSteps = [
-    { label: 'Funds Received', status: 'complete', time: 'Day 1' },
-    { label: 'Payroll Processing', status: 'complete', time: 'Day 2' },
-    { label: 'HMRC RTI Submission', status: 'complete', time: 'Day 3' },
-    { label: 'BACS Bureau Dispatch', status: 'active', time: 'Day 4' },
-    { label: 'Employee Pay Date', status: 'pending', time: 'Day 5' },
+const adminTasks = [
+    {
+        category: 'Companies House',
+        task: 'Confirmation Statement',
+        status: 'complete',
+        label: 'Filed',
+        date: '14 Feb',
+    },
+    {
+        category: 'HMRC Liaison',
+        task: 'PAYE Reference Update',
+        status: 'active',
+        label: 'In Progress',
+        date: 'Due 28 Feb',
+    },
+    {
+        category: 'Documents',
+        task: 'Director Service Agreement',
+        status: 'active',
+        label: 'Under Review',
+        date: 'Due 5 Mar',
+    },
+    {
+        category: 'Pension',
+        task: 'Auto-Enrolment Re-enrolment',
+        status: 'pending',
+        label: 'Scheduled',
+        date: 'Mar 2025',
+    },
+    {
+        category: 'Back Office',
+        task: 'Year-End Record Pack',
+        status: 'pending',
+        label: 'Upcoming',
+        date: 'Apr 2025',
+    },
 ];
 
-export const PayrollHero: React.FC = () => {
+export const AdminHero: React.FC = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -26,25 +56,21 @@ export const PayrollHero: React.FC = () => {
         >
             {/* ── ATMOSPHERIC BACKGROUND ── */}
             <div className="absolute inset-0 pointer-events-none">
-                {/* Green radial glow — top left */}
                 <div
-                    className="absolute -top-20 -left-20 w-[700px] h-[600px]"
-                    style={{ background: 'radial-gradient(ellipse at 20% 20%, rgba(16,185,129,0.12) 0%, transparent 65%)' }}
+                    className="absolute -top-20 right-0 w-[700px] h-[600px]"
+                    style={{ background: 'radial-gradient(ellipse at 85% 15%, rgba(16,185,129,0.08) 0%, transparent 65%)' }}
                 />
-                {/* Blue radial glow — bottom right */}
                 <div
-                    className="absolute bottom-0 right-0 w-[600px] h-[500px]"
-                    style={{ background: 'radial-gradient(ellipse at 80% 85%, rgba(59,130,246,0.07) 0%, transparent 65%)' }}
+                    className="absolute bottom-0 left-0 w-[600px] h-[500px]"
+                    style={{ background: 'radial-gradient(ellipse at 10% 90%, rgba(59,130,246,0.06) 0%, transparent 65%)' }}
                 />
-                {/* Dot grid — right half */}
                 <div
-                    className="absolute inset-y-0 right-0 w-1/2 opacity-30 hidden lg:block"
+                    className="absolute inset-y-0 right-0 w-1/2 opacity-20 hidden lg:block"
                     style={{
                         backgroundImage: 'radial-gradient(circle, rgba(16,185,129,0.25) 1px, transparent 1px)',
                         backgroundSize: '28px 28px',
                     }}
                 />
-                {/* Fade dot grid at left edge */}
                 <div className="absolute inset-y-0 right-0 w-1/2 bg-linear-to-r from-[#f8fffe] via-transparent to-transparent hidden lg:block" />
             </div>
 
@@ -59,41 +85,45 @@ export const PayrollHero: React.FC = () => {
                                 Home
                             </Link>
                             <span className="text-[#d1d5db]">/</span>
-                            <span className="text-xs text-[#0f1724] font-semibold">Payroll</span>
+                            <span className="text-xs text-[#0f1724] font-semibold">Admin & Support</span>
                         </div>
 
                         {/* Page label */}
                         <div className="hero-fade">
                             <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-4 block">
-                                Payroll Services
+                                Admin & Business Support
                             </span>
                         </div>
 
                         {/* Headline */}
-                        <h1 className="hero-fade text-[2.4rem] md:text-[3.2rem] lg:text-[3.8rem] font-bold leading-[1.06] tracking-tight mb-7">
-                            <span className="text-[#0f1724]">Payroll —</span>
+                        <h1 className="hero-fade text-[2.4rem] md:text-[3.2rem] lg:text-[3.6rem] font-bold leading-[1.06] tracking-tight mb-7">
+                            <span className="text-[#0f1724]">Operational Support —</span>
                             <br />
-                            <span className="text-green-primary">Structured.</span>{' '}
-                            <span className="text-green-primary">Secure.</span>{' '}
-                            <span className="text-green-primary">Efficient.</span>
+                            <span className="text-green-primary">Without the Overhead</span>
                         </h1>
 
-                        {/* Philosophy statement */}
-                        <div className="hero-fade border-l-[3px] border-green-primary pl-5 mb-6 space-y-2.5">
+                        {/* Opening statement */}
+                        <div className="hero-fade border-l-[3px] border-green-primary pl-5 mb-6">
                             <p className="text-[1.05rem] text-[#374151] leading-relaxed">
-                                Payroll is not just a task. It's a responsibility.
-                            </p>
-                            <p className="text-[1.05rem] text-[#374151] leading-relaxed">
-                                Employees rely on accuracy. HMRC requires compliance. Employers need certainty.
+                                Running a business involves more than payroll and taxes.
                             </p>
                         </div>
 
-                        {/* The missing line — key positioning statement */}
-                        <p className="hero-fade text-[#0f1724] font-semibold text-[1.05rem] leading-relaxed mb-9 max-w-[480px]">
-                            We built our payroll infrastructure around{' '}
-                            <span className="text-green-primary">reliability first</span>{' '}
-                            — and operational efficiency second.
-                        </p>
+                        {/* Body copy */}
+                        <div className="hero-fade space-y-3 text-[1.05rem] text-[#374151] leading-relaxed mb-7 max-w-[480px]">
+                            <p>
+                                Behind every company is an administration that must be handled
+                                properly — accurately, on time, and without distraction.
+                            </p>
+                        </div>
+
+                        {/* Payoff line */}
+                        <div className="hero-fade mb-9">
+                            <p className="text-[1.1rem] font-bold text-[#0f1724] leading-snug">
+                                We provide structured administrative support so you can focus on{' '}
+                                <span className="text-green-primary">growth, not paperwork.</span>
+                            </p>
+                        </div>
 
                         {/* CTAs */}
                         <div className="hero-fade flex flex-col sm:flex-row gap-3 mb-8">
@@ -107,24 +137,25 @@ export const PayrollHero: React.FC = () => {
                                 </svg>
                             </Link>
                             <Link
-                                to="#how-it-works"
+                                to="#services"
                                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border border-border text-[#374151] font-semibold text-base transition-all duration-200 hover:border-green-primary/50 hover:text-green-primary min-h-[52px] bg-white/60"
                             >
-                                See how it works
+                                See what we handle
                             </Link>
                         </div>
 
                         {/* Trust signals */}
                         <div className="hero-fade flex flex-wrap gap-3">
                             {[
-                                'RTI Compliant',
-                                'BACS Accredited Bureau',
-                                'Auto-Enrolment Ready',
+                                'Companies House Filing',
+                                'HMRC Liaison',
+                                'Audit Ready',
                             ].map((tag, i) => (
                                 <div key={i} className="inline-flex items-center gap-1.5 bg-white border border-border rounded-full px-3.5 py-1.5 shadow-sm">
                                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                                         <circle cx="5" cy="5" r="4.5" fill="#10b981" fillOpacity="0.15" />
-                                        <path d="M3 5l1.5 1.5 2.5-2.5" stroke="#10b981" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M3 5l1.5 1.5 2.5-2.5" stroke="#10b981" strokeWidth="1.3"
+                                            strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                     <span className="text-[0.65rem] font-semibold text-[#374151]">{tag}</span>
                                 </div>
@@ -132,7 +163,7 @@ export const PayrollHero: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* ── RIGHT: PAYROLL CYCLE STATUS PANEL ── */}
+                    {/* ── RIGHT: BACK-OFFICE TASK PANEL ── */}
                     <div className="hero-fade hidden lg:block">
                         <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_64px_rgba(0,0,0,0.12)] border border-border">
                             <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
@@ -146,7 +177,7 @@ export const PayrollHero: React.FC = () => {
                                         <div className="w-2.5 h-2.5 rounded-full bg-green-primary/70" />
                                     </div>
                                     <span className="text-[0.6rem] font-bold tracking-[0.18em] uppercase text-[#6b7280]">
-                                        Payroll Cycle — Live View
+                                        Back-Office Overview
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-1.5">
@@ -155,72 +186,68 @@ export const PayrollHero: React.FC = () => {
                                 </div>
                             </div>
 
-                            {/* Cycle steps */}
+                            {/* Task list */}
                             <div className="bg-white px-6 py-5">
                                 <p className="text-[0.6rem] font-bold tracking-[0.15em] uppercase text-text-muted mb-4">
-                                    Current Payroll Run
+                                    Active Workstreams
                                 </p>
 
-                                <div className="space-y-0">
-                                    {cycleSteps.map((step, i) => (
-                                        <div key={i} className="flex items-start gap-4">
-                                            {/* Step indicator + connector */}
-                                            <div className="flex flex-col items-center shrink-0 pt-0.5">
-                                                <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all
-                          ${step.status === 'complete'
-                                                        ? 'bg-green-primary border-green-primary'
-                                                        : step.status === 'active'
-                                                            ? 'bg-white border-green-primary shadow-[0_0_0_3px_rgba(16,185,129,0.2)]'
-                                                            : 'bg-white border-border'}`}
-                                                >
-                                                    {step.status === 'complete' ? (
-                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                                            <path d="M2.5 6l2.5 2.5 4.5-4.5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                                <div className="flex flex-col gap-3">
+                                    {adminTasks.map((task, i) => (
+                                        <div
+                                            key={i}
+                                            className={`flex items-center justify-between p-3 rounded-xl border ${task.status === 'complete'
+                                                ? 'bg-[#f0fdf4] border-[#bbf7d0]'
+                                                : task.status === 'active'
+                                                    ? 'bg-white border-border shadow-sm'
+                                                    : 'bg-bg-page border-border'
+                                                }`}
+                                        >
+                                            <div className="flex items-center gap-3">
+                                                <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${task.status === 'complete'
+                                                    ? 'bg-green-primary'
+                                                    : task.status === 'active'
+                                                        ? 'bg-[#0f1724]'
+                                                        : 'bg-border'
+                                                    }`}>
+                                                    {task.status === 'complete' ? (
+                                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                                            <path d="M2 5l2.5 2.5 4.5-4.5" stroke="white" strokeWidth="1.5"
+                                                                strokeLinecap="round" strokeLinejoin="round" />
                                                         </svg>
-                                                    ) : step.status === 'active' ? (
-                                                        <div className="w-2.5 h-2.5 rounded-full bg-green-primary animate-pulse" />
+                                                    ) : task.status === 'active' ? (
+                                                        <div className="w-2 h-2 rounded-full bg-green-primary" />
                                                     ) : (
-                                                        <div className="w-2 h-2 rounded-full bg-[#d1d5db]" />
+                                                        <div className="w-2 h-2 rounded-full bg-text-muted" />
                                                     )}
                                                 </div>
-                                                {i < cycleSteps.length - 1 && (
-                                                    <div className={`w-0.5 h-7 mt-1 mb-1 ${step.status === 'complete' ? 'bg-green-primary' : 'bg-border'
-                                                        }`} />
-                                                )}
-                                            </div>
-
-                                            {/* Step content */}
-                                            <div className="flex items-center justify-between flex-1 min-h-[40px]">
                                                 <div>
-                                                    <p className={`text-sm font-semibold leading-snug ${step.status === 'complete' ? 'text-[#0f1724]'
-                                                        : step.status === 'active' ? 'text-green-primary'
-                                                            : 'text-text-muted'
-                                                        }`}>
-                                                        {step.label}
-                                                    </p>
+                                                    <p className="text-xs font-bold text-[#0f1724]">{task.task}</p>
+                                                    <p className="text-[0.6rem] text-text-muted">{task.category}</p>
                                                 </div>
-                                                <div className="shrink-0 ml-3">
-                                                    <span className={`text-[0.6rem] font-semibold rounded-full px-2.5 py-1 ${step.status === 'complete'
-                                                        ? 'bg-[#f0fdf4] text-green-dark'
-                                                        : step.status === 'active'
-                                                            ? 'bg-[#f0fdf4] border border-green-primary/30 text-green-primary'
-                                                            : 'bg-bg-page text-text-muted'
-                                                        }`}>
-                                                        {step.status === 'complete' ? '✓ Done' : step.status === 'active' ? '● Live' : step.time}
-                                                    </span>
-                                                </div>
+                                            </div>
+                                            <div className="text-right">
+                                                <span className={`text-[0.6rem] font-bold rounded-full px-2.5 py-1 ${task.status === 'complete'
+                                                    ? 'bg-green-primary text-white'
+                                                    : task.status === 'active'
+                                                        ? 'bg-[#0f1724] text-white'
+                                                        : 'bg-border text-text-muted'
+                                                    }`}>
+                                                    {task.label}
+                                                </span>
+                                                <p className="text-[0.55rem] text-text-muted mt-1">{task.date}</p>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
-                            {/* Panel footer — key metrics */}
+                            {/* Panel footer */}
                             <div className="bg-[#f8fffe] border-t border-border px-6 py-4 grid grid-cols-3 gap-4">
                                 {[
-                                    { label: 'Rate', value: '£3', sub: 'per employee' },
-                                    { label: 'RTI', value: '100%', sub: 'compliant' },
-                                    { label: 'Pay Date', value: 'On time', sub: 'guaranteed' },
+                                    { label: 'Complete', value: '1', sub: 'this month' },
+                                    { label: 'Active', value: '2', sub: 'in progress' },
+                                    { label: 'Scheduled', value: '2', sub: 'upcoming' },
                                 ].map((metric, i) => (
                                     <div key={i} className="text-center">
                                         <p className="text-sm font-bold text-green-primary">{metric.value}</p>
@@ -230,10 +257,10 @@ export const PayrollHero: React.FC = () => {
                                 ))}
                             </div>
 
-                            {/* Compliance footer tag */}
+                            {/* Compliance footer */}
                             <div className="bg-[#0f1724] px-6 py-3 text-center">
                                 <p className="text-[0.55rem] text-text-secondary tracking-wide">
-                                    Segregated accounts · Never deployed · Daily reconciliation · BACS bureau accredited
+                                    Companies House · HMRC liaison · Document management · Pension coordination
                                 </p>
                             </div>
                         </div>

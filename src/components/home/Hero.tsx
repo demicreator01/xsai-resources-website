@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
                         backgroundSize: '24px 24px',
                     }} />
                 {/* Horizontal rule at bottom of hero */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#10b981]/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-green-primary/20 to-transparent" />
             </div>
 
             {/* ── Content grid ── */}
@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
                         {/* Primary */}
                         <Link
                             to="#contact"
-                            className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-green-primary text-white font-semibold text-base transition-all duration-200 hover:bg-[#059669] hover:shadow-[0_8px_28px_rgba(16,185,129,0.38)] hover:-translate-y-0.5 min-h-[52px]"
+                            className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-green-primary text-white font-semibold text-base transition-all duration-200 hover:bg-green-dark hover:shadow-[0_8px_28px_rgba(16,185,129,0.38)] hover:-translate-y-0.5 min-h-[52px]"
                         >
                             Book a Discovery Call
                             <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 16 16" fill="none">
@@ -103,10 +103,10 @@ export const Hero: React.FC = () => {
                 <div className="hero-cta relative w-full lg:pl-4 mb-6 lg:mb-0" style={{ animationDelay: '500ms' }}>
                     <div className="absolute -inset-4 bg-green-primary/06 blur-3xl rounded-3xl pointer-events-none" />
 
-                    <div className="relative rounded-2xl border border-[#e5e7eb] bg-white/85 backdrop-blur-md shadow-[0_12px_60px_rgba(0,0,0,0.10),0_1px_0_rgba(255,255,255,0.8)_inset] overflow-hidden">
+                    <div className="relative rounded-2xl border border-border bg-white/85 backdrop-blur-md shadow-[0_12px_60px_rgba(0,0,0,0.10),0_1px_0_rgba(255,255,255,0.8)_inset] overflow-hidden">
 
                         {/* Top accent bar */}
-                        <div className="h-0.5 w-full bg-linear-to-r from-transparent via-[#10b981] to-transparent" />
+                        <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
 
                         <div className="p-5 md:p-6">
                             {/* Panel header */}
@@ -117,7 +117,7 @@ export const Hero: React.FC = () => {
                                 </div>
                                 <div className="flex items-center gap-1.5 bg-[#f0fdf4] px-2.5 py-1 rounded-full border border-[#bbf7d0]">
                                     <div className="w-1.5 h-1.5 rounded-full bg-green-primary animate-pulse" />
-                                    <span className="text-[0.65rem] text-[#059669] font-semibold">Active</span>
+                                    <span className="text-[0.65rem] text-green-dark font-semibold">Active</span>
                                 </div>
                             </div>
 
@@ -128,17 +128,17 @@ export const Hero: React.FC = () => {
                                     { label: "RTI", value: "100%", sub: "compliant" },
                                     { label: "BACS", value: "Bureau", sub: "processing" },
                                 ].map((m, i) => (
-                                    <div key={i} className="rounded-xl bg-[#f8fffe] border border-[#e5e7eb] p-3 text-center">
+                                    <div key={i} className="rounded-xl bg-[#f8fffe] border border-border p-3 text-center">
                                         <p className="text-xl font-bold text-[#0f1724] leading-none">{m.value}</p>
                                         <p className="text-[0.6rem] text-green-primary font-bold tracking-wide uppercase mt-1">{m.label}</p>
-                                        <p className="text-[0.6rem] text-[#9ca3af] mt-0.5">{m.sub}</p>
+                                        <p className="text-[0.6rem] text-text-muted mt-0.5">{m.sub}</p>
                                     </div>
                                 ))}
                             </div>
 
                             {/* Payroll flow SVG */}
                             <div className="mb-5">
-                                <p className="text-[0.65rem] text-[#9ca3af] font-semibold uppercase tracking-wider mb-2.5">Payroll Cycle</p>
+                                <p className="text-[0.65rem] text-text-muted font-semibold uppercase tracking-wider mb-2.5">Payroll Cycle</p>
                                 <div className="flex items-center gap-1 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-hide">
                                     {[
                                         { label: 'Data', sub: 'Submit' },
@@ -149,11 +149,11 @@ export const Hero: React.FC = () => {
                                     ].map((node, i, arr) => (
                                         <React.Fragment key={i}>
                                             <div className={`flex-shrink-0 flex flex-col items-center justify-center rounded-xl border px-2 py-1.5 min-w-[44px] md:px-2.5 md:py-2 md:min-w-[52px] ${node.active
-                                                ? 'bg-green-primary border-[#059669] shadow-[0_4px_12px_rgba(16,185,129,0.35)]'
+                                                ? 'bg-green-primary border-green-dark shadow-[0_4px_12px_rgba(16,185,129,0.35)]'
                                                 : 'bg-[#f0fdf4] border-[#bbf7d0]'
                                                 }`}>
-                                                <p className={`text-[0.6rem] font-bold leading-none ${node.active ? 'text-white' : 'text-[#059669]'}`}>{node.label}</p>
-                                                <p className={`text-[0.55rem] mt-0.5 ${node.active ? 'text-white/80' : 'text-[#9ca3af]'}`}>{node.sub}</p>
+                                                <p className={`text-[0.6rem] font-bold leading-none ${node.active ? 'text-white' : 'text-green-dark'}`}>{node.label}</p>
+                                                <p className={`text-[0.55rem] mt-0.5 ${node.active ? 'text-white/80' : 'text-text-muted'}`}>{node.sub}</p>
                                             </div>
                                             {i < arr.length - 1 && (
                                                 <svg className="flex-shrink-0 w-3 h-3" viewBox="0 0 12 12" fill="none">
@@ -166,17 +166,17 @@ export const Hero: React.FC = () => {
                             </div>
 
                             {/* Loyalty credit meter */}
-                            <div className="rounded-xl bg-[#f8fffe] border border-[#e5e7eb] p-4">
+                            <div className="rounded-xl bg-[#f8fffe] border border-border p-4">
                                 <div className="flex items-center justify-between mb-2.5">
                                     <p className="text-xs font-semibold text-[#374151]">Loyalty Credit Programme</p>
                                     <span className="text-[0.65rem] font-bold text-green-primary bg-[#f0fdf4] px-2 py-0.5 rounded-full border border-[#bbf7d0]">Earning</span>
                                 </div>
-                                <div className="w-full h-1.5 bg-[#e5e7eb] rounded-full overflow-hidden">
+                                <div className="w-full h-1.5 bg-border rounded-full overflow-hidden">
                                     <div className="h-full w-[68%] bg-linear-to-r from-[#10b981] to-[#34d399] rounded-full" />
                                 </div>
                                 <div className="flex justify-between mt-1.5 mb-3">
-                                    <p className="text-[0.6rem] text-[#9ca3af]">Standard</p>
-                                    <p className="text-[0.6rem] text-[#9ca3af]">Strategic</p>
+                                    <p className="text-[0.6rem] text-text-muted">Standard</p>
+                                    <p className="text-[0.6rem] text-text-muted">Strategic</p>
                                 </div>
                                 <div className="grid grid-cols-3 gap-1.5">
                                     {['Standard', 'Early Funding', 'Strategic'].map((tier, i) => (
@@ -188,7 +188,7 @@ export const Hero: React.FC = () => {
                             </div>
 
                             {/* Bottom compliance tag */}
-                            <p className="text-center text-[0.6rem] text-[#9ca3af] mt-4 tracking-wide">
+                            <p className="text-center text-[0.6rem] text-text-muted mt-4 tracking-wide">
                                 Reconciled daily · Safeguarded UK accounts · HMRC RTI compliant
                             </p>
                         </div>

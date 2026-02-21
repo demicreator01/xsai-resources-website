@@ -4,7 +4,7 @@ const tiers = [
     {
         name: 'Standard Partner',
         tag: 'Entry Tier',
-        tagStyle: 'bg-[#f0fdf4] text-[#059669] border-[#bbf7d0]',
+        tagStyle: 'bg-[#f0fdf4] text-green-dark border-[#bbf7d0]',
         criteria: [
             { label: 'Funding timing', value: '3 working days prior' },
             { label: 'Headcount', value: 'Any volume' },
@@ -12,12 +12,12 @@ const tiers = [
         ],
         allocation: 'Base Allocation',
         allocationDesc: 'Eligible for base quarterly credit allocation based on payroll volume and holding window duration.',
-        cardStyle: 'bg-white border-[#e5e7eb]',
+        cardStyle: 'bg-white border-border',
         labelStyle: 'text-[#0f1724]',
         subStyle: 'text-[#6b7280]',
         valueStyle: 'text-[#0f1724]',
         rowBorder: 'border-[#f3f4f6]',
-        allocationBg: 'bg-[#f0fdf4] border-[#bbf7d0] text-[#059669]',
+        allocationBg: 'bg-[#f0fdf4] border-[#bbf7d0] text-green-dark',
         allocationDescStyle: 'text-[#6b7280]',
     },
     {
@@ -31,7 +31,7 @@ const tiers = [
         ],
         allocation: 'Enhanced Allocation',
         allocationDesc: 'Enhanced credit allocation reflecting the extended operational window created by early funding.',
-        cardStyle: 'bg-[#10b981] border-[#059669]',
+        cardStyle: 'bg-green-primary border-green-dark',
         labelStyle: 'text-white/70',
         subStyle: 'text-white/80',
         valueStyle: 'text-white font-bold',
@@ -42,7 +42,7 @@ const tiers = [
     {
         name: 'Strategic Partner',
         tag: 'Priority Tier',
-        tagStyle: 'bg-[#10b981]/15 text-[#10b981] border-[#10b981]/30',
+        tagStyle: 'bg-green-primary/15 text-green-primary border-green-primary/30',
         criteria: [
             { label: 'Funding timing', value: '5 working days prior' },
             { label: 'Headcount', value: '500+ employees' },
@@ -51,12 +51,12 @@ const tiers = [
         allocation: 'Priority Allocation',
         allocationDesc: 'Priority quarterly allocation with dedicated account review. Highest credit return tier in the programme.',
         cardStyle: 'bg-[#0f1724] border-[#1e293b]',
-        labelStyle: 'text-[#9ca3af]',
-        subStyle: 'text-[#9ca3af]',
+        labelStyle: 'text-text-muted',
+        subStyle: 'text-text-muted',
         valueStyle: 'text-white font-bold',
-        rowBorder: 'border-white/[0.08]',
-        allocationBg: 'bg-[#10b981]/10 border-[#10b981]/30 text-[#10b981]',
-        allocationDescStyle: 'text-[#9ca3af]',
+        rowBorder: 'border-white/8',
+        allocationBg: 'bg-green-primary/10 border-green-primary/30 text-green-primary',
+        allocationDescStyle: 'text-text-muted',
     },
 ];
 
@@ -81,7 +81,7 @@ export const LoyaltyTiers: React.FC = () => {
             {/* Atmospheric background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div
-                    className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e5e7eb] to-transparent"
+                    className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent"
                 />
                 <div
                     className="absolute top-0 right-0 w-[500px] h-[400px]"
@@ -97,13 +97,13 @@ export const LoyaltyTiers: React.FC = () => {
 
                 {/* ── HEADING ── */}
                 <div className="fade-up mb-10 md:mb-12">
-                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-3 block">
+                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-3 block">
                         Programme Tiers
                     </span>
                     <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-4">
-                        Loyalty <span className="text-[#10b981]">Tiers</span>
+                        Loyalty <span className="text-green-primary">Tiers</span>
                     </h2>
-                    <p className="text-[#4b5563] text-lg max-w-[520px] leading-relaxed">
+                    <p className="text-text-secondary text-lg max-w-[520px] leading-relaxed">
                         Three tiers based on funding timing, headcount, and partnership commitment.
                         Your tier determines your quarterly allocation level.
                     </p>
@@ -160,15 +160,15 @@ export const LoyaltyTiers: React.FC = () => {
                 {/* ── CLOSING COMPLIANCE LINE ── */}
                 <div className="fade-up flex flex-col items-center gap-3 text-center" style={{ animationDelay: '140ms' }}>
                     <div className="flex items-center gap-4 w-full max-w-[460px]">
-                        <div className="flex-1 h-px bg-[#e5e7eb]" />
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
-                        <div className="flex-1 h-px bg-[#e5e7eb]" />
+                        <div className="flex-1 h-px bg-border" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-primary" />
+                        <div className="flex-1 h-px bg-border" />
                     </div>
                     <p className="text-sm font-semibold text-[#374151]">
                         Allocations are reviewed quarterly and applied{' '}
-                        <span className="text-[#10b981]">transparently.</span>
+                        <span className="text-green-primary">transparently.</span>
                     </p>
-                    <p className="text-xs text-[#9ca3af] max-w-[420px] leading-relaxed">
+                    <p className="text-xs text-text-muted max-w-[420px] leading-relaxed">
                         Your dedicated account manager will confirm your tier classification and
                         provide a quarterly credit summary with each allocation cycle.
                     </p>

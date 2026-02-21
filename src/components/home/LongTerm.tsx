@@ -57,7 +57,7 @@ export const LongTerm: React.FC = () => {
             {/* Atmospheric background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div
-                    className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e5e7eb] to-transparent"
+                    className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent"
                 />
                 <div
                     className="absolute top-0 right-0 w-[500px] h-[400px]"
@@ -84,12 +84,12 @@ export const LongTerm: React.FC = () => {
 
                     {/* Left: text */}
                     <div className="fade-up">
-                        <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-3 block">
+                        <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-3 block">
                             Our Philosophy
                         </span>
                         <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-6">
                             Built for Businesses That{' '}
-                            <span className="text-[#10b981]">Think Long Term</span>
+                            <span className="text-green-primary">Think Long Term</span>
                         </h2>
                         <div className="space-y-4 text-[1.05rem] text-[#374151] leading-relaxed max-w-[500px]">
                             <p>
@@ -105,15 +105,15 @@ export const LongTerm: React.FC = () => {
 
                     {/* Right: three pillars */}
                     <div className="fade-up flex flex-col gap-4" style={{ animationDelay: '100ms' }}>
-                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#9ca3af]">
+                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-text-muted">
                             Our model rewards
                         </p>
                         {pillars.map((p, i) => (
                             <div
                                 key={i}
-                                className="group flex items-start gap-4 bg-white border border-[#e5e7eb] rounded-2xl p-5 hover:border-[#10b981]/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
+                                className="group flex items-start gap-4 bg-white border border-border rounded-2xl p-5 hover:border-green-primary/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
                             >
-                                <div className="shrink-0 w-9 h-9 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-[#10b981] group-hover:border-[#059669] transition-colors duration-250">
+                                <div className="shrink-0 w-9 h-9 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-green-primary group-hover:border-green-dark transition-colors duration-250">
                                     <div className="group-hover:[&_path]:stroke-white group-hover:[&_rect]:stroke-white group-hover:[&_circle]:stroke-white transition-colors duration-250">
                                         {p.icon}
                                     </div>
@@ -132,11 +132,11 @@ export const LongTerm: React.FC = () => {
 
                     {/* Decorative top rule */}
                     <div className="flex items-center gap-4 mb-10 md:mb-12">
-                        <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#e5e7eb]" />
+                        <div className="flex-1 h-px bg-linear-to-r from-transparent to-[#e5e7eb]" />
                         <div className="flex items-center gap-2">
-                            <div className="w-1 h-1 rounded-full bg-[#10b981]" />
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
-                            <div className="w-1 h-1 rounded-full bg-[#10b981]" />
+                            <div className="w-1 h-1 rounded-full bg-green-primary" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-green-primary" />
+                            <div className="w-1 h-1 rounded-full bg-green-primary" />
                         </div>
                         <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#e5e7eb]" />
                     </div>
@@ -146,10 +146,10 @@ export const LongTerm: React.FC = () => {
                         <p className="text-[2rem] md:text-[2.8rem] lg:text-[3.2rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-2">
                             It's not about hype.
                         </p>
-                        <p className="text-[2rem] md:text-[2.8rem] lg:text-[3.2rem] font-bold text-[#10b981] leading-[1.1] tracking-tight">
+                        <p className="text-[2rem] md:text-[2.8rem] lg:text-[3.2rem] font-bold text-green-primary leading-[1.1] tracking-tight">
                             It's about structure.
                         </p>
-                        <p className="text-[#9ca3af] text-base mt-6 max-w-[420px] mx-auto leading-relaxed">
+                        <p className="text-text-muted text-base mt-6 max-w-[420px] mx-auto leading-relaxed">
                             Structure that rewards the right behaviours, protects the right interests,
                             and builds relationships that last.
                         </p>

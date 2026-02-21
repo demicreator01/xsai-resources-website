@@ -9,6 +9,7 @@ import { ServicesGrid } from '../components/home/ServicesGrid';
 import { WhyUs } from '../components/home/WhyUs';
 import { Security } from '../components/home/Security';
 import { LongTerm } from '../components/home/LongTerm';
+import { CTA } from '../components/layout/CTA';
 
 export const Home: React.FC = () => {
     return (
@@ -26,6 +27,7 @@ export const Home: React.FC = () => {
             <WhyUs />
             <Security />
             <LongTerm />
+            <CTA />
         </Layout >
     );
 };

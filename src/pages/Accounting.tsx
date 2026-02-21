@@ -5,6 +5,7 @@ import { WhyClientsCombine } from '../components/accounting/WhyClientsCombine';
 import { TransparentEngagement } from '../components/accounting/TransparentEngagement';
 import { WhoThisIsFor } from '../components/shared/WhoThisIsFor';
 import { BuiltForLongTermStability } from '../components/accounting/BuiltForLongTermStability';
+import { CTA } from '../components/layout/CTA';
 
 
 
@@ -43,6 +44,18 @@ export const Accounting: React.FC = () => {
                 }}
             />
             <BuiltForLongTermStability />
+            <CTA
+                subline="If you want accounting that integrates properly with your payroll and operational systems — and a team that explains how it all works — let's talk."
+                rightCardTitle="Request a Service Breakdown"
+                rightCardDescription="For businesses wanting a detailed breakdown of our accounting services, integration approach, and how we align with your existing payroll setup."
+                rightCardChecklist={[
+                    'Full accounting services breakdown',
+                    'Payroll integration assessment',
+                    'Transparent pricing for your structure',
+                ]}
+                rightCardButton="Request a Service Breakdown"
+                rightCardEmailSubject="Service%20Breakdown%20Request%20-%20Accounting"
+            />
         </Layout>
     );
 };

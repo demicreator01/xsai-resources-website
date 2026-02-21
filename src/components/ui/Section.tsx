@@ -17,10 +17,10 @@ export const Section: React.FC<SectionProps> = ({
 }) => {
     const bgColors = {
         white: 'bg-white',
-        light: 'bg-[#f9fafb]',
+        light: 'bg-bg-page',
         dark: 'bg-[#111827]',
         'green-light': 'bg-[#f0fdf4]',
-        'green': 'bg-gradient-to-r from-[#10b981] to-[#059669]',
+        'green': 'bg-linear-to-r from-[#10b981] to-[#059669]',
         'blue-light': 'bg-[#eff6ff]',
     };
 

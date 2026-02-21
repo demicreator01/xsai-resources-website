@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar } from './Navbar';
 // import { Footer } from './Footer';
-import { CTA } from './CTA';
+import { Footer } from './Footer';
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -29,11 +29,10 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
         <div className="min-h-screen flex flex-col bg-bg-page font-inter">
             <Navbar />
-            <main className="grow pt-20">
+            <main className="grow">
                 {children}
-                <CTA />
             </main>
-            {/* <Footer /> */}
+            <Footer />
         </div>
     );
 };

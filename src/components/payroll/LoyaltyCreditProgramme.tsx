@@ -74,19 +74,19 @@ export const LoyaltyCreditProgramme: React.FC = () => {
                     className="absolute bottom-0 left-0 w-[400px] h-[400px]"
                     style={{ background: 'radial-gradient(ellipse at 10% 85%, rgba(16,185,129,0.06) 0%, transparent 65%)' }}
                 />
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e5e7eb] to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
             </div>
 
             <div className="relative z-10 max-w-[1120px] mx-auto">
 
                 {/* ── HEADING ── */}
                 <div className="fade-up mb-10 md:mb-12 max-w-[680px]">
-                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-3 block">
+                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-3 block">
                         Loyalty Credits
                     </span>
                     <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-5">
                         The Loyalty Credit{' '}
-                        <span className="text-[#10b981]">Programme</span>
+                        <span className="text-green-primary">Programme</span>
                     </h2>
                     <div className="space-y-3 text-[1.05rem] text-[#374151] leading-relaxed">
                         <p>
@@ -102,17 +102,17 @@ export const LoyaltyCreditProgramme: React.FC = () => {
 
                 {/* ── CONTRAST MOMENT — dark strip ── */}
                 <div className="fade-up mb-10 md:mb-12 rounded-2xl bg-[#0f1724] overflow-hidden" style={{ animationDelay: '80ms' }}>
-                    <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[#10b981] to-transparent" />
+                    <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
                     <div className="px-7 py-7 md:px-10 md:py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
                         <div>
                             <p className="text-[1.15rem] md:text-[1.3rem] font-bold text-white leading-snug mb-1">
                                 Most providers retain this entirely.
                             </p>
-                            <p className="text-[1.15rem] md:text-[1.3rem] font-bold text-[#10b981] leading-snug">
+                            <p className="text-[1.15rem] md:text-[1.3rem] font-bold text-green-primary leading-snug">
                                 We allocate a portion back to you.
                             </p>
                         </div>
-                        <p className="text-sm text-[#9ca3af] max-w-[320px] leading-relaxed shrink-0">
+                        <p className="text-sm text-text-muted max-w-[320px] leading-relaxed shrink-0">
                             Through our Loyalty Credit Programme, qualifying partners receive a share of operational
                             treasury benefit as discretionary credits — applied against invoices, redeemed, or used toward additional services.
                         </p>
@@ -124,19 +124,19 @@ export const LoyaltyCreditProgramme: React.FC = () => {
 
                     {/* LEFT: How it works — compact 4-step vertical */}
                     <div className="fade-up" style={{ animationDelay: '120ms' }}>
-                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#9ca3af] mb-5">
+                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-text-muted mb-5">
                             How the programme works
                         </p>
-                        <div className="relative rounded-2xl border border-[#e5e7eb] bg-[#f8fffe] overflow-hidden">
-                            <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[#10b981] to-transparent" />
+                        <div className="relative rounded-2xl border border-border bg-[#f8fffe] overflow-hidden">
+                            <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
                             <div className="p-6 space-y-0">
                                 {howItWorks.map((step, i) => (
                                     <div key={i} className="flex items-start gap-4">
                                         <div className="flex flex-col items-center shrink-0">
                                             <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-[0.65rem] font-bold
                         ${i < 3
-                                                    ? 'bg-[#10b981] border-[#059669] text-white'
-                                                    : 'bg-[#10b981] border-[#059669] shadow-[0_0_0_3px_rgba(16,185,129,0.2)] text-white'
+                                                    ? 'bg-green-primary border-green-dark text-white'
+                                                    : 'bg-green-primary border-green-dark shadow-[0_0_0_3px_rgba(16,185,129,0.2)] text-white'
                                                 }`}>
                                                 {i < 3 ? (
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -164,7 +164,7 @@ export const LoyaltyCreditProgramme: React.FC = () => {
 
                     {/* RIGHT: Classification statements — the compliance focus */}
                     <div className="fade-up" style={{ animationDelay: '160ms' }}>
-                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#9ca3af] mb-5">
+                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-text-muted mb-5">
                             Programme classification
                         </p>
                         <div className="space-y-3">
@@ -172,14 +172,14 @@ export const LoyaltyCreditProgramme: React.FC = () => {
                                 <div
                                     key={i}
                                     className={`rounded-2xl border p-4 ${item.negative
-                                            ? 'bg-white border-[#e5e7eb]'
-                                            : 'bg-[#f0fdf4] border-[#bbf7d0]'
+                                        ? 'bg-white border-border'
+                                        : 'bg-[#f0fdf4] border-[#bbf7d0]'
                                         }`}
                                 >
                                     <div className="flex items-start gap-3">
                                         <div className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5 ${item.negative
-                                                ? 'bg-[#fef2f2] border border-[#fecaca]'
-                                                : 'bg-[#10b981] border border-[#059669]'
+                                            ? 'bg-[#fef2f2] border border-[#fecaca]'
+                                            : 'bg-green-primary border border-green-dark'
                                             }`}>
                                             {item.negative ? (
                                                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -192,7 +192,7 @@ export const LoyaltyCreditProgramme: React.FC = () => {
                                             )}
                                         </div>
                                         <div>
-                                            <p className={`text-sm font-bold mb-1 ${item.negative ? 'text-[#374151]' : 'text-[#059669]'}`}>
+                                            <p className={`text-sm font-bold mb-1 ${item.negative ? 'text-[#374151]' : 'text-green-dark'}`}>
                                                 {item.negative ? '✗ ' : '✓ '}{item.label}
                                             </p>
                                             <p className="text-xs text-[#6b7280] leading-relaxed">{item.sub}</p>
@@ -214,7 +214,7 @@ export const LoyaltyCreditProgramme: React.FC = () => {
                             </svg>
                         </div>
                         <div>
-                            <p className="text-sm font-bold text-[#059669] mb-1">Programme Classification — Important</p>
+                            <p className="text-sm font-bold text-green-dark mb-1">Programme Classification — Important</p>
                             <p className="text-sm text-[#374151] leading-relaxed">
                                 The Loyalty Credit Programme is a <strong>discretionary operational rebate</strong>. It is not an investment product,
                                 not interest on deposits, and not guaranteed income. Credits are allocated at XSAI's discretion based on

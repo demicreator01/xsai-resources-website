@@ -107,13 +107,13 @@ export const ProcessSteps: React.FC = () => {
 
                 {/* ── HEADING ── */}
                 <div className="fade-up mb-12 md:mb-16 max-w-[600px]">
-                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-3 block">
+                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-3 block">
                         How It Works
                     </span>
                     <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-4">
-                        Our Payroll <span className="text-[#10b981]">Process</span>
+                        Our Payroll <span className="text-green-primary">Process</span>
                     </h2>
-                    <p className="text-[#4b5563] text-lg leading-relaxed">
+                    <p className="text-text-secondary text-lg leading-relaxed">
                         We follow a structured, repeatable workflow to ensure every payroll cycle runs smoothly — every cycle, every time.
                     </p>
                 </div>
@@ -125,9 +125,9 @@ export const ProcessSteps: React.FC = () => {
                     <div className="relative flex items-start justify-between mb-0">
                         {/* The connecting line — sits behind the step numbers */}
                         <div className="absolute top-5 left-[2.5rem] right-[2.5rem] h-0.5 z-0">
-                            <div className="h-full bg-[#e5e7eb] rounded-full relative overflow-hidden">
+                            <div className="h-full bg-border rounded-full relative overflow-hidden">
                                 {/* Green fill — covers steps 1 to 4 (4/5 complete) */}
-                                <div className="absolute inset-y-0 left-0 bg-[#10b981] rounded-full" style={{ width: '75%' }} />
+                                <div className="absolute inset-y-0 left-0 bg-green-primary rounded-full" style={{ width: '75%' }} />
                             </div>
                         </div>
 
@@ -135,10 +135,10 @@ export const ProcessSteps: React.FC = () => {
                         {steps.map((step, i) => (
                             <div key={i} className="relative z-10 flex flex-col items-center" style={{ width: '20%' }}>
                                 <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center font-bold text-sm shadow-sm mb-4 ${i < 4
-                                        ? 'bg-[#10b981] border-[#059669] text-white'
-                                        : i === 4
-                                            ? 'bg-white border-[#10b981] text-[#10b981] shadow-[0_0_0_3px_rgba(16,185,129,0.15)]'
-                                            : 'bg-white border-[#e5e7eb] text-[#9ca3af]'
+                                    ? 'bg-green-primary border-green-dark text-white'
+                                    : i === 4
+                                        ? 'bg-white border-green-primary text-green-primary shadow-[0_0_0_3px_rgba(16,185,129,0.15)]'
+                                        : 'bg-white border-border text-text-muted'
                                     }`}>
                                     {i < 3 ? (
                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -158,8 +158,8 @@ export const ProcessSteps: React.FC = () => {
                             <div
                                 key={i}
                                 className={`flex-1 rounded-2xl border p-5 hover:-translate-y-1 transition-all duration-300 ${i === 3
-                                        ? 'border-[#10b981]/40 bg-[#f0fdf4] shadow-[0_4px_20px_rgba(16,185,129,0.10)]'
-                                        : 'border-[#e5e7eb] bg-white hover:border-[#10b981]/30 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)]'
+                                    ? 'border-green-primary/40 bg-[#f0fdf4] shadow-[0_4px_20px_rgba(16,185,129,0.10)]'
+                                    : 'border-border bg-white hover:border-green-primary/30 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)]'
                                     }`}
                             >
                                 <div className="w-8 h-8 rounded-lg bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mb-3">
@@ -173,7 +173,7 @@ export const ProcessSteps: React.FC = () => {
                                     <div className="mt-3 space-y-1.5">
                                         {step.bullets.map((b, j) => (
                                             <div key={j} className="flex items-center gap-2">
-                                                <div className="w-3.5 h-3.5 rounded-full bg-[#10b981] flex items-center justify-center shrink-0">
+                                                <div className="w-3.5 h-3.5 rounded-full bg-green-primary flex items-center justify-center shrink-0">
                                                     <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
                                                         <path d="M1.5 4L3 5.5 6.5 2" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                                                     </svg>
@@ -187,8 +187,8 @@ export const ProcessSteps: React.FC = () => {
                                 {/* Active step indicator */}
                                 {i === 3 && (
                                     <div className="mt-3 flex items-center gap-1.5">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse" />
-                                        <span className="text-[0.6rem] text-[#10b981] font-bold uppercase tracking-wider">In Progress</span>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-green-primary animate-pulse" />
+                                        <span className="text-[0.6rem] text-green-primary font-bold uppercase tracking-wider">In Progress</span>
                                     </div>
                                 )}
                             </div>
@@ -204,10 +204,10 @@ export const ProcessSteps: React.FC = () => {
                                 {/* Left: connector */}
                                 <div className="flex flex-col items-center shrink-0">
                                     <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center font-bold text-sm shadow-sm z-10 ${i < 3
-                                            ? 'bg-[#10b981] border-[#059669] text-white'
-                                            : i === 3
-                                                ? 'bg-white border-[#10b981] text-[#10b981] shadow-[0_0_0_3px_rgba(16,185,129,0.15)]'
-                                                : 'bg-white border-[#e5e7eb] text-[#9ca3af]'
+                                        ? 'bg-green-primary border-green-dark text-white'
+                                        : i === 3
+                                            ? 'bg-white border-green-primary text-green-primary shadow-[0_0_0_3px_rgba(16,185,129,0.15)]'
+                                            : 'bg-white border-border text-text-muted'
                                         }`}>
                                         {i < 3 ? (
                                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -218,14 +218,14 @@ export const ProcessSteps: React.FC = () => {
                                         )}
                                     </div>
                                     {i < steps.length - 1 && (
-                                        <div className={`w-0.5 flex-1 min-h-[40px] mt-1 mb-1 ${i < 3 ? 'bg-[#10b981]' : 'bg-[#e5e7eb]'}`} />
+                                        <div className={`w-0.5 flex-1 min-h-[40px] mt-1 mb-1 ${i < 3 ? 'bg-green-primary' : 'bg-border'}`} />
                                     )}
                                 </div>
 
                                 {/* Right: content card */}
                                 <div className={`flex-1 rounded-2xl border p-4 mb-4 ${i === 3
-                                        ? 'border-[#10b981]/40 bg-[#f0fdf4]'
-                                        : 'border-[#e5e7eb] bg-white'
+                                    ? 'border-green-primary/40 bg-[#f0fdf4]'
+                                    : 'border-border bg-white'
                                     }`}>
                                     <div className="flex items-center gap-3 mb-2">
                                         <div className="w-7 h-7 rounded-lg bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center shrink-0">
@@ -239,7 +239,7 @@ export const ProcessSteps: React.FC = () => {
                                         <div className="mt-3 space-y-1.5">
                                             {step.bullets.map((b, j) => (
                                                 <div key={j} className="flex items-center gap-2">
-                                                    <div className="w-3.5 h-3.5 rounded-full bg-[#10b981] flex items-center justify-center shrink-0">
+                                                    <div className="w-3.5 h-3.5 rounded-full bg-green-primary flex items-center justify-center shrink-0">
                                                         <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
                                                             <path d="M1.5 4L3 5.5 6.5 2" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                                                         </svg>
@@ -252,8 +252,8 @@ export const ProcessSteps: React.FC = () => {
 
                                     {i === 3 && (
                                         <div className="mt-2 flex items-center gap-1.5">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse" />
-                                            <span className="text-[0.6rem] text-[#10b981] font-bold uppercase tracking-wider">In Progress</span>
+                                            <div className="w-1.5 h-1.5 rounded-full bg-green-primary animate-pulse" />
+                                            <span className="text-[0.6rem] text-green-primary font-bold uppercase tracking-wider">In Progress</span>
                                         </div>
                                     )}
                                 </div>
@@ -265,16 +265,16 @@ export const ProcessSteps: React.FC = () => {
                 {/* ── CLOSING BRAND LINE ── */}
                 <div className="fade-up flex flex-col items-center gap-3 text-center" style={{ animationDelay: '160ms' }}>
                     <div className="flex items-center gap-4 w-full max-w-[400px]">
-                        <div className="flex-1 h-px bg-[#e5e7eb]" />
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
-                        <div className="flex-1 h-px bg-[#e5e7eb]" />
+                        <div className="flex-1 h-px bg-border" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-primary" />
+                        <div className="flex-1 h-px bg-border" />
                     </div>
                     <p className="text-xl md:text-2xl font-bold text-[#0f1724]">
                         Simple.{' '}
-                        <span className="text-[#10b981]">Controlled.</span>{' '}
+                        <span className="text-green-primary">Controlled.</span>{' '}
                         Accountable.
                     </p>
-                    <p className="text-sm text-[#9ca3af] max-w-[360px]">
+                    <p className="text-sm text-text-muted max-w-[360px]">
                         The same five steps. Every payroll cycle. No exceptions.
                     </p>
                 </div>

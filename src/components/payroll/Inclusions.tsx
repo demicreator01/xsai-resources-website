@@ -127,29 +127,29 @@ export const Inclusions: React.FC = () => {
 
                 {/* ── HEADING ── */}
                 <div className="fade-up mb-8 md:mb-10">
-                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-3 block">
+                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-3 block">
                         Pricing & Inclusions
                     </span>
                     <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-4">
                         What's Included —{' '}
-                        <span className="text-[#10b981]">£3 Per Employee</span>
+                        <span className="text-green-primary">£3 Per Employee</span>
                     </h2>
-                    <p className="text-[#4b5563] text-lg max-w-[520px] leading-relaxed">
+                    <p className="text-text-secondary text-lg max-w-[520px] leading-relaxed">
                         Transparent, predictable billing. No per-item add-ons, no hidden complexities, no surprises.
                     </p>
                 </div>
 
                 {/* ── PRICING STATEMENT BAR ── */}
                 <div className="fade-up mb-10 md:mb-12 rounded-2xl overflow-hidden border border-[#bbf7d0] shadow-[0_4px_24px_rgba(16,185,129,0.10)]" style={{ animationDelay: '80ms' }}>
-                    <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[#10b981] to-transparent" />
+                    <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
                     <div className="bg-white px-7 py-6 md:px-10 md:py-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
 
                         {/* Price */}
                         <div className="flex items-end gap-3">
                             <div>
-                                <p className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-[#9ca3af] mb-0.5">Flat Monthly Rate</p>
+                                <p className="text-[0.6rem] font-bold tracking-[0.2em] uppercase text-text-muted mb-0.5">Flat Monthly Rate</p>
                                 <div className="flex items-baseline gap-1">
-                                    <span className="text-5xl md:text-6xl font-bold text-[#10b981] leading-none">£3</span>
+                                    <span className="text-5xl md:text-6xl font-bold text-green-primary leading-none">£3</span>
                                     <span className="text-lg text-[#6b7280] font-medium">/employee</span>
                                 </div>
                             </div>
@@ -158,7 +158,7 @@ export const Inclusions: React.FC = () => {
                                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                                     <path d="M5 1L6.2 4H9L6.5 5.8l.9 3L5 7.5 2.6 8.8l.9-3L1 4h2.8L5 1Z" fill="#10b981" />
                                 </svg>
-                                <span className="text-[0.6rem] font-semibold text-[#059669]">Industry avg: £8–£14</span>
+                                <span className="text-[0.6rem] font-semibold text-green-dark">Industry avg: £8–£14</span>
                             </div>
                         </div>
 
@@ -182,9 +182,9 @@ export const Inclusions: React.FC = () => {
                     {inclusions.map((item, i) => (
                         <div
                             key={i}
-                            className="group flex items-start gap-4 bg-white border border-[#e5e7eb] rounded-2xl px-5 py-4 hover:border-[#10b981]/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
+                            className="group flex items-start gap-4 bg-white border border-border rounded-2xl px-5 py-4 hover:border-green-primary/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
                         >
-                            <div className="shrink-0 w-9 h-9 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-[#10b981] group-hover:border-[#059669] transition-colors duration-250">
+                            <div className="shrink-0 w-9 h-9 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-green-primary group-hover:border-green-dark transition-colors duration-250">
                                 <div className="group-hover:[&_path]:stroke-white group-hover:[&_rect]:stroke-white group-hover:[&_circle]:stroke-white transition-colors duration-250">
                                     {item.icon}
                                 </div>
@@ -201,14 +201,14 @@ export const Inclusions: React.FC = () => {
                 <div className="fade-up flex flex-col items-center gap-3 text-center" style={{ animationDelay: '160ms' }}>
                     <div className="flex items-center gap-4 w-full max-w-[420px]">
                         <div className="flex-1 h-px bg-[#bbf7d0]" />
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-primary" />
                         <div className="flex-1 h-px bg-[#bbf7d0]" />
                     </div>
                     <p className="text-lg md:text-xl font-bold text-[#0f1724]">
                         Transparent pricing.{' '}
-                        <span className="text-[#10b981]">No hidden per-item add-ons.</span>
+                        <span className="text-green-primary">No hidden per-item add-ons.</span>
                     </p>
-                    <p className="text-sm text-[#9ca3af] max-w-[360px]">
+                    <p className="text-sm text-text-muted max-w-[360px]">
                         Every service listed is included in the £3 flat rate. Nothing is gated, tiered, or charged separately.
                     </p>
                 </div>

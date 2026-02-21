@@ -104,21 +104,21 @@ export const HowLoyaltyCreditsWork: React.FC = () => {
                     className="absolute bottom-0 right-0 w-[400px] h-[350px]"
                     style={{ background: 'radial-gradient(ellipse at 90% 90%, rgba(59,130,246,0.05) 0%, transparent 65%)' }}
                 />
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#bbf7d0] to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#bbf7d0] to-transparent" />
             </div>
 
             <div className="relative z-10 max-w-[1120px] mx-auto">
 
                 {/* ── HEADING ── */}
                 <div className="fade-up mb-10 md:mb-12">
-                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-3 block">
+                    <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-3 block">
                         Credit Mechanics
                     </span>
                     <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-4">
                         How Loyalty Credits{' '}
-                        <span className="text-[#10b981]">Work</span>
+                        <span className="text-green-primary">Work</span>
                     </h2>
-                    <p className="text-[#4b5563] text-lg max-w-[520px] leading-relaxed">
+                    <p className="text-text-secondary text-lg max-w-[520px] leading-relaxed">
                         Credits are allocated based on three factors — and can be deployed in three ways.
                         The more organised and committed your engagement, the more you earn.
                     </p>
@@ -129,17 +129,17 @@ export const HowLoyaltyCreditsWork: React.FC = () => {
 
                     {/* LEFT: Allocation factors — how credits are earned */}
                     <div className="fade-up" style={{ animationDelay: '80ms' }}>
-                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#9ca3af] mb-4">
+                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-text-muted mb-4">
                             Credits are allocated based on
                         </p>
                         <div className="flex flex-col gap-3">
                             {allocationFactors.map((factor, i) => (
                                 <div
                                     key={i}
-                                    className="group bg-white border border-[#e5e7eb] rounded-2xl p-5 hover:border-[#10b981]/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
+                                    className="group bg-white border border-border rounded-2xl p-5 hover:border-green-primary/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
                                 >
                                     <div className="flex items-start gap-4">
-                                        <div className="shrink-0 w-10 h-10 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-[#10b981] group-hover:border-[#059669] transition-colors duration-250">
+                                        <div className="shrink-0 w-10 h-10 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-green-primary group-hover:border-green-dark transition-colors duration-250">
                                             <div className="group-hover:[&_path]:stroke-white group-hover:[&_circle]:stroke-white transition-colors duration-250">
                                                 {factor.icon}
                                             </div>
@@ -151,7 +151,7 @@ export const HowLoyaltyCreditsWork: React.FC = () => {
                                                 <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
                                                     <path d="M1 6L3 2l2 2 1.5-2L8 6" stroke="#10b981" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                                                 </svg>
-                                                <span className="text-[0.6rem] font-semibold text-[#059669]">{factor.trend}</span>
+                                                <span className="text-[0.6rem] font-semibold text-green-dark">{factor.trend}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -162,17 +162,17 @@ export const HowLoyaltyCreditsWork: React.FC = () => {
 
                     {/* RIGHT: Credit uses — how credits are spent */}
                     <div className="fade-up" style={{ animationDelay: '130ms' }}>
-                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#9ca3af] mb-4">
+                        <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-text-muted mb-4">
                             Credits can be used as
                         </p>
                         <div className="flex flex-col gap-3">
                             {creditUses.map((use, i) => (
                                 <div
                                     key={i}
-                                    className="group bg-white border border-[#e5e7eb] rounded-2xl p-5 hover:border-[#10b981]/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
+                                    className="group bg-white border border-border rounded-2xl p-5 hover:border-green-primary/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
                                 >
                                     <div className="flex items-start gap-4">
-                                        <div className="shrink-0 w-10 h-10 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-[#10b981] group-hover:border-[#059669] transition-colors duration-250">
+                                        <div className="shrink-0 w-10 h-10 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-green-primary group-hover:border-green-dark transition-colors duration-250">
                                             <div className="group-hover:[&_path]:stroke-white group-hover:[&_rect]:stroke-white transition-colors duration-250">
                                                 {use.icon}
                                             </div>
@@ -203,13 +203,13 @@ export const HowLoyaltyCreditsWork: React.FC = () => {
                 {/* ── CLOSING BRAND STATEMENT ── */}
                 <div className="fade-up" style={{ animationDelay: '180ms' }}>
                     <div className="rounded-2xl bg-[#0f1724] overflow-hidden">
-                        <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[#10b981] to-transparent" />
+                        <div className="h-0.5 w-full bg-linear-to-r from-transparent via-green-primary to-transparent" />
                         <div className="px-7 py-6 md:px-10 md:py-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                             <div>
                                 <p className="text-white font-bold text-lg md:text-xl leading-snug mb-1">
                                     Designed to reward efficiency, scale,
                                 </p>
-                                <p className="text-[#10b981] font-bold text-lg md:text-xl leading-snug">
+                                <p className="text-green-primary font-bold text-lg md:text-xl leading-snug">
                                     and long-term collaboration.
                                 </p>
                             </div>

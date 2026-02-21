@@ -12,6 +12,7 @@ import { HowLoyaltyCreditsWork } from '../components/payroll/HowLoyaltyCreditsWo
 import { WhyThisModelWorks } from '../components/payroll/WhyThisModelWorks';
 import { BuiltForReliability } from '../components/payroll/BuiltForReliability';
 import { WhoWeWorkBestWith } from '../components/payroll/WhoWeWorkBestWith';
+import { CTA } from '../components/layout/CTA';
 
 export const Payroll: React.FC = () => {
     return (
@@ -31,6 +32,14 @@ export const Payroll: React.FC = () => {
             <WhyThisModelWorks />
             <BuiltForReliability />
             <WhoWeWorkBestWith />
+            <CTA
+                headline="Ready to streamline your payroll?"
+                subline="If you want a payroll provider that treats infrastructure seriously — and rewards loyalty intelligently — we should talk."
+                rightCardTitle="Request a Custom Proposal"
+                rightCardDescription="For multi-entity businesses or SMEs with 50+ employees, we provide a detailed cost-benefit analysis, implementation roadmap, and projected Loyalty Credit allocation based on your payroll profile."
+                rightCardButton="Request a Custom Proposal"
+                rightCardEmailSubject="Custom%20Proposal%20Request%20-%20Payroll"
+            />
         </Layout>
     );
 };

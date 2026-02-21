@@ -80,7 +80,7 @@ export const WhoWeWorkBestWith: React.FC = () => {
             {/* Atmospheric background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div
-                    className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#e5e7eb] to-transparent"
+                    className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent"
                 />
                 <div
                     className="absolute top-0 right-0 w-[500px] h-[400px]"
@@ -117,7 +117,7 @@ export const WhoWeWorkBestWith: React.FC = () => {
                         </div>
 
                         {/* Honest qualifier */}
-                        <div className="rounded-2xl border border-[#e5e7eb] bg-white p-5">
+                        <div className="rounded-2xl border border-border bg-white p-5">
                             <p className="text-[0.6rem] font-bold tracking-[0.15em] uppercase text-text-muted mb-3">
                                 A note on fit
                             </p>
@@ -137,7 +137,7 @@ export const WhoWeWorkBestWith: React.FC = () => {
                         {clientTypes.map((type, i) => (
                             <div
                                 key={i}
-                                className="group flex items-start gap-4 bg-white border border-[#e5e7eb] rounded-2xl px-5 py-4 hover:border-green-primary/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
+                                className="group flex items-start gap-4 bg-white border border-border rounded-2xl px-5 py-4 hover:border-green-primary/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
                             >
                                 <div className="shrink-0 w-10 h-10 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-green-primary group-hover:border-green-dark transition-colors duration-250">
                                     <div className="group-hover:[&_path]:stroke-white group-hover:[&_rect]:stroke-white group-hover:[&_circle]:stroke-white transition-colors duration-250 text-green-primary">

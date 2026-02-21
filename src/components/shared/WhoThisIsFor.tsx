@@ -12,7 +12,7 @@ interface QualifierProps {
 }
 
 interface WhoThisIsForProps {
-    context?: 'accounting' | 'payroll' | 'general';
+    context?: 'accounting' | 'payroll' | 'general' | 'admin';
     headline?: string;
     intro?: string;
     clientTypes: ClientType[];
@@ -75,7 +75,8 @@ export const WhoThisIsFor: React.FC<WhoThisIsForProps> = ({
     const eyebrow =
         context === 'accounting' ? 'Accounting Fit'
             : context === 'payroll' ? 'The Right Fit'
-                : 'Who We Serve';
+                : context === 'admin' ? 'Operational Fit'
+                    : 'Who We Serve';
 
     return (
         <section
@@ -84,7 +85,7 @@ export const WhoThisIsFor: React.FC<WhoThisIsForProps> = ({
         >
             {/* Atmospheric background */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e5e7eb] to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
                 <div
                     className="absolute top-0 right-0 w-[500px] h-[400px]"
                     style={{ background: 'radial-gradient(ellipse at 85% 10%, rgba(16,185,129,0.08) 0%, transparent 65%)' }}
@@ -101,14 +102,14 @@ export const WhoThisIsFor: React.FC<WhoThisIsForProps> = ({
 
                     {/* LEFT: Heading + intro + qualifier */}
                     <div className="fade-up lg:sticky lg:top-8">
-                        <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#10b981] mb-3 block">
+                        <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-green-primary mb-3 block">
                             {eyebrow}
                         </span>
                         <h2 className="text-[1.9rem] md:text-[2.6rem] font-bold text-[#0f1724] leading-[1.1] tracking-tight mb-5">
                             {headline.includes('For') ? (
                                 <>
                                     Who This Is{' '}
-                                    <span className="text-[#10b981]">For</span>
+                                    <span className="text-green-primary">For</span>
                                 </>
                             ) : (
                                 <span>{headline}</span>
@@ -122,14 +123,14 @@ export const WhoThisIsFor: React.FC<WhoThisIsForProps> = ({
                         )}
 
                         {qualifier && (
-                            <div className="rounded-2xl border border-[#e5e7eb] bg-white p-5">
-                                <p className="text-[0.6rem] font-bold tracking-[0.15em] uppercase text-[#9ca3af] mb-3">
+                            <div className="rounded-2xl border border-border bg-white p-5">
+                                <p className="text-[0.6rem] font-bold tracking-[0.15em] uppercase text-text-muted mb-3">
                                     A note on fit
                                 </p>
                                 <p className="text-sm text-[#374151] leading-relaxed mb-2">
                                     {qualifier.negative}
                                 </p>
-                                <p className="text-sm text-[#10b981] font-semibold leading-relaxed">
+                                <p className="text-sm text-green-primary font-semibold leading-relaxed">
                                     {qualifier.positive}
                                 </p>
                             </div>
@@ -141,9 +142,9 @@ export const WhoThisIsFor: React.FC<WhoThisIsForProps> = ({
                         {clientTypes.map((type, i) => (
                             <div
                                 key={i}
-                                className="group flex items-start gap-4 bg-white border border-[#e5e7eb] rounded-2xl px-5 py-4 hover:border-[#10b981]/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
+                                className="group flex items-start gap-4 bg-white border border-border rounded-2xl px-5 py-4 hover:border-green-primary/40 hover:shadow-[0_4px_16px_rgba(16,185,129,0.08)] hover:-translate-y-0.5 transition-all duration-250"
                             >
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-[#10b981] group-hover:border-[#059669] transition-colors duration-250">
+                                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mt-0.5 group-hover:bg-green-primary group-hover:border-green-dark transition-colors duration-250">
                                     <div className="group-hover:[&_path]:stroke-white group-hover:[&_circle]:stroke-white group-hover:[&_rect]:stroke-white transition-colors duration-250">
                                         {type.icon ?? defaultIcons[i % defaultIcons.length]}
                                     </div>
