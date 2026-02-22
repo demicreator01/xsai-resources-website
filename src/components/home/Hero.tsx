@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Hero: React.FC = () => {
     return (
-        <section className="relative min-h-[calc(100vh-72px)] flex items-center overflow-hidden bg-[#f8fffe] pt-32 lg:pt-4 px-5 md:px-8 pb-20 md:pb-16 lg:pb-20">
+        <section className="relative min-h-[calc(100vh-72px)] flex items-center overflow-hidden bg-[#f8fffe] pt-32 px-5 md:px-8 pb-20 md:pb-16 lg:pb-20">
 
             {/* ── Atmospheric background layers ── */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">

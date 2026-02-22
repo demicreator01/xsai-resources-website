@@ -8,7 +8,7 @@ interface SEOProps {
     ogImage?: string; // filename only e.g. 'og-home.png' — resolves to /public/
 }
 
-const BASE_URL = 'https://xsai.co.uk'; // Update if domain differs
+const BASE_URL = 'https://xsai-resources-website.vercel.app'; // Update if domain differs
 
 export const SEO: React.FC<SEOProps> = ({
     title,
