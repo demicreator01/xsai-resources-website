@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Button } from '../ui/Button';
 
 export const Hero: React.FC = () => {
     return (
@@ -67,19 +67,20 @@ export const Hero: React.FC = () => {
                     {/* CTAs */}
                     <div className="hero-cta flex flex-col sm:flex-row gap-3">
                         {/* Primary */}
-                        <Link
-                            to="#contact"
+                        <Button
+                            variant="primary"
+                            href="mailto:help@xsairesources.com?subject=Discovery%20Call%20Request"
                             className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-green-primary text-white font-semibold text-base transition-all duration-200 hover:bg-green-dark hover:shadow-[0_8px_28px_rgba(16,185,129,0.38)] hover:-translate-y-0.5 min-h-[52px]"
                         >
                             Book a Discovery Call
                             <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 16 16" fill="none">
                                 <path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                        </Link>
+                        </Button>
 
                         {/* Secondary */}
                         <a
-                            href="#pricing"
+                            href="mailto:help@xsairesources.com?subject=Request%20Pricing%20Overview"
                             className="inline-flex items-center justify-center px-5 py-3 rounded-xl text-text-secondary font-medium text-base hover:text-green-primary transition-colors duration-200 min-h-[52px] underline-offset-4 hover:underline"
                         >
                             Request a Pricing Overview

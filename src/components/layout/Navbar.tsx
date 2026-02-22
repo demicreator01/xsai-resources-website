@@ -75,7 +75,7 @@ export const Navbar: React.FC = () => {
                                     {link.name}
                                 </Link>
                             ))}
-                            <Button variant="primary" size="sm" href="#contact" className="shadow-lg shadow-green-primary/20 hover:shadow-green-primary/40">
+                            <Button variant="primary" size="sm" href="mailto:help@xsairesources.com?subject=Discovery%20Call%20Request" className="shadow-lg shadow-green-primary/20 hover:shadow-green-primary/40">
                                 Book a Discovery Call
                             </Button>
                         </div>
@@ -135,7 +135,7 @@ export const Navbar: React.FC = () => {
                     </div>
 
                     <div className="mt-auto pb-6">
-                        <Button fullWidth variant="primary" size="lg" href="#contact" className="shadow-xl shadow-green-primary/30">
+                        <Button fullWidth variant="primary" size="lg" href="mailto:help@xsairesources.com?subject=Discovery%20Call%20Request" className="shadow-xl shadow-green-primary/30">
                             Book a Discovery Call
                         </Button>
                     </div>

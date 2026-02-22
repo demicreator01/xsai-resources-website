@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://xsai-resources-website.vercel.app/sitemap.xml
+Sitemap: https://xsairesources.com/sitemap.xml

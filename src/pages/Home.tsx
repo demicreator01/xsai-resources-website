@@ -26,7 +26,7 @@ export const Home: React.FC = () => {
                 "@type": "WebPage",
                 "name": "XSAI Resources — Payroll & Accounting Infrastructure for UK Businesses",
                 "description": "Transparent £3 per employee payroll, integrated accounting, and admin support. One infrastructure. Built for businesses that value structure, clarity, and long-term partnership.",
-                "url": "https://xsai.co.uk",
+                "url": "https://xsairesources.com",
                 "provider": {
                     "@type": "FinancialService",
                     "name": "XSAI Resources Ltd"

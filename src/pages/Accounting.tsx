@@ -24,11 +24,11 @@ export const Accounting: React.FC = () => {
                 "serviceType": "Accounting Services",
                 "name": "XSAI Accounting Services",
                 "description": "Managed accounting that connects directly with your payroll. VAT, corporation tax, year-end accounts, and MTD compliance — under one accountable structure.",
-                "url": "https://xsai.co.uk/accounting",
+                "url": "https://xsairesources.com/accounting",
                 "provider": {
                     "@type": "FinancialService",
                     "name": "XSAI Resources Ltd",
-                    "url": "https://xsai.co.uk"
+                    "url": "https://xsairesources.com"
                 },
                 "areaServed": {
                     "@type": "Country",

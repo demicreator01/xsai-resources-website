@@ -24,7 +24,7 @@ const DEFAULT_PROPS: Required<CTAProps> = {
         'Implementation timeline and transition plan',
     ],
     rightCardButton: 'Request a Proposal',
-    rightCardEmail: 'proposals@xsai.co.uk',
+    rightCardEmail: 'help@xsairesources.com',
     rightCardEmailSubject: 'Proposal%20Request',
 };
 
@@ -133,10 +133,10 @@ export const CTA: React.FC<CTAProps> = (props) => {
                         </div>
                         <div className="mt-auto flex flex-col gap-3">
                             <a
-                                href="mailto:contact@xsai.co.uk?subject=Discovery%20Call%20Request"
+                                href="mailto:help@xsairesources.com?subject=Discovery%20Call%20Request"
                                 className="group w-full flex items-center justify-center gap-2 bg-white text-green-dark font-bold py-3.5 rounded-xl text-sm transition-all duration-200 hover:bg-white/90"
                             >
-                                Book a 15-Minute Call
+                                Book a Discovery Call
                                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
                                     viewBox="0 0 16 16" fill="none">
                                     <path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor"
@@ -145,9 +145,9 @@ export const CTA: React.FC<CTAProps> = (props) => {
                             </a>
                             <p className="text-[0.7rem] text-white/60 text-center">
                                 Or email directly:{' '}
-                                <a href="mailto:contact@xsai.co.uk"
+                                <a href="mailto:help@xsairesources.com"
                                     className="text-white/80 hover:text-white underline">
-                                    contact@xsai.co.uk
+                                    help@xsairesources.com
                                 </a>
                             </p>
                         </div>

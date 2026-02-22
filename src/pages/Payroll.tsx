@@ -29,11 +29,11 @@ export const Payroll: React.FC = () => {
                 "serviceType": "Payroll Services",
                 "name": "XSAI Payroll Services",
                 "description": "Full-service BACS bureau payroll at £3 per employee per month. RTI compliant, HMRC registered, with a Loyalty Credit Programme that rewards long-term partners.",
-                "url": "https://xsai.co.uk/payroll",
+                "url": "https://xsairesources.com/payroll",
                 "provider": {
                     "@type": "FinancialService",
                     "name": "XSAI Resources Ltd",
-                    "url": "https://xsai.co.uk"
+                    "url": "https://xsairesources.com"
                 },
                 "areaServed": {
                     "@type": "Country",

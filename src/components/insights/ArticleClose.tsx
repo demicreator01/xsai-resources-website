@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Button } from '../ui/Button';
 
 const beliefs = [
     { label: 'Transparent', sub: 'Every aspect of our model explained openly.' },
@@ -174,9 +175,10 @@ export const ArticleClose: React.FC = () => {
 
                     {/* Two CTA options */}
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                        <a
-                            href="mailto:contact@xsai.co.uk?subject=Discovery%20Call%20Request"
-                            className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-green-primary text-white font-semibold text-base transition-all duration-200 hover:bg-green-dark hover:shadow-[0_8px_28px_rgba(16,185,129,0.35)] hover:-translate-y-0.5 min-h-[52px]"
+                        <Button
+                            href="mailto:help@xsairesources.com?subject=Discovery%20Call%20Request"
+                            size="lg"
+                            className="shadow-2xl shadow-green-primary/20"
                         >
                             Book a Discovery Call
                             <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
@@ -184,14 +186,15 @@ export const ArticleClose: React.FC = () => {
                                 <path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8"
                                     strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                        </a>
-                        <a
-                            href="mailto:proposals@xsai.co.uk?subject=Transparent%20Proposal%20Request"
-                            className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border border-white/20 text-white font-semibold text-base transition-all duration-200 hover:border-green-primary/50 hover:text-green-primary min-h-[52px]"
-                            style={{ background: 'rgba(255,255,255,0.04)' }}
+                        </Button>
+                        <Button
+                            href="mailto:help@xsairesources.com?subject=Transparent%20Proposal%20Request"
+                            variant="outline-white"
+                            size="lg"
+                            className="border-white/20 hover:border-green-primary/50"
                         >
                             Request a Transparent Proposal
-                        </a>
+                        </Button>
                     </div>
                     {/* Article end mark */}
                     <div className="mt-16 flex items-center gap-4 justify-center opacity-30">

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '../ui/Button';
 
 const accountingItems = [
     { label: 'VAT Return', period: 'Q4 2024', status: 'filed', date: 'Filed 28 Jan' },
@@ -119,17 +120,18 @@ export const AccountingHero: React.FC = () => {
 
                         {/* CTAs */}
                         <div className="hero-fade flex flex-col sm:flex-row gap-3 mb-8">
-                            <Link
-                                to="#contact"
+                            <Button
+                                variant="primary"
+                                href="mailto:help@xsairesources.com?subject=Discovery%20Call%20Request"
                                 className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-green-primary text-white font-semibold text-base transition-all duration-200 hover:bg-green-dark hover:shadow-[0_8px_28px_rgba(16,185,129,0.40)] hover:-translate-y-0.5 min-h-[52px]"
                             >
                                 Book a Discovery Call
                                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 16 16" fill="none">
                                     <path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                            </Link>
+                            </Button>
                             <Link
-                                to="#services"
+                                to="#"
                                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border border-border text-[#374151] font-semibold text-base transition-all duration-200 hover:border-green-primary/50 hover:text-green-primary min-h-[52px] bg-white/60"
                             >
                                 See our services

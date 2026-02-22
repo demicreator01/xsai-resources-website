@@ -23,11 +23,11 @@ export const OurEdge: React.FC = () => {
                 "@type": "WebPage",
                 "name": "Our Edge — Why XSAI is Built Differently",
                 "description": "Six reasons XSAI operates differently. Transparent pricing, shared efficiency, integrated control, and infrastructure built to last.",
-                "url": "https://xsai.co.uk/our-edge",
+                "url": "https://xsairesources.com/our-edge",
                 "provider": {
                     "@type": "FinancialService",
                     "name": "XSAI Resources Ltd",
-                    "url": "https://xsai.co.uk"
+                    "url": "https://xsairesources.com"
                 }
             }} />
             <OurEdgeHero />

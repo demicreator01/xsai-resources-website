@@ -25,18 +25,18 @@ export const WhatTheyDontTellYou: React.FC = () => {
                 "@type": "Article",
                 "headline": "What They Don't Tell You About Payroll",
                 "description": "An honest explanation of how payroll infrastructure works — the funding window, treasury benefit, and why XSAI chose transparency over silence.",
-                "url": "https://xsai.co.uk/insights",
+                "url": "https://xsairesources.com/insights",
                 "author": {
                     "@type": "Organization",
                     "name": "XSAI Resources Ltd",
-                    "url": "https://xsai.co.uk"
+                    "url": "https://xsairesources.com"
                 },
                 "publisher": {
                     "@type": "Organization",
                     "name": "XSAI Resources Ltd",
-                    "url": "https://xsai.co.uk"
+                    "url": "https://xsairesources.com"
                 },
-                "image": "https://xsai.co.uk/og-insights.png",
+                "image": "https://xsairesources.com/og-insights.png",
                 "inLanguage": "en-GB"
             }} />
             <InsightsHero />

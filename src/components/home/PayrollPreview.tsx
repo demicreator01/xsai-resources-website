@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '../ui/Button';
 
 const features = [
     {
@@ -216,15 +217,16 @@ export const PayrollPreview: React.FC = () => {
 
                             {/* CTA inside card */}
                             <div className="bg-white px-7 py-5 border-t border-border">
-                                <Link
-                                    to="#contact"
-                                    className="group w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-green-primary text-white font-semibold text-sm transition-all duration-200 hover:bg-green-dark hover:shadow-[0_8px_24px_rgba(16,185,129,0.35)] hover:-translate-y-0.5"
+                                <Button
+                                    variant="primary"
+                                    href="mailto:help@xsairesources.com?subject=Discovery%20Call%20Request"
+                                    className="w-full text-sm"
                                 >
                                     Book a Discovery Call
                                     <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 14 14" fill="none">
                                         <path d="M2.5 7H11.5M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
-                                </Link>
+                                </Button>
                                 <p className="text-center text-[0.65rem] text-text-muted mt-2.5">
                                     No setup fees · Cancel with notice · Dedicated AM from day one
                                 </p>

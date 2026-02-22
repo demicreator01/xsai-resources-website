@@ -22,11 +22,11 @@ export const AdminSupport: React.FC = () => {
                 "serviceType": "Business Support Services",
                 "name": "XSAI Admin & Business Support",
                 "description": "Director administration, document management, back-office coordination, and business support — quietly handled so your operations run smoothly.",
-                "url": "https://xsai.co.uk/admin-support",
+                "url": "https://xsairesources.com/admin-support",
                 "provider": {
                     "@type": "FinancialService",
                     "name": "XSAI Resources Ltd",
-                    "url": "https://xsai.co.uk"
+                    "url": "https://xsairesources.com"
                 },
                 "areaServed": {
                     "@type": "Country",

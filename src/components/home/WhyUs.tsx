@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Button } from '../ui/Button';
 
 const coreDifferentiators = [
     {
@@ -170,7 +170,7 @@ export const WhyUs: React.FC = () => {
                     <div className="flex items-center gap-4 mb-8 md:mb-10">
                         <div className="flex-1 h-px bg-linear-to-r from-white/0 to-white/10" />
                         <div className="w-1.5 h-1.5 rounded-full bg-green-primary" />
-                        <div className="flex-1 h-px bg-gradient-to-l from-white/0 to-white/10" />
+                        <div className="flex-1 h-px bg-linear-to-l from-white/0 to-white/10" />
                     </div>
 
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-12">
@@ -186,15 +186,9 @@ export const WhyUs: React.FC = () => {
 
                         {/* CTA on the right */}
                         <div className="shrink-0 flex flex-col items-start md:items-end gap-3">
-                            <Link
-                                to="#contact"
-                                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-green-primary text-white font-semibold text-base transition-all duration-200 hover:bg-green-dark hover:shadow-[0_8px_28px_rgba(16,185,129,0.40)] hover:-translate-y-0.5 min-h-[52px]"
-                            >
+                            <Button size="lg" href="mailto:help@xsairesources.com?subject=Discovery%20Call%20Request" className="shadow-2xl shadow-green-primary/20">
                                 Book a Discovery Call
-                                <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 16 16" fill="none">
-                                    <path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </Link>
+                            </Button>
                             <p className="text-xs text-[#6b7280]">No commitment · Discovery call only</p>
                         </div>
                     </div>

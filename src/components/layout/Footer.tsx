@@ -40,10 +40,10 @@ export const Footer: React.FC = () => {
                             built for businesses that think long term.
                         </p>
                         <a
-                            href="mailto:contact@xsai.co.uk"
-                            className="text-xs text-green-primary hover:text-[#34d399] transition-colors duration-200 font-medium"
+                            href="mailto:help@xsairesources.com"
+                            className="text-gray-400 hover:text-green-primary transition-colors duration-200"
                         >
-                            contact@xsai.co.uk
+                            help@xsairesources.com
                         </a>
                     </div>
 

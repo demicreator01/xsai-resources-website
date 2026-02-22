@@ -41,9 +41,16 @@ export const Button: React.FC<ButtonProps> = ({
     const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${fullWidth ? 'w-full' : ''} ${className}`;
 
     if (href) {
-        if (href.startsWith('http')) {
+        const isExternal = href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
+
+        if (isExternal) {
             return (
-                <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
+                <a
+                    href={href}
+                    className={classes}
+                    target={href.startsWith('http') ? "_blank" : undefined}
+                    rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
+                >
                     {children}
                 </a>
             );

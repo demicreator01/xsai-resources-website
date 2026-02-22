@@ -114,7 +114,7 @@ export const OurEdgeClose: React.FC = () => {
                     {/* CTA buttons */}
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                         <a
-                            href="mailto:contact@xsai.co.uk?subject=Discovery%20Call%20Request"
+                            href="mailto:help@xsairesources.com?subject=Discovery%20Call%20Request"
                             className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-green-primary text-white font-semibold text-base transition-all duration-200 hover:bg-green-dark hover:shadow-[0_8px_28px_rgba(16,185,129,0.35)] hover:-translate-y-0.5 min-h-[52px]"
                         >
                             Book a Discovery Call
@@ -127,7 +127,7 @@ export const OurEdgeClose: React.FC = () => {
                             </svg>
                         </a>
                         <a
-                            href="mailto:proposals@xsai.co.uk?subject=Proposal%20Request%20-%20Our%20Edge"
+                            href="mailto:help@xsairesources.com?subject=Proposal%20Request%20-%20Our%20Edge"
                             className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border border-white/20 text-white font-semibold text-base transition-all duration-200 hover:border-green-primary/50 hover:text-green-primary min-h-[52px]"
                             style={{ background: 'rgba(255,255,255,0.04)' }}
                         >
