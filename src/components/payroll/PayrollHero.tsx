@@ -48,7 +48,7 @@ export const PayrollHero: React.FC = () => {
                 <div className="absolute inset-y-0 right-0 w-1/2 bg-linear-to-r from-[#f8fffe] via-transparent to-transparent hidden lg:block" />
             </div>
 
-            <div className="relative z-10 max-w-[1120px] mx-auto w-full pt-24 sm:pt-2 pb-8 sm:pb-2">
+            <div className="relative z-10 max-w-[1120px] mx-auto w-full pt-24 pb-8 sm:pb-2">
                 <div className="grid grid-cols-1 lg:grid-cols-[55%_42%] gap-10 lg:gap-14 items-center">
 
                     {/* ── LEFT: TEXT CONTENT ── */}
