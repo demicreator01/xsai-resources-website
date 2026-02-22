@@ -12,6 +12,7 @@ import { BuiltForReliability } from '../components/payroll/BuiltForReliability';
 import { WhoWeWorkBestWith } from '../components/payroll/WhoWeWorkBestWith';
 import { CTA } from '../components/layout/CTA';
 import { SEO } from '../components/shared/SEO';
+import { JsonLd } from '../components/shared/JsonLd';
 
 export const Payroll: React.FC = () => {
     return (
@@ -22,6 +23,29 @@ export const Payroll: React.FC = () => {
                 path="/payroll"
                 ogImage="og-payroll.png"
             />
+            <JsonLd schema={{
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "serviceType": "Payroll Services",
+                "name": "XSAI Payroll Services",
+                "description": "Full-service BACS bureau payroll at £3 per employee per month. RTI compliant, HMRC registered, with a Loyalty Credit Programme that rewards long-term partners.",
+                "url": "https://xsai.co.uk/payroll",
+                "provider": {
+                    "@type": "FinancialService",
+                    "name": "XSAI Resources Ltd",
+                    "url": "https://xsai.co.uk"
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "United Kingdom"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "3.00",
+                    "priceCurrency": "GBP",
+                    "description": "£3 per employee per month — full payroll processing included"
+                }
+            }} />
             <PayrollHero />
             <ProcessSteps />
             <Inclusions />

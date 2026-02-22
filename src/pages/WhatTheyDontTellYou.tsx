@@ -8,6 +8,7 @@ import { WhatThisDoesntMean } from '../components/insights/WhatThisDoesntMean';
 import { WhyThisMatters } from '../components/insights/WhyThisMatters';
 import { ArticleClose } from '../components/insights/ArticleClose';
 import { SEO } from '../components/shared/SEO';
+import { JsonLd } from '../components/shared/JsonLd';
 
 export const WhatTheyDontTellYou: React.FC = () => {
     return (
@@ -19,6 +20,25 @@ export const WhatTheyDontTellYou: React.FC = () => {
                 ogType="article"
                 ogImage="og-insights.png"
             />
+            <JsonLd schema={{
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": "What They Don't Tell You About Payroll",
+                "description": "An honest explanation of how payroll infrastructure works — the funding window, treasury benefit, and why XSAI chose transparency over silence.",
+                "url": "https://xsai.co.uk/insights",
+                "author": {
+                    "@type": "Organization",
+                    "name": "XSAI Resources Ltd",
+                    "url": "https://xsai.co.uk"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "XSAI Resources Ltd",
+                    "url": "https://xsai.co.uk"
+                },
+                "image": "https://xsai.co.uk/og-insights.png",
+                "inLanguage": "en-GB"
+            }} />
             <InsightsHero />
             <FundingWindow />
             <TheQuietPart />

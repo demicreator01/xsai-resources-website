@@ -5,6 +5,7 @@ import { IntegratedWithPayrollAccounting } from '../components/admin/IntegratedW
 import { WhoThisIsFor } from '../components/shared/WhoThisIsFor';
 import { CTA } from '../components/layout/CTA';
 import { SEO } from '../components/shared/SEO';
+import { JsonLd } from '../components/shared/JsonLd';
 
 export const AdminSupport: React.FC = () => {
     return (
@@ -15,6 +16,23 @@ export const AdminSupport: React.FC = () => {
                 path="/admin-support"
                 ogImage="og-admin.png"
             />
+            <JsonLd schema={{
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "serviceType": "Business Support Services",
+                "name": "XSAI Admin & Business Support",
+                "description": "Director administration, document management, back-office coordination, and business support — quietly handled so your operations run smoothly.",
+                "url": "https://xsai.co.uk/admin-support",
+                "provider": {
+                    "@type": "FinancialService",
+                    "name": "XSAI Resources Ltd",
+                    "url": "https://xsai.co.uk"
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "United Kingdom"
+                }
+            }} />
             <AdminHero />
             <WhatWeSupport />
             <IntegratedWithPayrollAccounting />

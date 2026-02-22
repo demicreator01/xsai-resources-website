@@ -7,6 +7,7 @@ import { WhoThisIsFor } from '../components/shared/WhoThisIsFor';
 import { BuiltForLongTermStability } from '../components/accounting/BuiltForLongTermStability';
 import { CTA } from '../components/layout/CTA';
 import { SEO } from '../components/shared/SEO';
+import { JsonLd } from '../components/shared/JsonLd';
 
 export const Accounting: React.FC = () => {
     return (
@@ -17,6 +18,23 @@ export const Accounting: React.FC = () => {
                 path="/accounting"
                 ogImage="og-accounting.png"
             />
+            <JsonLd schema={{
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "serviceType": "Accounting Services",
+                "name": "XSAI Accounting Services",
+                "description": "Managed accounting that connects directly with your payroll. VAT, corporation tax, year-end accounts, and MTD compliance — under one accountable structure.",
+                "url": "https://xsai.co.uk/accounting",
+                "provider": {
+                    "@type": "FinancialService",
+                    "name": "XSAI Resources Ltd",
+                    "url": "https://xsai.co.uk"
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "United Kingdom"
+                }
+            }} />
             <AccountingHero />
             <AccountingServices />
             <WhyClientsCombine />

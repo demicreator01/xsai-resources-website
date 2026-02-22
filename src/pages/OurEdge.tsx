@@ -7,6 +7,7 @@ import { BuiltForLongTerm } from '../components/edge/BuiltForLongTerm';
 import { CalmlyDifferent } from '../components/edge/CalmlyDifferent';
 import { OurEdgeClose } from '../components/edge/OurEdgeClose';
 import { SEO } from '../components/shared/SEO';
+import { JsonLd } from '../components/shared/JsonLd';
 
 export const OurEdge: React.FC = () => {
     return (
@@ -17,6 +18,18 @@ export const OurEdge: React.FC = () => {
                 path="/our-edge"
                 ogImage="og-our-edge.png"
             />
+            <JsonLd schema={{
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "Our Edge — Why XSAI is Built Differently",
+                "description": "Six reasons XSAI operates differently. Transparent pricing, shared efficiency, integrated control, and infrastructure built to last.",
+                "url": "https://xsai.co.uk/our-edge",
+                "provider": {
+                    "@type": "FinancialService",
+                    "name": "XSAI Resources Ltd",
+                    "url": "https://xsai.co.uk"
+                }
+            }} />
             <OurEdgeHero />
             <TransparencyOverComplexity />
             <EfficiencyAndSafeguarding />

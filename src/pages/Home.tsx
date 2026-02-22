@@ -10,6 +10,7 @@ import { Security } from '../components/home/Security';
 import { LongTerm } from '../components/home/LongTerm';
 import { CTA } from '../components/layout/CTA';
 import { SEO } from '../components/shared/SEO';
+import { JsonLd } from '../components/shared/JsonLd';
 
 export const Home: React.FC = () => {
     return (
@@ -20,6 +21,17 @@ export const Home: React.FC = () => {
                 path="/"
                 ogImage="og-home.png"
             />
+            <JsonLd schema={{
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "XSAI Resources — Payroll & Accounting Infrastructure for UK Businesses",
+                "description": "Transparent £3 per employee payroll, integrated accounting, and admin support. One infrastructure. Built for businesses that value structure, clarity, and long-term partnership.",
+                "url": "https://xsai.co.uk",
+                "provider": {
+                    "@type": "FinancialService",
+                    "name": "XSAI Resources Ltd"
+                }
+            }} />
             <Hero />
             <div id="services">
                 <SmarterInfrastructure />
