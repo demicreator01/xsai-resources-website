@@ -22,7 +22,7 @@ export const PayrollHero: React.FC = () => {
     return (
         <section
             ref={sectionRef}
-            className="relative bg-[#f8fffe] min-h-[90vh] flex items-center py-20 md:py-0 px-5 md:px-8 overflow-hidden"
+            className="relative bg-[#f8fffe] min-h-[90vh] flex items-center py-10 md:py-10 px-5 md:px-8 overflow-hidden"
         >
             {/* ── ATMOSPHERIC BACKGROUND ── */}
             <div className="absolute inset-0 pointer-events-none">
@@ -48,7 +48,7 @@ export const PayrollHero: React.FC = () => {
                 <div className="absolute inset-y-0 right-0 w-1/2 bg-linear-to-r from-[#f8fffe] via-transparent to-transparent hidden lg:block" />
             </div>
 
-            <div className="relative z-10 max-w-[1120px] mx-auto w-full pt-24 md:pt-28 pb-12 md:pb-20">
+            <div className="relative z-10 max-w-[1120px] mx-auto w-full pt-24 sm:pt-2 pb-8 sm:pb-2">
                 <div className="grid grid-cols-1 lg:grid-cols-[55%_42%] gap-10 lg:gap-14 items-center">
 
                     {/* ── LEFT: TEXT CONTENT ── */}
