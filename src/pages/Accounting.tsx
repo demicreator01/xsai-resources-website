@@ -6,12 +6,17 @@ import { TransparentEngagement } from '../components/accounting/TransparentEngag
 import { WhoThisIsFor } from '../components/shared/WhoThisIsFor';
 import { BuiltForLongTermStability } from '../components/accounting/BuiltForLongTermStability';
 import { CTA } from '../components/layout/CTA';
-
-
+import { SEO } from '../components/shared/SEO';
 
 export const Accounting: React.FC = () => {
     return (
         <Layout>
+            <SEO
+                title="Accounting Services Integrated with Payroll"
+                description="Managed accounting that connects directly with your payroll. VAT, corporation tax, year-end accounts, and MTD compliance — under one accountable structure."
+                path="/accounting"
+                ogImage="og-accounting.png"
+            />
             <AccountingHero />
             <AccountingServices />
             <WhyClientsCombine />

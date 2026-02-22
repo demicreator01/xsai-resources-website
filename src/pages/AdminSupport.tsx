@@ -4,12 +4,17 @@ import { WhatWeSupport } from '../components/admin/WhatWeSupport';
 import { IntegratedWithPayrollAccounting } from '../components/admin/IntegratedWithPayrollAccounting';
 import { WhoThisIsFor } from '../components/shared/WhoThisIsFor';
 import { CTA } from '../components/layout/CTA';
-
-
+import { SEO } from '../components/shared/SEO';
 
 export const AdminSupport: React.FC = () => {
     return (
         <Layout>
+            <SEO
+                title="Admin & Business Support Services"
+                description="Director administration, document management, back-office coordination, and business support — quietly handled so your operations run smoothly."
+                path="/admin-support"
+                ogImage="og-admin.png"
+            />
             <AdminHero />
             <WhatWeSupport />
             <IntegratedWithPayrollAccounting />
